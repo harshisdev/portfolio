@@ -1,0 +1,97 @@
+// scroll bar css
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $gray-color;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $primary;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $primary-hover;
+}
+.btn-outline-primary {
+  border-color: $primary;
+  color: $nav-color;
+  cursor: pointer !important;
+  &:hover {
+    background-color: $primary;
+    border-color: $primary;
+  }
+  &:focus {
+    background-color: $primary;
+    border-color: $primary;
+  }
+  &:active {
+    background-color: $primary !important;
+    border-color: $primary !important;
+  }
+}
+.form-floating {
+  & label {
+    position: absolute;
+    margin-left: 10px;
+    color: $black;
+    transition: all 0.2s ease-in-out;
+  }
+
+  & .form-control {
+    box-sizing: content-box;
+    height: 45px;
+    border-radius: 4px;
+    border: 2px solid #392b58;
+    padding: 0 10px;
+    font-family: "Roboto";
+    font-size: 16px;
+    outline: none;
+  }
+
+  & .form-control:focus + label {
+    transform: translate(0, -25px);
+    color: $danger;
+  }
+  & .form-control:valid + label {
+    transform: translate(0, -25px);
+    color: $danger;
+  }
+}
+
+#text-container {
+  overflow: hidden;
+}
+
+#typed-text {
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #000;
+  animation: typing 1s steps(40) forwards,
+    blink-caret 0.5s step-end infinite alternate;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #000;
+  }
+}

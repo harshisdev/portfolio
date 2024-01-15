@@ -1,4 +1,4 @@
-export const Name = "Harsh";
+export const Name = "Shivam";
 export const activeColor = "#f8222277";
 export const Destination = "Software Engineer Frontend";
 export const Company = "MyHealthcare Technologies Private Limited, Gurgaon";

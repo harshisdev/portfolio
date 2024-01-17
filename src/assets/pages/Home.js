@@ -38,10 +38,6 @@ const Home = () => {
   useEffect(() => {
     calculateDateDifference();
   });
-  const widht = {
-    width: "95px",
-    display: "inline-block"
-  }
   const SliderSlick = {
     dots: true,
     infinite: true,
@@ -94,7 +90,6 @@ const Home = () => {
               {" "}
               <strong style={{ color: "#f8222277" }}>
                 <Typewriter
-                  style={widht}
                   words={['frontend developer', 'web developer', 'ui developer',]}
                   loop={5}
                   cursor

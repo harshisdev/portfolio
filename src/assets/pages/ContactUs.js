@@ -91,10 +91,6 @@ const ContactUs = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
               quos?
             </p>
-            <div class="form-floating">
-              <input class="form-control" type="text" required />
-              <label>What are you looking for?</label>
-            </div>
           </Col>
           <Col sm={6}>
             <Form onSubmit={handleSubmit}>

@@ -35,7 +35,7 @@ const NavaBar = () => {
       <Navbar className="navbar__custom">
         <Container className="d-block">
           <Row>
-            <Col sm={2}>
+            <Col className="col-2">
               <Link onClick={viewImges}>
                 <Popover content={content} trigger="hover">
                   <img src={HarshLogo} alt="logo" className="rounded-circle" />
@@ -77,8 +77,7 @@ const NavaBar = () => {
               </Modal>
             </Col>
             <Col
-              sm={10}
-              className="d-flex align-items-center justify-content-end"
+              className="col-10 d-flex align-items-center justify-content-end"
             >
               <Nav>
                 <ul>

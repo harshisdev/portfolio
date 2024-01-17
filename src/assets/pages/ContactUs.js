@@ -86,7 +86,6 @@ const ContactUs = () => {
 
         <Row>
           <Col sm={6}>
-            <h1 className="text-primary fs-6 mb-0">Contact Us</h1>
             <p className="fs-6">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
               quos?
@@ -94,7 +93,7 @@ const ContactUs = () => {
           </Col>
           <Col sm={6}>
             <Form onSubmit={handleSubmit}>
-              <Card className="py-3">
+              <Card className="p-3 ">
                 <Row>
                   <Col sm={12}>
                     <FormGroup>
@@ -108,7 +107,7 @@ const ContactUs = () => {
                       />
                     </FormGroup>
                   </Col>
-                  <Col className="mt-4" sm={12}>
+                  <Col className="mt-3" sm={12}>
                     <FormGroup>
                       <FormControl
                         type="text"
@@ -126,7 +125,7 @@ const ContactUs = () => {
                       />
                     </FormGroup>
                   </Col>
-                  <Col className="mt-4" sm={12}>
+                  <Col className="mt-3" sm={12}>
                     <FormGroup>
                       <FormControl
                         type="email"
@@ -138,7 +137,7 @@ const ContactUs = () => {
                       />
                     </FormGroup>
                   </Col>
-                  <Col className="mt-4" sm={12}>
+                  <Col className="mt-3" sm={12}>
                     <FormGroup>
                       <FormControl
                         type="text"
@@ -150,7 +149,7 @@ const ContactUs = () => {
                       />
                     </FormGroup>
                   </Col>
-                  <Col className="d-flex justify-content-center mt-4" sm={12}>
+                  <Col className="d-flex justify-content-center mt-3" sm={12}>
                     <Button
                       className="d-flex"
                       variant="outline-primary"

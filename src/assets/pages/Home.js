@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import { JoinigDate, Name } from "../../constant";
 import { Link } from "react-router-dom";

@@ -97,19 +97,15 @@ const ContactUs = () => {
               <Card className="py-3">
                 <Row>
                   <Col sm={12}>
-                    <FormGroup className="form-floating">
+                    <FormGroup>
                       <FormControl
                         type="text"
                         name="name"
                         value={name}
                         onChange={handleChange}
+                        placeholder="Mobile Number *"
                         autoComplete="off"
-                        id="name"
                       />
-                      <label htmlFor="name">
-                        {" "}
-                        Name <sup>*</sup>{" "}
-                      </label>
                     </FormGroup>
                   </Col>
                   <Col className="mt-4" sm={12}>

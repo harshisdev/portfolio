@@ -21,12 +21,6 @@ import BredcrumComponent from "../component/Bredcrum/BredcrumComponent";
 import ReactStars from "react-rating-stars-component";
 import { toast, ToastContainer } from "react-toastify";
 
-const ratingChanged = (countRating) => {
-  setTimeout(() => {
-    toast.success(`Thanks for rating ${countRating}`);
-  }, 500);
-};
-
 const Project = () => {
   const AllProject = [
     {
@@ -63,12 +57,30 @@ const Project = () => {
 
   const [show, setShow] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [rating, setRating] = useState("")
 
   const handleClose = () => setShow(false);
   const handleShow = (project) => {
     setSelectedProject(project);
     setShow(true);
   };
+  const ratingChanged = (countRating) => {
+    setRating(countRating);
+  };
+
+  const handleOk = (i) => {
+    if (i.length === i) {
+      console.log("1111111111111",i);
+      setShow(false);
+      setTimeout(() => {
+        toast.success(`Thanks for your review ${i}`);
+      }, 500);
+    } else {
+      setShow(false);
+      console.log("000000000000000",i);
+    }
+
+  }
 
   return (
     <>
@@ -112,7 +124,7 @@ const Project = () => {
             {selectedProject && (
               <>
                 <Row>
-                  <Col xl="auto">Project Title :-</Col>
+                  <Col xl="auto">Project Name :-</Col>
                   <Col xl={7}>{selectedProject.title}</Col>
                   <Col xl="auto">Project Link :-</Col>
                   <Col xl={7}>
@@ -126,7 +138,7 @@ const Project = () => {
                     </a>
                   </Col>
                   <Col className="d-flex align-items-center" xl={3}>
-                    Rating :-
+                    Review :-
                   </Col>
                   <Col xl={7}>
                     <ReactStars
@@ -135,6 +147,9 @@ const Project = () => {
                       size={24}
                       activeColor={activeColor}
                     />
+                  </Col>
+                  <Col xl={12} className="text-center">
+                    <Button onClick={() => handleOk(rating)} type="button" variant="outline" className="btn-outline-primary">Ok</Button>
                   </Col>
                 </Row>
               </>

@@ -153,7 +153,7 @@ const ContactUs = () => {
                   </Col>
                   <Col className="d-flex justify-content-center mt-3" sm={12}>
                     <Button
-                      className="d-flex align-items-center"
+                      className="d-flex align-items-center text-black"
                       variant="outline-primary"
                       type="submit"
                     >

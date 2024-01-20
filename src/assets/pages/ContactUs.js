@@ -171,7 +171,7 @@ const ContactUs = () => {
                           />
                         </>
                       ) : (
-                        <FaArrowRight className="ms-2"/>
+                        <FaArrowRight className="ms-2" />
                       )}
                     </Button>
                   </Col>

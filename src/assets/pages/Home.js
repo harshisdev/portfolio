@@ -14,6 +14,12 @@ import jqueryImages from "../../assets/images/jquery-img.png";
 import responsiveImages from "../../assets/images/responsive-img.png";
 import gitImages from "../../assets/images/git-img.png";
 import { Typewriter } from "react-simple-typewriter";
+import iconNaukri from "../../assets/images/iconNaukri.png";
+import iconLinkedin from "../../assets/images/iconLinkedin.png";
+import iconGit from "../../assets/images/iconGit.png";
+import iconHackerrank from "../../assets/images/iconHackerrank.png";
+import { Popover } from "antd";
+
 
 const Home = () => {
   const [endDate] = useState(new Date());
@@ -49,7 +55,32 @@ const Home = () => {
     pauseOnHover: true,
     centerMode: true,
     autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 575,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ]
   };
+  const Naukari = <div className="pointer">View Naukari Profile</div>
+  const Linkedin = <div className="pointer">View Linkedin Profile</div>
+  const Git = <div className="pointer">View Git Profile</div>
+  const Hackerrank = <div className="pointer">View Hacker Rank Profile</div>
+
   return (
     <>
       <Helmet>
@@ -59,7 +90,18 @@ const Home = () => {
         <Row>
           <Col className="12">
             <h1 className="fs-6 text-center">
-              <span className="animate-charcter">Hello {Name} !!!</span>
+              <span className="animate-charcter">Hi, I'm {Name} </span>
+              <br />
+              <span style={{ color: "#f8222277" }}>
+                <Typewriter
+                  words={['Frontend Developer', 'Web Developer', 'Ui Developer',]}
+                  loop={5}
+                  cursor
+                  typeSpeed={70}
+                  deleteSpeed={70}
+                  delaySpeed={1500}
+                />
+              </span>
             </h1>
             <ul className="list-style justify-content-center">
               <li>
@@ -67,7 +109,9 @@ const Home = () => {
                   target="_blank"
                   to="https://www.naukri.com/mnjuser/profile?id=&altresid"
                 >
-                  Naukari.com
+                  <Popover content={Naukari} trigger="hover">
+                    <img src={iconNaukri} alt="Naukari icon" width={25} />
+                  </Popover>
                 </Link>
               </li>
               <li>
@@ -75,52 +119,52 @@ const Home = () => {
                   target="_blank"
                   to="https://www.linkedin.com/in/harsh-kumar-593a19232/"
                 >
-                  Linkedin
+                  <Popover content={Linkedin} trigger="hover">
+                    <img src={iconLinkedin} alt="Linkedin icon" width={25} />
+                  </Popover>
                 </Link>
               </li>
               <li>
                 <Link target="_blank" to="https://github.com/harshisdev">
-                  GitHub
+                  <Popover content={Git} trigger="hover">
+                    <img src={iconGit} alt="Git icon" width={25} />
+                  </Popover>
+                </Link>
+              </li>
+              <li>
+                <Link target="_blank" to="https://www.hackerrank.com/profile/harshch9931">
+                  <Popover content={Hackerrank} trigger="hover">
+                    <img src={iconHackerrank} alt="Hacker rank icon" width={25} />
+                  </Popover>
                 </Link>
               </li>
             </ul>
             <p>
               I have around {differenceInYears} year {differenceInMonths} months of
-              experience in
-              {" "}
-              <strong style={{ color: "#f8222277" }}>
-                <Typewriter
-                  words={['frontend developer', 'web developer', 'ui developer',]}
-                  loop={5}
-                  cursor
-                  typeSpeed={70}
-                  deleteSpeed={70}
-                  delaySpeed={1500}
-                /> </strong>. To continuously thrive for
-              excellence in the software industry with committed and dedicated
+              experience in <strong style={{ color: "#f8222277" }}>frontend developer</strong>. To continuously thrive for excellence in the software industry with committed and dedicated
               people, which will help me to explore my learning capability and
               realize my potential.
             </p>
             <ul className="ps-3">
-              <li>
+              <li className="sm-pb-2 md-pb-1">
                 Experienced in designing user interfaces and professional web
                 applications using core HTML5, CSS, SASS/LESS, Bootstrap,
                 JavaScript, React, jQuery, and boilerplate development techniques.
               </li>
-              <li>
+              <li className="sm-pb-2 md-pb-1">
                 Experienced in responsive web development with a strong
                 understanding of Bootstrap and Media Query.
               </li>
-              <li>
+              <li className="sm-pb-2 md-pb-1">
                 Experienced in designing and developing web applications and web
                 contents that are optimized for search engines.
               </li>
-              <li>
+              <li className="sm-pb-2 md-pb-1">
                 Experienced in using testing tools to debug and optimize web pages,
                 such as Firebug, Chrome or Safari web inspectors, and IE Developer
                 Toolbar.
               </li>
-              <li>
+              <li className="sm-pb-2 md-pb-1">
                 Have a proven track record of identifying and fixing client-end
                 performance and browser compatibility issues.
               </li>

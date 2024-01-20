@@ -93,7 +93,7 @@ const ContactUs = () => {
           </Col>
           <Col sm={6}>
             <Form onSubmit={handleSubmit}>
-              <Card className="p-3 ">
+              <Card className="p-3 box-shadow_1">
                 <Row>
                   <Col sm={12}>
                     <FormGroup>

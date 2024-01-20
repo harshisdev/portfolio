@@ -103,7 +103,7 @@ const AboutPages = () => {
                 <li>Fixed bugs and resolved user issues.</li>
               </ul>
             </Tab>
-            <Tab eventKey={2} title="Strength">
+            <Tab eventKey={2} title="Professional Skills">
               <Row>
                 <Col className="d-flex align-items-center" xl={3}>
                   <label className="me-3">

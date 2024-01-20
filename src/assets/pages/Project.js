@@ -79,7 +79,7 @@ const Project = () => {
         <BredcrumComponent pageName="Projects" />
         <Row>
           {AllProject.map((item) => (
-            <Col className="text-center" key={item.id} xl={4}>
+            <Col className="text-center sm-pb-0 md-pb-4" key={item.id} sm={12} md={6} xl={4}>
               <iframe
                 title={item.title}
                 src={item.link}

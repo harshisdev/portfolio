@@ -148,7 +148,7 @@ const Home = () => {
             <ul className="ps-3">
               <li className="sm-pb-2 md-pb-1">
                 Experienced in designing user interfaces and professional web
-                applications using core HTML5, CSS, SASS/LESS, Bootstrap,
+                applications using core HTML5, CSS3, SASS/LESS, Bootstrap,
                 JavaScript, React, jQuery, and boilerplate development techniques.
               </li>
               <li className="sm-pb-2 md-pb-1">

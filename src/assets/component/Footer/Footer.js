@@ -9,7 +9,7 @@ const Footer = () => {
         <Container className="py-3">
           <Row>
             <Col className="text-center">
-              Copyright © 2023 - {(new Date().getFullYear())}· All Rights Reserved · {Name}
+              Copyright © 2023 - {(new Date().getFullYear())} · All Rights Reserved · {Name}
             </Col>
           </Row>
         </Container>

@@ -15,6 +15,7 @@ import { Helmet } from "react-helmet";
 import { toast, ToastContainer } from "react-toastify";
 import BredcrumComponent from "../component/Bredcrum/BredcrumComponent";
 import loaderIcon from "../../assets/images/loader.svg";
+import { FaArrowRight } from "react-icons/fa6";
 
 const ContactUs = () => {
   const [show, setShow] = useState(false);
@@ -102,7 +103,7 @@ const ContactUs = () => {
                         name="name"
                         value={name}
                         onChange={handleChange}
-                        placeholder="Mobile Number *"
+                        placeholder="Your Name *"
                         autoComplete="off"
                       />
                     </FormGroup>
@@ -141,6 +142,7 @@ const ContactUs = () => {
                     <FormGroup>
                       <FormControl
                         type="text"
+                        as="textarea"
                         name="Message"
                         value={message}
                         onChange={handleChange}
@@ -151,11 +153,11 @@ const ContactUs = () => {
                   </Col>
                   <Col className="d-flex justify-content-center mt-3" sm={12}>
                     <Button
-                      className="d-flex"
+                      className="d-flex align-items-center"
                       variant="outline-primary"
                       type="submit"
                     >
-                      Submit
+                      Send Message
                       {loader ? (
                         <>
                           <img
@@ -169,7 +171,7 @@ const ContactUs = () => {
                           />
                         </>
                       ) : (
-                        ""
+                        <FaArrowRight className="ms-2"/>
                       )}
                     </Button>
                   </Col>

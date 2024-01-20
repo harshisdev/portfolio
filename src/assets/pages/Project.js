@@ -67,19 +67,23 @@ const Project = () => {
   const ratingChanged = (countRating) => {
     setRating(countRating);
   };
-
+  const Verypooar = "Very Pooar";
+  const Pooar = "Pooar";
+  const Good = "Good";
+  const Verygood = "Very Good";
+  const Excellent = "Excellent"
+  const ratingArray = ["", Verypooar, Pooar, Good, Verygood, Excellent];
   const handleOk = (i) => {
-    if (i.length === i) {
-      console.log("1111111111111",i);
-      setShow(false);
-      setTimeout(() => {
-        toast.success(`Thanks for your review ${i}`);
-      }, 500);
+    if (rating === "") {
+      toast.error("Please give rating");
+      return;
     } else {
-      setShow(false);
-      console.log("000000000000000",i);
+      setTimeout(() => {
+        toast.success(`Thanks for your review ${ratingArray[i]}`);
+      }, 500);
+      handleClose();
+      setRating("");
     }
-
   }
 
   return (

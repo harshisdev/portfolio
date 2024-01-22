@@ -80,7 +80,7 @@ const Project = () => {
     } else {
       setTimeout(() => {
         toast.success(`Thanks for your review ${ratingArray[i]}`);
-      }, 500);
+      }, 2000);
       handleClose();
       setRating("");
     }
@@ -91,11 +91,11 @@ const Project = () => {
       <Helmet>
         <title>{Name} - Projects</title>
       </Helmet>
+      <BredcrumComponent pageName="Projects" />
       <Container className="min-height">
-        <BredcrumComponent pageName="Projects" />
         <Row>
           {AllProject.map((item) => (
-            <Col className="text-center sm-pb-0 md-pb-4" key={item.id} sm={12} md={6} xl={4}>
+            <Col className="text-center pb-4 pb-md-2" key={item.id} sm={12} md={6} xl={4}>
               <iframe
                 title={item.title}
                 src={item.link}

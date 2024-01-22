@@ -1,7 +1,12 @@
 // scroll bar css
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+}
+
+
+::-webkit-scrollbar:horizontal {
+  height: 2px !important;
 }
 
 /* Track */
@@ -19,23 +24,28 @@
 ::-webkit-scrollbar-thumb:hover {
   background: $primary-hover;
 }
+
 .btn-outline-primary {
   border-color: $primary;
   color: $nav-color;
   cursor: pointer !important;
+
   &:hover {
     background-color: $primary;
     border-color: $primary;
   }
+
   &:focus {
     background-color: $primary;
     border-color: $primary;
   }
+
   &:active {
     background-color: $primary !important;
     border-color: $primary !important;
   }
 }
+
 .form-floating {
   & label {
     position: absolute;
@@ -55,11 +65,12 @@
     outline: none;
   }
 
-  & .form-control:focus + label {
+  & .form-control:focus+label {
     transform: translate(0, -25px);
     color: $danger;
   }
-  & .form-control:valid + label {
+
+  & .form-control:valid+label {
     transform: translate(0, -25px);
     color: $danger;
   }
@@ -81,16 +92,19 @@
   from {
     width: 0;
   }
+
   to {
     width: 100%;
   }
 }
 
 @keyframes blink-caret {
+
   from,
   to {
     border-color: transparent;
   }
+
   50% {
     border-color: #000;
   }

@@ -82,9 +82,8 @@ const ContactUs = () => {
       <Helmet>
         <title>{Name} - Contact</title>
       </Helmet>
+      <BredcrumComponent pageName="Contact" />
       <Container className="min-height">
-        <BredcrumComponent pageName="Contact" />
-
         <Row>
           <Col sm={6}>
             <p className="fs-6">

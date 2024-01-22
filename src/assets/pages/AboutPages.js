@@ -9,7 +9,7 @@ import {
   activeColor,
 } from "../../constant";
 import BredcrumComponent from "../component/Bredcrum/BredcrumComponent";
-import Resume from "../images/Resume.pdf";
+import Resume from "../images/harsh-resume.pdf";
 import CompanyLogos from "../images/logo.svg";
 import { Table } from "antd";
 import ReactStars from "react-rating-stars-component";
@@ -28,13 +28,13 @@ const AboutPages = () => {
   const dataSource = [
     {
       key: "1",
-      course: "Diploma Multimedia(Web Design)",
+      course: "Diploma Multimedia (Web Design)",
       school: "Oxford Institute Rajouri  Garden, New Delhi",
       passing: "2022",
     },
     {
       key: "2",
-      course: "B.A(Eng. Hons)",
+      course: "B.A (Eng. Hons)",
       school: "LNMU University, Darbhanga",
       passing: "2021",
     },
@@ -74,22 +74,22 @@ const AboutPages = () => {
       <Helmet>
         <title>{Name} - About</title>
       </Helmet>
+      <BredcrumComponent pageName="About" />
       <Container className="min-height">
-        <BredcrumComponent pageName="About" />
         <Col className="card box-shadow bg-white p-3" xl={12}>
           <Tabs className="custom-nav-tabs mb-4" defaultActiveKey={1}>
             <Tab eventKey={1} title="Experience">
-              Company:- {Company}{" "}
+              Company:- <br className="d-sm-none" /> {Company}{" "}
               <img
                 className="ms-2"
-                width="40px"
+                width="50px"
                 src={CompanyLogos}
                 alt={Company}
               />
               <br />
-              Destination:- {Destination}
+              Destination:- <br className="d-sm-none" /> {Destination}
               <br />
-              Experiance:- {Experiance}
+              Experiance:- <br className="d-sm-none" /> {Experiance}
               <ul>
                 <li>Developed and maintained the company's website.</li>
                 <li>
@@ -105,7 +105,7 @@ const AboutPages = () => {
             </Tab>
             <Tab eventKey={2} title="Professional Skills">
               <Row>
-                <Col className="d-flex align-items-center" xl={3}>
+                <Col className="d-flex align-items-center" sm={6} xl={3}>
                   <label className="me-3">
                     HTML5 <FaHtml5 color="rgb(248 34 23 / 47%)" />
                   </label>
@@ -117,7 +117,7 @@ const AboutPages = () => {
                     edit={false}
                   />
                 </Col>
-                <Col className="d-flex align-items-center" xl={3}>
+                <Col className="d-flex align-items-center" sm={6} xl={3}>
                   <label className="me-3">
                     CSS3 <FaCss3 color="rgb(248 34 23 / 47%)" />
                   </label>
@@ -129,7 +129,7 @@ const AboutPages = () => {
                     edit={false}
                   />
                 </Col>
-                <Col className="d-flex align-items-center" xl={3}>
+                <Col className="d-flex align-items-center" sm={6} xl={3}>
                   <label className="me-3">
                     SASS <FaSass color="rgb(248 34 23 / 47%)" />
                   </label>
@@ -141,7 +141,7 @@ const AboutPages = () => {
                     edit={false}
                   />
                 </Col>
-                <Col className="d-flex align-items-center" xl={3}>
+                <Col className="d-flex align-items-center" sm={6} xl={3}>
                   <label className="me-3">
                     JavaScript{" "}
                     <TbBrandJavascript color="rgb(248 34 23 / 47%)" />
@@ -156,7 +156,7 @@ const AboutPages = () => {
                 </Col>
               </Row>
               <Row>
-                <Col className="d-flex align-items-center" xl={3}>
+                <Col className="d-flex align-items-center" sm={6} xl={3}>
                   <label className="me-3">
                     React JS <FaReact color="rgb(248 34 23 / 47%)" />
                   </label>
@@ -168,7 +168,7 @@ const AboutPages = () => {
                     edit={false}
                   />
                 </Col>
-                <Col className="d-flex align-items-center" xl={3}>
+                <Col className="d-flex align-items-center" sm={6} xl={3}>
                   <label className="me-3">
                     jQuery <SiJquery color="rgb(248 34 23 / 47%)" />
                   </label>
@@ -180,7 +180,7 @@ const AboutPages = () => {
                     edit={false}
                   />
                 </Col>
-                <Col className="d-flex align-items-center" xl={3}>
+                <Col className="d-flex align-items-center" sm={6} xl={3}>
                   <label className="me-3">
                     Bootstrap5 <FaBootstrap color="rgb(248 34 23 / 47%)" />
                   </label>
@@ -192,7 +192,7 @@ const AboutPages = () => {
                     edit={false}
                   />
                 </Col>
-                <Col className="d-flex align-items-center" xl={3}>
+                <Col className="d-flex align-items-center" sm={6} xl={3}>
                   <label className="me-3">
                     Git/Lab <FaGithub color="rgb(248 34 23 / 47%)" />
                   </label>

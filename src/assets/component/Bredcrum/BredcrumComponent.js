@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const BredcrumComponent = (props) => {
   return (
     <>
-      <Breadcrumb className="bredcrum-custom py-2">
+      <Breadcrumb className="bredcrum-custom py-2 container">
         <Breadcrumb.Item linkAs="span">
             <Link to="/" className="nav-link">Home</Link>
         </Breadcrumb.Item>

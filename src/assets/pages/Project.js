@@ -80,7 +80,7 @@ const Project = () => {
     } else {
       setTimeout(() => {
         toast.success(`Thanks for your review ${ratingArray[i]}`);
-      }, 2000);
+      }, 1000);
       handleClose();
       setRating("");
     }

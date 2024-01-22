@@ -25,8 +25,16 @@ const ContactUs = () => {
     setMobile("");
     setEmail("");
     setMessage("");
-    toast.success("Thanks for contacting us as soon as");
+    toast.error("Faild data not sumited!!!");
   };
+  const handleOk = () => {
+    setShow(false);
+    setName("");
+    setMobile("");
+    setEmail("");
+    setMessage("");
+    toast.success("Your Message Send Successfully");
+  }
 
   const [name, setName] = useState("");
   const [mobile, setMobile] = useState("");
@@ -69,7 +77,7 @@ const ContactUs = () => {
       setTimeout(() => {
         setShow(true);
         setLoader(false);
-      }, 1500);
+      }, 2000);
       setName(name);
       setMobile(mobile);
       setEmail(email);
@@ -190,7 +198,7 @@ const ContactUs = () => {
           <Modal.Header closeButton>
             <Modal.Title>
               <h1 className="text-primary fs-6 mb-0">
-                Your Message Send Successfully
+                Your Message Send
               </h1>
             </Modal.Title>
           </Modal.Header>
@@ -219,7 +227,7 @@ const ContactUs = () => {
             </table>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="outline-primary" onClick={handleClose}>
+            <Button variant="outline-primary" onClick={handleOk}>
               Okay
             </Button>
           </Modal.Footer>

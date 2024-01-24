@@ -25,15 +25,15 @@ const ContactUs = () => {
     setMobile("");
     setEmail("");
     setMessage("");
-    toast.error("Faild data not sumited!!!");
+    toast.error("Your message not submited !!!");
   };
-  const handleOk = () => {
+  const handleYes = () => {
     setShow(false);
     setName("");
     setMobile("");
     setEmail("");
     setMessage("");
-    toast.success("Your Message Send Successfully");
+    toast.success("Your message send successfully");
   }
 
   const [name, setName] = useState("");
@@ -93,13 +93,13 @@ const ContactUs = () => {
       <BredcrumComponent pageName="Contact" />
       <Container className="min-height">
         <Row>
-          <Col sm={6}>
+          <Col className="col-12 col-sm-6 order-2 order-sm-1 pt-4 pt-sm-0">
             <p className="fs-6">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
               quos?
             </p>
           </Col>
-          <Col sm={6}>
+          <Col className="col-12 col-sm-6 order-1 order-sm-2">
             <Form onSubmit={handleSubmit}>
               <Card className="p-3 box-shadow_1">
                 <Row>
@@ -198,7 +198,7 @@ const ContactUs = () => {
           <Modal.Header closeButton>
             <Modal.Title>
               <h1 className="text-primary fs-6 mb-0">
-                Your Message Send
+                Are you sure send message !!!
               </h1>
             </Modal.Title>
           </Modal.Header>
@@ -210,7 +210,7 @@ const ContactUs = () => {
                 <td>{name}</td>
               </tr>
               <tr>
-                <td>Mobile Number</td>
+                <td style={{minWidth:"115px"}}>Mobile Number</td>
                 <td>:-</td>
                 <td>{mobile}</td>
               </tr>
@@ -222,13 +222,13 @@ const ContactUs = () => {
               <tr>
                 <td>Message</td>
                 <td>:-</td>
-                <td>{message}</td>
+                <td style={{wordBreak:"break-all"}}>{message}</td>
               </tr>
             </table>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="outline-primary" onClick={handleOk}>
-              Okay
+            <Button variant="outline-primary" onClick={handleYes}>
+              Yes
             </Button>
           </Modal.Footer>
         </Modal>

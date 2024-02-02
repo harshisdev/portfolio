@@ -91,13 +91,17 @@ const ContactUs = () => {
         <title>{Name} - Contact</title>
       </Helmet>
       <BredcrumComponent pageName="Contact" />
-      <Container className="min-height">
+      <Container className="min-height min-height-pagination">
         <Row>
           <Col className="col-12 col-sm-6 order-2 order-sm-1 pt-4 pt-sm-0">
-            <p className="fs-6">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
-              quos?
-            </p>
+            <div className="d-flex">
+              <div>
+                <a href="tel:6205044930">+91-6205044930</a>
+              </div>
+              <div>
+                <a href="mailto:harshch9931@gmail.com">harshch9931@gmail.com</a>
+              </div>
+            </div>
           </Col>
           <Col className="col-12 col-sm-6 order-1 order-sm-2">
             <Form onSubmit={handleSubmit}>
@@ -210,7 +214,7 @@ const ContactUs = () => {
                 <td>{name}</td>
               </tr>
               <tr>
-                <td style={{minWidth:"115px"}}>Mobile Number</td>
+                <td style={{ minWidth: "115px" }}>Mobile Number</td>
                 <td>:-</td>
                 <td>{mobile}</td>
               </tr>
@@ -222,7 +226,7 @@ const ContactUs = () => {
               <tr>
                 <td>Message</td>
                 <td>:-</td>
-                <td style={{wordBreak:"break-all"}}>{message}</td>
+                <td style={{ wordBreak: "break-all" }}>{message}</td>
               </tr>
             </table>
           </Modal.Body>

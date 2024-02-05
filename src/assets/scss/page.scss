@@ -48,9 +48,11 @@ table {
 .min-height {
   min-height: calc(100vh - 111.2px);
   padding: 1.5rem 1rem;
-  &.min-height-pagination{
+
+  &.min-height-pagination {
     min-height: calc(100vh - 151.2px);
   }
+
   @media screen and (max-width:576px) {
     padding: 1rem;
   }
@@ -387,5 +389,12 @@ td {
 
 .box-shadow_1 {
   box-shadow: 4px 8px 24px 2px rgba(0, 0, 0, 0.1);
-  background-color: $cardbg;
+}
+
+// contact us css
+.contact__us{
+  div a{
+    text-decoration: none;
+    color: $black;
+  }
 }

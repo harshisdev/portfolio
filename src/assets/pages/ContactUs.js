@@ -16,6 +16,16 @@ import { toast, ToastContainer } from "react-toastify";
 import BredcrumComponent from "../component/Bredcrum/BredcrumComponent";
 import loaderIcon from "../../assets/images/loader.svg";
 import { FaArrowRight } from "react-icons/fa6";
+import { CiMail } from "react-icons/ci";
+import { MdOutlineLocalPhone } from "react-icons/md";
+import { CiFacebook } from "react-icons/ci";
+import { CiLinkedin } from "react-icons/ci";
+import { FaWhatsapp } from "react-icons/fa";
+import { CiInstagram } from "react-icons/ci";
+import { FaGithub } from "react-icons/fa";
+import ContactImg from "../../assets/images/contact.png";
+
+
 
 const ContactUs = () => {
   const [show, setShow] = useState(false);
@@ -93,15 +103,35 @@ const ContactUs = () => {
       <BredcrumComponent pageName="Contact" />
       <Container className="min-height min-height-pagination">
         <Row>
+          <Col xl={12}><h1 className="fs-5 text-center mb-0 pb-4">Contact With Me</h1></Col>
           <Col className="col-12 col-sm-6 order-2 order-sm-1 pt-4 pt-sm-0">
-            <div className="d-flex">
-              <div>
-                <a href="tel:6205044930">+91-6205044930</a>
+            <Card className="p-3 box-shadow_1">
+              <div className="d-flex justify-content-center">
+                <Card className="mb-2 w-25"><img src={ContactImg} alt="Contact With Me" /></Card>
               </div>
-              <div>
-                <a href="mailto:harshch9931@gmail.com">harshch9931@gmail.com</a>
+              <div className="contact__us">
+                <p className="mb-2">I am available for freelance work. Connect with me via and call in to my account.</p>
+                <div>
+                  <span className="pe-2"><MdOutlineLocalPhone /> </span> <a href="tel:6205044930">+91-6205044930</a>
+                </div>
+                <div>
+                  <span className="pe-2"><CiMail /> </span> <a href="mailto:harshch9931@gmail.com">harshch9931@gmail.com</a>
+                </div>
+                <p className="py-2 mb-0  text-center fw-bold">FIND WITH ME</p>
+                <div className="d-flex justify-content-between">
+                  <Card className="p-2"><a href="#" target="__blank"><CiFacebook className="fs-3" />
+                  </a></Card>
+                  <Card className="p-2"><a href="#" target="__blank"><CiLinkedin className="fs-3" /></a>
+                  </Card>
+                  <Card className="p-2"><a href="#" target="__blank"><FaWhatsapp className="fs-3" /></a>
+                  </Card>
+                  <Card className="p-2"><a href="#" target="__blank"><CiInstagram className="fs-3" /></a>
+                  </Card>
+                  <Card className="p-2"><a href="#" target="__blank"><FaGithub className="fs-3" />
+                  </a></Card>
+                </div>
               </div>
-            </div>
+            </Card>
           </Col>
           <Col className="col-12 col-sm-6 order-1 order-sm-2">
             <Form onSubmit={handleSubmit}>

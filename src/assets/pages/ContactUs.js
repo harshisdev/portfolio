@@ -119,15 +119,15 @@ const ContactUs = () => {
                 </div>
                 <p className="py-2 mb-0  text-center fw-bold">FIND WITH ME</p>
                 <div className="d-flex justify-content-between">
-                  <Card className="p-2"><a href="#" target="__blank"><CiFacebook className="fs-3" />
+                  <Card className="p-2"><a href="https://www.facebook.com/harshkumar1208200" target="__blank"><CiFacebook className="fs-3" />
                   </a></Card>
-                  <Card className="p-2"><a href="#" target="__blank"><CiLinkedin className="fs-3" /></a>
+                  <Card className="p-2"><a href="https://www.linkedin.com/in/harsh-kumar-593a19232/" target="__blank"><CiLinkedin className="fs-3" /></a>
                   </Card>
-                  <Card className="p-2"><a href="#" target="__blank"><FaWhatsapp className="fs-3" /></a>
+                  <Card className="p-2"><a href="https://wa.me/6205044930?text=Hi Harsh," target="__blank"><FaWhatsapp className="fs-3" /></a>
                   </Card>
-                  <Card className="p-2"><a href="#" target="__blank"><CiInstagram className="fs-3" /></a>
+                  <Card className="p-2"><a href="https://www.instagram.com/harshch9931/" target="__blank"><CiInstagram className="fs-3" /></a>
                   </Card>
-                  <Card className="p-2"><a href="#" target="__blank"><FaGithub className="fs-3" />
+                  <Card className="p-2"><a href="https://github.com/harshisdev" target="__blank"><FaGithub className="fs-3" />
                   </a></Card>
                 </div>
               </div>

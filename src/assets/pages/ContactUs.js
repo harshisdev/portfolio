@@ -123,7 +123,7 @@ const ContactUs = () => {
                   </a></Card>
                   <Card className="p-2"><a href="https://www.linkedin.com/in/harsh-kumar-593a19232/" target="__blank"><CiLinkedin className="fs-3" /></a>
                   </Card>
-                  <Card className="p-2"><a href="https://wa.me/6205044930?text=Hi Harsh," target="__blank"><FaWhatsapp className="fs-3" /></a>
+                  <Card className="p-2"><a href="https://wa.me/+916205044930?text=Hi Harsh," target="__blank"><FaWhatsapp className="fs-3" /></a>
                   </Card>
                   <Card className="p-2"><a href="https://www.instagram.com/harshch9931/" target="__blank"><CiInstagram className="fs-3" /></a>
                   </Card>

@@ -2,7 +2,7 @@ body {
   font-family: "Roboto", sans-serif !important;
   font-size: 1rem !important;
   line-height: 1.5;
-  color: $black;
+  color: $dark-gray;
 }
 
 table {
@@ -85,7 +85,7 @@ table {
 .animate-charcter {
   padding-bottom: 10px;
   background-image: linear-gradient(225deg,
-      $black 0%,
+      $dark-gray 0%,
       #44107a 29%,
       #ff1361 67%,
       $primary 100%);
@@ -191,7 +191,7 @@ table {
 
 // footer css
 footer {
-  background-color: $footer;
+  background-color: $dark-gray;
   color: $white;
   font-size: 0.8rem;
 }
@@ -228,7 +228,7 @@ footer {
     white-space: nowrap;
 
     .nav-link {
-      color: $black !important;
+      color: $dark-gray !important;
 
       &.active {
         color: $primary !important;
@@ -237,7 +237,7 @@ footer {
   }
 
   ~.tab-content>.active {
-    color: $black !important;
+    color: $dark-gray !important;
 
     ul {
       padding-left: 1rem;
@@ -279,7 +279,7 @@ td {
 }
 
 .dark-mode {
-  background-color: $black;
+  background-color: $dark-gray;
   color: $white;
 }
 
@@ -389,12 +389,13 @@ td {
 
 .box-shadow_1 {
   box-shadow: 4px 8px 24px 2px rgba(0, 0, 0, 0.1);
+  background-color: $card-background;
 }
 
 // contact us css
 .contact__us{
   div a{
     text-decoration: none;
-    color: $black;
+    color: $dark-gray;
   }
 }

@@ -38,6 +38,7 @@
   &:focus {
     background-color: $primary;
     border-color: $primary;
+    color: $white;
   }
 
   &:active {
@@ -50,7 +51,7 @@
   & label {
     position: absolute;
     margin-left: 10px;
-    color: $black;
+    color: $dark-gray;
     transition: all 0.2s ease-in-out;
   }
 
@@ -74,6 +75,10 @@
     transform: translate(0, -25px);
     color: $danger;
   }
+}
+.form-control:focus{
+  box-shadow: none !important;
+  border-color: $dark-gray !important;
 }
 
 #text-container {

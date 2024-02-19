@@ -9,7 +9,7 @@ import {
   activeColor,
 } from "../../constant";
 import BredcrumComponent from "../component/Bredcrum/BredcrumComponent";
-import Resume from "../images/harsh-resume.pdf";
+import Resume from "../images/HarshResume.pdf";
 import CompanyLogos from "../images/logo.svg";
 import { Table } from "antd";
 import ReactStars from "react-rating-stars-component";

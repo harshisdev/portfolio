@@ -78,9 +78,7 @@ const Project = () => {
       toast.error("Please give rating");
       return;
     } else {
-      setTimeout(() => {
-        toast.success(`Thanks for your review ${ratingArray[i]}`);
-      }, 1000);
+      toast.success(`Thanks for your review ${ratingArray[i]}`);
       handleClose();
       setRating("");
     }
@@ -107,7 +105,7 @@ const Project = () => {
                 variant="outline-primary"
                 onClick={() => handleShow(item)}
               >
-                Project Details
+                Veiw Project
               </Button>
             </Col>
           ))}

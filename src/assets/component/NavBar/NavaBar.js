@@ -6,6 +6,8 @@ import Harshimg from "../../images/Harsh-Kumar.jpg";
 import Slider from "react-slick";
 import { Destination, Name } from "../../../constant";
 import { Popover } from "antd";
+import { Typewriter } from "react-simple-typewriter";
+import { VscMenu } from "react-icons/vsc";
 
 const NavaBar = () => {
   const location = useLocation();
@@ -34,13 +36,25 @@ const NavaBar = () => {
     <>
       <Navbar className="navbar__custom">
         <Container className="d-block">
-          <Row>
-            <Col className="col-2">
+          <Row className="justify-content-between">
+            <div className="col-auto d-flex align-items-center">
               <Link onClick={viewImges}>
                 <Popover content={content} trigger="hover">
                   <img src={HarshLogo} alt="logo" className="rounded-circle" />
                 </Popover>
               </Link>
+              <h1 className="fs-6 mb-0 ps-2 fw-light">{Name} Kumar <br />
+                <span style={{ fontSize:"0.8rem", color: "#2ecc71" }}>
+                  <Typewriter
+                    words={['Frontend Developer', 'Web Developer', 'Ui Developer',]}
+                    loop={5}
+                    cursor
+                    typeSpeed={70}
+                    deleteSpeed={70}
+                    delaySpeed={1500}
+                  />
+                </span>
+              </h1>
 
               <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
@@ -75,9 +89,9 @@ const NavaBar = () => {
                   </Slider>
                 </Modal.Body>
               </Modal>
-            </Col>
+            </div>
             <Col
-              className="col-10 d-flex align-items-center justify-content-end"
+              className="col-auto align-items-center d-none d-sm-flex"
             >
               <Nav>
                 <ul>
@@ -129,6 +143,9 @@ const NavaBar = () => {
                   </li>
                 </ul>
               </Nav>
+            </Col>
+            <Col className="col-auto d-flex align-items-center d-flex d-sm-none">
+            <VscMenu />
             </Col>
           </Row>
         </Container>

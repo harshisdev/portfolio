@@ -13,7 +13,6 @@ import reactImages from "../../assets/images/react-img.png";
 import jqueryImages from "../../assets/images/jquery-img.png";
 import responsiveImages from "../../assets/images/responsive-img.png";
 import gitImages from "../../assets/images/git-img.png";
-import { Typewriter } from "react-simple-typewriter";
 import iconNaukri from "../../assets/images/iconNaukri.png";
 import iconLinkedin from "../../assets/images/iconLinkedin.png";
 import iconGit from "../../assets/images/iconGit.png";
@@ -88,21 +87,7 @@ const Home = () => {
       </Helmet>
       <Container className="min-height center">
         <Row>
-          <Col className="12">
-            <h1 className="fs-6 text-center">
-              <span className="animate-charcter">Hi, I'm {Name} </span>
-              <br />
-              <span style={{ color: "#f8222277" }}>
-                <Typewriter
-                  words={['Frontend Developer', 'Web Developer', 'Ui Developer',]}
-                  loop={5}
-                  cursor
-                  typeSpeed={70}
-                  deleteSpeed={70}
-                  delaySpeed={1500}
-                />
-              </span>
-            </h1>
+          <Col>
             <ul className="list-style justify-content-center">
               <li>
                 <Link
@@ -141,7 +126,7 @@ const Home = () => {
             </ul>
             <p>
               I have around {differenceInYears} year {differenceInMonths} months of
-              experience in <strong style={{ color: "#f8222277" }}>frontend developer</strong>. To continuously thrive for excellence in the software industry with committed and dedicated
+              experience in <strong style={{ color: "#2c3e50" }}>frontend developer</strong>. To continuously thrive for excellence in the software industry with committed and dedicated
               people, which will help me to explore my learning capability and
               realize my potential.
             </p>
@@ -169,7 +154,7 @@ const Home = () => {
                 performance and browser compatibility issues.
               </li>
             </ul>
-            <h2 className="fs-6 text-center">
+            <h2 className="fs-6 text-center mt-4">
               Technical <span className="text-primary">Skills</span>
             </h2>
             <Slider {...SliderSlick}>

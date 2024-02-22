@@ -44,7 +44,7 @@ const NavaBar = () => {
                 </Popover>
               </Link>
               <h1 className="fs-6 mb-0 ps-2 fw-light">{Name} Kumar <br />
-                <span style={{ fontSize:"0.8rem", color: "#2ecc71" }}>
+                <span style={{ fontSize:"0.8rem", color: "#ff014f" }}>
                   <Typewriter
                     words={['Frontend Developer', 'Web Developer', 'Ui Developer',]}
                     loop={5}
@@ -120,13 +120,13 @@ const NavaBar = () => {
                   <li>
                     <Link
                       className={
-                        splitLocation[1] === "Project"
+                        splitLocation[1] === "Portfolio"
                           ? "active nav-link"
                           : "nav-link"
                       }
-                      to="/Project"
+                      to="/Portfolio"
                     >
-                      Project
+                      Portfolio
                     </Link>
                   </li>
                   <li>

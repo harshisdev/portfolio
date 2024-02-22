@@ -36,6 +36,10 @@ table {
         color: $nav-color;
         font-size: 0.9rem;
         animation: 0.3s all ease-in;
+
+        &:hover {
+          color: $primary;
+        }
       }
 
       li:last-child .nav-link {
@@ -137,11 +141,11 @@ table {
     padding: 10px 0px;
 
     li button::before {
-      color: $primary-hover;
+      color: $primary;
     }
 
     .slick-active button::before {
-      color: $primary-hover;
+      color: $primary;
     }
   }
 
@@ -213,7 +217,7 @@ footer {
 }
 
 .active {
-  color: $primary-hover !important;
+  color: $primary !important;
   transition: 0.3s all ease-in-out;
 }
 
@@ -226,12 +230,24 @@ footer {
 
   .nav-item {
     white-space: nowrap;
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0px;
+    }
 
     .nav-link {
       color: $dark-gray !important;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+      transition: 0.3s all ease-in-out;
+      border: 1px solid #dee2e6;
+      border-bottom: 0px;
 
       &.active {
         color: $primary !important;
+        border-bottom: 2px solid $primary;
+        transition: 0.3s all ease-in-out;
       }
     }
   }
@@ -393,8 +409,22 @@ td {
 }
 
 // contact us css
-.contact__us{
-  div a{
+.contact__us {
+  .card {
+    cursor: pointer;
+
+    &:hover {
+      background-color: $primary;
+      transition: 0.3s all ease-in-out;
+
+      a svg {
+        color: $white;
+        transition: 0.3s all ease-in-out;
+      }
+    }
+  }
+
+  div a {
     text-decoration: none;
     color: $dark-gray;
   }

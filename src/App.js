@@ -5,7 +5,7 @@ import AboutPages from "./assets/pages/AboutPages";
 import Erorr from "./assets/pages/Erorr";
 import ContactUs from "./assets/pages/ContactUs";
 import NavaBar from "./assets/component/NavBar/NavaBar";
-import Project from "./assets/pages/Project";
+import Portfolio from "./assets/pages/Portfolio";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutPages />} />
-          <Route path="/Project" element={<Project />} />
+          <Route path="/Portfolio" element={<Portfolio />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="*" element={<Erorr />} />
         </Routes>

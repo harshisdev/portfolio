@@ -21,7 +21,7 @@ import BredcrumComponent from "../component/Bredcrum/BredcrumComponent";
 import ReactStars from "react-rating-stars-component";
 import { toast, ToastContainer } from "react-toastify";
 
-const Project = () => {
+const Portfolio = () => {
   const AllProject = [
     {
       id: 1,
@@ -87,9 +87,9 @@ const Project = () => {
   return (
     <>
       <Helmet>
-        <title>{Name} - Projects</title>
+        <title>{Name} - Portfolio</title>
       </Helmet>
-      <BredcrumComponent pageName="Projects" />
+      <BredcrumComponent pageName="Portfolio" />
       <Container className="min-height">
         <Row>
           {AllProject.map((item) => (
@@ -165,4 +165,4 @@ const Project = () => {
   );
 };
 
-export default Project;
+export default Portfolio;

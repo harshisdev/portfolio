@@ -94,7 +94,7 @@ const Home = () => {
                   target="_blank"
                   to="https://www.naukri.com/mnjuser/profile?id=&altresid"
                 >
-                  <Popover content={Naukari} trigger="hover">
+                  <Popover content={Naukari} placement="bottom" trigger="hover">
                     <img src={iconNaukri} alt="Naukari icon" width={25} />
                   </Popover>
                 </Link>
@@ -104,21 +104,21 @@ const Home = () => {
                   target="_blank"
                   to="https://www.linkedin.com/in/harsh-kumar-593a19232/"
                 >
-                  <Popover content={Linkedin} trigger="hover">
+                  <Popover content={Linkedin} placement="bottom" trigger="hover">
                     <img src={iconLinkedin} alt="Linkedin icon" width={25} />
                   </Popover>
                 </Link>
               </li>
               <li>
                 <Link target="_blank" to="https://github.com/harshisdev">
-                  <Popover content={Git} trigger="hover">
+                  <Popover content={Git} placement="bottom" trigger="hover">
                     <img src={iconGit} alt="Git icon" width={25} />
                   </Popover>
                 </Link>
               </li>
               <li>
                 <Link target="_blank" to="https://www.hackerrank.com/profile/harshch9931">
-                  <Popover content={Hackerrank} trigger="hover">
+                  <Popover content={Hackerrank} placement="bottom" trigger="hover">
                     <img src={iconHackerrank} alt="Hacker rank icon" width={25} />
                   </Popover>
                 </Link>

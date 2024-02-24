@@ -210,7 +210,7 @@ const Home = () => {
               </li>
             </ul>
             <h2 className="fs-6 text-center mt-4">
-              Technical Skills - <span style={{ transition: "0.5s all ease-in-out" }} className="text-primary">{activeSkillName}</span>
+              Technical Skills - <span className="text-primary">{activeSkillName}</span>
             </h2>
             <Slider {...SliderSlick}>
               {

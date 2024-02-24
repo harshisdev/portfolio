@@ -29,20 +29,29 @@ const NavaBar = () => {
     pauseOnHover: true,
     centerMode: false,
     autoplaySpeed: 2000,
+    with: "300px"
   };
   const content = <div className="pointer">View Profile</div>;
 
   const [open, setOpen] = useState(false);
-  const [placement, setPlacement] = useState('right');
+
   const showDrawer = () => {
     setOpen(true);
-  };
-  const onChange = (e) => {
-    setPlacement(e.target.value);
   };
   const onClose = () => {
     setOpen(false);
   };
+
+  const profileImage = [
+    {
+      id: "1",
+      images: Harshimg,
+    },
+    {
+      id: "2",
+      images: Harshimg,
+    }
+  ]
 
   return (
     <>
@@ -52,10 +61,10 @@ const NavaBar = () => {
             <div className="col-auto d-flex align-items-center">
               <Link onClick={viewImges}>
                 <Popover content={content} trigger="hover">
-                  <img src={HarshLogo} alt="logo" className="rounded-circle" />
+                  <img src={HarshLogo} alt={Name} className="rounded-circle" />
                 </Popover>
               </Link>
-              <h1 className="fs-6 mb-0 ps-2 fw-light"><strong>{Name} Kumar</strong> <br />
+              <h1 className="fs-6 mb-0 ps-2 fw-light"><strong>{Name}</strong> <br />
                 <span style={{ fontSize: "0.8rem", color: "#ff014f" }}>
                   <Typewriter
                     words={['Frontend Developer', 'Web Developer', 'Ui Developer',]}
@@ -71,7 +80,7 @@ const NavaBar = () => {
               <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                   <Modal.Title>
-                    <h1 className="fs-6 mb-1">{Name} Kumar</h1>
+                    <h1 className="fs-6 mb-1">{Name}</h1>
                     <p
                       style={{ fontSize: "0.8rem", color: "#858282" }}
                       className="mb-0"
@@ -82,22 +91,18 @@ const NavaBar = () => {
                 </Modal.Header>
                 <Modal.Body>
                   <Slider {...SliderSlick}>
-                    <div>
-                      <img
-                        src={Harshimg}
-                        width="100%"
-                        height="auto"
-                        alt="logo"
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src={HarshLogo}
-                        width="100%"
-                        height="auto"
-                        alt="logo"
-                      />
-                    </div>
+                    {
+                      profileImage.map((item) => (
+                        <div key={item.id}>
+                          <img
+                            src={item.images}
+                            width="100%"
+                            height="auto"
+                            alt={Name}
+                          />
+                        </div>
+                      ))
+                    }
                   </Slider>
                 </Modal.Body>
               </Modal>
@@ -164,7 +169,7 @@ const NavaBar = () => {
       </Navbar>
       <Drawer
         title={false}
-        placement={placement}
+        placement="right"
         width={200}
         onClose={onClose}
         open={open}

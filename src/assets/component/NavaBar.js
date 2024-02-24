@@ -5,7 +5,7 @@ import HarshLogo from "../images/Harsh-Kumar.png";
 import Harshimg from "../images/Harsh-Kumar.jpg";
 import Slider from "react-slick";
 import { Destination, Name } from "../../constant";
-import { Popover } from "antd";
+import { Drawer, Popover } from "antd";
 import { Typewriter } from "react-simple-typewriter";
 import { VscMenu } from "react-icons/vsc";
 
@@ -32,6 +32,18 @@ const NavaBar = () => {
   };
   const content = <div className="pointer">View Profile</div>;
 
+  const [open, setOpen] = useState(false);
+  const [placement, setPlacement] = useState('right');
+  const showDrawer = () => {
+    setOpen(true);
+  };
+  const onChange = (e) => {
+    setPlacement(e.target.value);
+  };
+  const onClose = () => {
+    setOpen(false);
+  };
+
   return (
     <>
       <Navbar className="navbar__custom">
@@ -44,7 +56,7 @@ const NavaBar = () => {
                 </Popover>
               </Link>
               <h1 className="fs-6 mb-0 ps-2 fw-light"><strong>{Name} Kumar</strong> <br />
-                <span style={{ fontSize:"0.8rem", color: "#ff014f" }}>
+                <span style={{ fontSize: "0.8rem", color: "#ff014f" }}>
                   <Typewriter
                     words={['Frontend Developer', 'Web Developer', 'Ui Developer',]}
                     loop={5}
@@ -145,11 +157,69 @@ const NavaBar = () => {
               </Nav>
             </Col>
             <Col className="col-auto d-flex align-items-center d-flex d-sm-none">
-            <VscMenu />
+              <VscMenu onClick={showDrawer} className="fs-2" />
             </Col>
           </Row>
         </Container>
       </Navbar>
+      <Drawer
+        title={false}
+        placement={placement}
+        width={200}
+        onClose={onClose}
+        open={open}
+      >
+        <Nav>
+          <ul>
+            <li>
+              <Link
+                className={
+                  splitLocation[1] === "" ? "active nav-link" : "nav-link"
+                }
+                to="/"
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={
+                  splitLocation[1] === "about"
+                    ? "active nav-link"
+                    : "nav-link"
+                }
+                to="/about"
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={
+                  splitLocation[1] === "Portfolio"
+                    ? "active nav-link"
+                    : "nav-link"
+                }
+                to="/Portfolio"
+              >
+                Portfolio
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={
+                  splitLocation[1] === "contact-us"
+                    ? "active nav-link"
+                    : "nav-link"
+                }
+                to="/contact-us"
+              >
+                Contact Us
+              </Link>
+            </li>
+          </ul>
+        </Nav>
+      </Drawer>
     </>
   );
 };

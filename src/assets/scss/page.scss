@@ -58,10 +58,6 @@ table {
     min-height: calc(100vh - 112.41px);
   }
 
-  @media screen and (max-width:576px) {
-    padding: 1rem;
-  }
-
   .list-style {
     list-style: none;
     display: flex;
@@ -125,7 +121,8 @@ table {
     height: 50px;
     transition: 0.3s all ease-in-out;
   }
-  .slick-track{
+
+  .slick-track {
     display: flex;
     align-items: center;
   }
@@ -180,7 +177,8 @@ table {
 
   .breadcrumb {
     margin-bottom: 0px;
-    .breadcrumb-item{
+
+    .breadcrumb-item {
       font-size: 0.9rem;
     }
   }

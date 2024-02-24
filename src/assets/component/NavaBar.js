@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Col, Container, Modal, Nav, Navbar, Row } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
-import HarshLogo from "../../images/Harsh-Kumar.png";
-import Harshimg from "../../images/Harsh-Kumar.jpg";
+import HarshLogo from "../images/Harsh-Kumar.png";
+import Harshimg from "../images/Harsh-Kumar.jpg";
 import Slider from "react-slick";
-import { Destination, Name } from "../../../constant";
+import { Destination, Name } from "../../constant";
 import { Popover } from "antd";
 import { Typewriter } from "react-simple-typewriter";
 import { VscMenu } from "react-icons/vsc";
@@ -43,7 +43,7 @@ const NavaBar = () => {
                   <img src={HarshLogo} alt="logo" className="rounded-circle" />
                 </Popover>
               </Link>
-              <h1 className="fs-6 mb-0 ps-2 fw-light">{Name} Kumar <br />
+              <h1 className="fs-6 mb-0 ps-2 fw-light"><strong>{Name} Kumar</strong> <br />
                 <span style={{ fontSize:"0.8rem", color: "#ff014f" }}>
                   <Typewriter
                     words={['Frontend Developer', 'Web Developer', 'Ui Developer',]}

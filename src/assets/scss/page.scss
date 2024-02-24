@@ -3,6 +3,7 @@ body {
   font-size: 1rem !important;
   line-height: 1.5;
   color: $dark-gray;
+  overflow-x: hidden;
 }
 
 table {
@@ -20,8 +21,8 @@ table {
   box-shadow: 0 2px 4px -1px rgba(57, 76, 96, 0.15);
 
   img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50px;
   }
 
@@ -50,11 +51,11 @@ table {
 }
 
 .min-height {
-  min-height: calc(100vh - 111.2px);
+  min-height: calc(100vh - 82.8px);
   padding: 1.5rem 1rem;
 
   &.min-height-pagination {
-    min-height: calc(100vh - 151.2px);
+    min-height: calc(100vh - 112.41px);
   }
 
   @media screen and (max-width:576px) {
@@ -121,7 +122,12 @@ table {
 
   img {
     width: auto;
-    height: 70px;
+    height: 50px;
+    transition: 0.3s all ease-in-out;
+  }
+  .slick-track{
+    display: flex;
+    align-items: center;
   }
 
   .slick-arrow {
@@ -134,7 +140,8 @@ table {
 
   .slick-center img {
     width: auto;
-    height: 90px;
+    height: 70px;
+    transition: 0.3s all ease-in-out;
   }
 
   .slick-dots {
@@ -167,12 +174,15 @@ table {
 // bredcrum css
 .bredcrum-custom {
   position: sticky;
-  top: 59.53px;
+  top: 50px;
   background-color: $white;
-  z-index: 99;
+  z-index: 3;
 
   .breadcrumb {
     margin-bottom: 0px;
+    .breadcrumb-item{
+      font-size: 0.9rem;
+    }
   }
 }
 
@@ -197,7 +207,7 @@ table {
 footer {
   background-color: $dark-gray;
   color: $white;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 .center {

@@ -261,6 +261,9 @@ const ContactUs = () => {
             </table>
           </Modal.Body>
           <Modal.Footer>
+          <Button variant="primary" onClick={handleClose}>
+              No
+            </Button>
             <Button variant="outline-primary" onClick={handleYes}>
               Yes
             </Button>

@@ -25,11 +25,17 @@
   background: $primary;
 }
 
-.nav .nav-link {
-  color: $nav-color !important;
+.nav {
+  ul {
+    padding-left: 20px !important;
+  }
 
-  &.active {
-    color: $primary !important;
+  .nav-link {
+    color: $nav-color !important;
+
+    &.active {
+      color: $primary !important;
+    }
   }
 }
 

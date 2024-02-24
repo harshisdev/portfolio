@@ -25,6 +25,10 @@
   background: $primary;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .nav {
   ul {
     padding-left: 20px !important;
@@ -39,6 +43,28 @@
   }
 }
 
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+
+  &:hover {
+    background-color: $primary;
+    border-color: $primary;
+    transition: 0.3s all ease-in-out;
+  }
+
+  &:focus {
+    background-color: $primary;
+    border-color: $primary;
+    color: $white;
+    transition: 0.3s all ease-in-out;
+  }
+
+  &:active {
+    background-color: $primary !important;
+    border-color: $primary !important;
+  }
+}
 
 .btn-outline-primary {
   border-color: $primary;

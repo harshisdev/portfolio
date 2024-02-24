@@ -1,5 +1,5 @@
 export const Name = "Harsh Kumar";
-export const activeColor = "#f8222277";
+export const activeColor = "#e70448";
 export const Destination = "Software Engineer Frontend";
 export const Company = "MyHealthcare Technologies Private Limited, Gurgaon";
 export const JoinigDate = "08-08-2022";

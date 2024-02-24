@@ -107,7 +107,7 @@ const AboutPages = () => {
               <Row>
                 <Col className="d-flex align-items-center" sm={6} xl={3}>
                   <label className="me-3">
-                    HTML5 <FaHtml5 color="rgb(248 34 23 / 47%)" />
+                    HTML5 <FaHtml5 color="#e70448" />
                   </label>
                   <ReactStars
                     count={5}
@@ -119,7 +119,7 @@ const AboutPages = () => {
                 </Col>
                 <Col className="d-flex align-items-center" sm={6} xl={3}>
                   <label className="me-3">
-                    CSS3 <FaCss3 color="rgb(248 34 23 / 47%)" />
+                    CSS3 <FaCss3 color="#e70448" />
                   </label>
                   <ReactStars
                     count={5}
@@ -131,7 +131,7 @@ const AboutPages = () => {
                 </Col>
                 <Col className="d-flex align-items-center" sm={6} xl={3}>
                   <label className="me-3">
-                    SASS <FaSass color="rgb(248 34 23 / 47%)" />
+                    SASS <FaSass color="#e70448" />
                   </label>
                   <ReactStars
                     count={5}
@@ -144,7 +144,7 @@ const AboutPages = () => {
                 <Col className="d-flex align-items-center" sm={6} xl={3}>
                   <label className="me-3">
                     JavaScript{" "}
-                    <TbBrandJavascript color="rgb(248 34 23 / 47%)" />
+                    <TbBrandJavascript color="#e70448" />
                   </label>
                   <ReactStars
                     count={5}
@@ -158,7 +158,7 @@ const AboutPages = () => {
               <Row>
                 <Col className="d-flex align-items-center" sm={6} xl={3}>
                   <label className="me-3">
-                    React JS <FaReact color="rgb(248 34 23 / 47%)" />
+                    React JS <FaReact color="#e70448" />
                   </label>
                   <ReactStars
                     count={5}
@@ -170,7 +170,7 @@ const AboutPages = () => {
                 </Col>
                 <Col className="d-flex align-items-center" sm={6} xl={3}>
                   <label className="me-3">
-                    jQuery <SiJquery color="rgb(248 34 23 / 47%)" />
+                    jQuery <SiJquery color="#e70448" />
                   </label>
                   <ReactStars
                     count={5}
@@ -182,7 +182,7 @@ const AboutPages = () => {
                 </Col>
                 <Col className="d-flex align-items-center" sm={6} xl={3}>
                   <label className="me-3">
-                    Bootstrap5 <FaBootstrap color="rgb(248 34 23 / 47%)" />
+                    Bootstrap5 <FaBootstrap color="#e70448" />
                   </label>
                   <ReactStars
                     count={5}
@@ -194,7 +194,7 @@ const AboutPages = () => {
                 </Col>
                 <Col className="d-flex align-items-center" sm={6} xl={3}>
                   <label className="me-3">
-                    Git/Lab <FaGithub color="rgb(248 34 23 / 47%)" />
+                    Git/Lab <FaGithub color="#e70448" />
                   </label>
                   <ReactStars
                     count={5}
@@ -238,7 +238,7 @@ const AboutPages = () => {
                   </tr>
                   <tr>
                     <td>Hobbies:-</td>
-                    <td>Coding & Listening music</td>
+                    <td>Coding & Listening to music</td>
                   </tr>
                 </tbody>
               </table>

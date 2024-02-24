@@ -104,7 +104,7 @@ const Home = () => {
     speed: 800,
     slidesToShow: 5,
     slidesToScroll: 1,
-    className: "custom-slick-slider",
+    className: "custom-slick-slider h-70",
     autoplay: true,
     pauseOnHover: true,
     centerMode: true,

@@ -106,7 +106,9 @@ table {
 
 .custom-slick-slider {
   margin-top: 20px;
-  height: 70px;
+  &.h-70{
+    height: 70px;
+  }
   &.img-slick {
     margin-top: 0px;
 

@@ -3,6 +3,7 @@ import { Col, Container, Modal, Nav, Navbar, Row } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import HarshLogo from "../images/Harsh-Kumar.png";
 import Harshimg from "../images/Harsh-Kumar.jpg";
+import Harshimg1 from "../images/Harsh-Kumar1.jpg";
 import Slider from "react-slick";
 import { Destination, Name } from "../../constant";
 import { Drawer, Popover } from "antd";
@@ -49,7 +50,7 @@ const NavaBar = () => {
     },
     {
       id: "2",
-      images: Harshimg,
+      images: Harshimg1,
     }
   ]
 

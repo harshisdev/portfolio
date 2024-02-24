@@ -65,7 +65,12 @@ html {
     border-color: $primary !important;
   }
 }
-
+.btn:focus-visible{
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: $primary !important;
+  border-color: $primary !important;
+}
 .btn-outline-primary {
   border-color: $primary;
   color: $nav-color;

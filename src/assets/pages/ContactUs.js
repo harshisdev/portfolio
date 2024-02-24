@@ -232,7 +232,7 @@ const ContactUs = () => {
           <Modal.Header closeButton>
             <Modal.Title>
               <h1 className="text-primary fs-6 mb-0">
-                Are you sure send message ?
+                Are you sure send message...?
               </h1>
             </Modal.Title>
           </Modal.Header>
@@ -261,10 +261,10 @@ const ContactUs = () => {
             </table>
           </Modal.Body>
           <Modal.Footer>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="outline-primary" onClick={handleClose}>
               No
             </Button>
-            <Button variant="outline-primary" onClick={handleYes}>
+            <Button variant="primary" onClick={handleYes}>
               Yes
             </Button>
           </Modal.Footer>

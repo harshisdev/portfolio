@@ -232,7 +232,7 @@ const ContactUs = () => {
           <Modal.Header closeButton>
             <Modal.Title>
               <h1 className="text-primary fs-6 mb-0">
-                Are you sure send message !!!
+                Are you sure send message ?
               </h1>
             </Modal.Title>
           </Modal.Header>

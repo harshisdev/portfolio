@@ -42,6 +42,16 @@ html {
     }
   }
 }
+.ant-drawer-header-title{
+  justify-content: end;
+  .ant-drawer-close{
+    margin-right: 0px;
+    padding-right: 0px;
+  }
+}
+.ant-drawer-body{
+  padding-top: 0px !important;
+}
 
 .btn-primary {
   background-color: $primary;

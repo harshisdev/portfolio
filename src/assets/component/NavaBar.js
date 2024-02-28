@@ -168,6 +168,7 @@ const NavaBar = () => {
           </Row>
         </Container>
       </Navbar>
+      {/* mobile view nav bar */}
       <Drawer
         title={false}
         placement="right"
@@ -178,7 +179,7 @@ const NavaBar = () => {
         <Nav>
           <ul>
             <li>
-              <Link
+              <Link onClick={() => setOpen(false)}
                 className={
                   splitLocation[1] === "" ? "active nav-link" : "nav-link"
                 }
@@ -189,6 +190,7 @@ const NavaBar = () => {
             </li>
             <li>
               <Link
+                onClick={() => setOpen(false)}
                 className={
                   splitLocation[1] === "about"
                     ? "active nav-link"
@@ -201,6 +203,7 @@ const NavaBar = () => {
             </li>
             <li>
               <Link
+                onClick={() => setOpen(false)}
                 className={
                   splitLocation[1] === "Portfolio"
                     ? "active nav-link"
@@ -213,6 +216,7 @@ const NavaBar = () => {
             </li>
             <li>
               <Link
+                onClick={() => setOpen(false)}
                 className={
                   splitLocation[1] === "contact-us"
                     ? "active nav-link"

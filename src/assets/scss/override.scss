@@ -42,14 +42,17 @@ html {
     }
   }
 }
-.ant-drawer-header-title{
+
+.ant-drawer-header-title {
   justify-content: end;
-  .ant-drawer-close{
+
+  .ant-drawer-close {
     margin-right: 0px;
     padding-right: 0px;
   }
 }
-.ant-drawer-body{
+
+.ant-drawer-body {
   padding-top: 0px !important;
 }
 
@@ -75,12 +78,14 @@ html {
     border-color: $primary !important;
   }
 }
-.btn:focus-visible{
+
+.btn:focus-visible {
   outline: none !important;
   box-shadow: none !important;
   background-color: $primary !important;
   border-color: $primary !important;
 }
+
 .btn-outline-primary {
   border-color: $primary;
   color: $nav-color;
@@ -107,38 +112,43 @@ html {
 }
 
 .form-floating {
+  & .form-control {
+    border-radius: 4px;
+    outline: none;
+    height: 2.5rem;
+    min-height: 2.5rem;
+    border-color: $border-color;
+
+    &:focus {
+      box-shadow: none !important;
+      border-color: $border-color !important;
+    }
+  }
+
   & label {
     position: absolute;
-    margin-left: 10px;
     color: $dark-gray;
-    transition: all 0.2s ease-in-out;
-  }
-
-  & .form-control {
-    box-sizing: content-box;
-    height: 45px;
-    border-radius: 4px;
-    border: 2px solid #392b58;
-    padding: 0 10px;
-    font-family: "Roboto";
-    font-size: 16px;
-    outline: none;
-  }
-
-  & .form-control:focus+label {
-    transform: translate(0, -25px);
-    color: $danger;
-  }
-
-  & .form-control:valid+label {
-    transform: translate(0, -25px);
-    color: $danger;
+    transition: all 0.3s ease-in-out;
+    font-size: 0.95rem;
+    padding: 0px 10px;
+    top: 7px;
+    left: 2px;
+    height: 20px;
   }
 }
 
-.form-control:focus {
-  box-shadow: none !important;
-  border-color: $dark-gray !important;
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label,
+.form-floating>.form-select~label {
+  transform: scale(.85) translateY(-1.2rem) translateX(0.15rem) !important;
+  color: $danger;
+  transition: 0.3s all ease-out;
+}
+
+.form-floating>.form-control:focus,
+.form-floating>.form-control:not(:placeholder-shown) {
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 #text-container {
@@ -165,7 +175,6 @@ html {
 
 @keyframes blink-caret {
 
-  from,
   to {
     border-color: transparent;
   }

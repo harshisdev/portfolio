@@ -55,11 +55,11 @@ const ContactUs = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    if (name === "name") {
+    if (name === "Name") {
       setName(value);
     } else if (name === "MobileNumber") {
       setMobile(value);
-    } else if (name === "email") {
+    } else if (name === "Email") {
       setEmail(value);
     } else if (name === "Message") {
       setMessage(value);
@@ -107,7 +107,7 @@ const ContactUs = () => {
           <Col className="col-12 col-sm-6 order-2 order-sm-1 pt-4 pt-sm-0">
             <Card className="p-3 box-shadow_1">
               <div className="d-flex justify-content-center">
-                <Card className="mb-3 w-25 overflow-hidden"><img src={Freelancer} alt="Contact With Me" /></Card>
+                <Card className="w-25 overflow-hidden"><img src={Freelancer} alt="Contact With Me" /></Card>
               </div>
               <div className="contact__us">
                 <p className="mb-2">I am available for freelance work. Connect with me via and call in to my account.</p>
@@ -138,19 +138,21 @@ const ContactUs = () => {
               <Card className="p-3 box-shadow_1">
                 <Row>
                   <Col sm={12}>
-                    <FormGroup>
+                    <FormGroup className="form-floating">
                       <FormControl
                         type="text"
-                        name="name"
+                        name="Name"
                         value={name}
                         onChange={handleChange}
-                        placeholder="Your Name *"
+                        placeholder="Name *"
                         autoComplete="off"
+                        className="form-control"
                       />
+                      <label htmlFor="name">Name <span className="text-primary">*</span></label>
                     </FormGroup>
                   </Col>
                   <Col className="mt-3" sm={12}>
-                    <FormGroup>
+                    <FormGroup className="form-floating">
                       <FormControl
                         type="text"
                         name="MobileNumber"
@@ -158,6 +160,7 @@ const ContactUs = () => {
                         onChange={handleChange}
                         placeholder="Mobile Number *"
                         autoComplete="off"
+                        className="form-control"
                         maxLength={10}
                         onKeyPress={(event) => {
                           if (!/[0-9]/.test(event.key)) {
@@ -165,31 +168,38 @@ const ContactUs = () => {
                           }
                         }}
                       />
+                      <label htmlFor="mobile">Mobile Number <span className="text-primary">*</span></label>
                     </FormGroup>
                   </Col>
                   <Col className="mt-3" sm={12}>
-                    <FormGroup>
+                    <FormGroup className="form-floating">
                       <FormControl
+                        className="form-control"
                         type="email"
-                        name="email"
+                        name="Email"
+                        id="email"
                         onChange={handleChange}
                         value={email}
-                        placeholder="Email *"
+                        placeholder="Email"
                         autoComplete="off"
                       />
+                      <label htmlFor="email">Email <span className="text-primary">*</span></label>
                     </FormGroup>
                   </Col>
                   <Col className="mt-3" sm={12}>
-                    <FormGroup>
+                    <FormGroup className="form-floating">
                       <FormControl
                         type="text"
                         as="textarea"
                         name="Message"
+                        id="message"
+                        className="form-control py-2"
                         value={message}
                         onChange={handleChange}
-                        placeholder="Message *"
+                        placeholder="message"
                         autoComplete="off"
                       />
+                      <label htmlFor="message">Message <span className="text-primary">*</span></label>
                     </FormGroup>
                   </Col>
                   <Col className="d-flex justify-content-center mt-3" sm={12}>
@@ -261,7 +271,7 @@ const ContactUs = () => {
             </table>
           </Modal.Body>
           <Modal.Footer>
-          <Button variant="outline-primary" onClick={handleClose}>
+            <Button variant="outline-primary" onClick={handleClose}>
               No
             </Button>
             <Button variant="primary" onClick={handleYes}>

@@ -29,23 +29,6 @@ import Freelancer from "../../assets/images/freelancer-img.png";
 
 const ContactUs = () => {
   const [show, setShow] = useState(false);
-  const handleClose = () => {
-    setShow(false);
-    setName("");
-    setMobile("");
-    setEmail("");
-    setMessage("");
-    toast.error("Your message not submited !!!");
-  };
-  const handleYes = () => {
-    setShow(false);
-    setName("");
-    setMobile("");
-    setEmail("");
-    setMessage("");
-    toast.success("Your message send successfully");
-  }
-
   const [name, setName] = useState("");
   const [mobile, setMobile] = useState("");
   const [email, setEmail] = useState("");
@@ -87,13 +70,27 @@ const ContactUs = () => {
       setTimeout(() => {
         setShow(true);
         setLoader(false);
-      }, 2000);
+      }, 2500);
       setName(name);
       setMobile(mobile);
       setEmail(email);
       setMessage(message);
     }
   };
+  const handleClose = () => {
+    setShow(false);
+    toast.error("Your message not submited");
+  };
+  const handleYes = () => {
+    setShow(false);
+    setName("");
+    setMobile("");
+    setEmail("");
+    setMessage("");
+    setTimeout(() => {
+      toast.success("Your message sent successfully");
+    }, 500);
+  }
 
   return (
     <>
@@ -242,7 +239,7 @@ const ContactUs = () => {
           <Modal.Header closeButton>
             <Modal.Title>
               <h1 className="text-primary fs-6 mb-0">
-                Are you sure send message...?
+                Are you sure send message
               </h1>
             </Modal.Title>
           </Modal.Header>

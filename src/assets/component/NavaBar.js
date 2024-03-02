@@ -224,7 +224,7 @@ const NavaBar = () => {
                 }
                 to="/contact"
               >
-                Contact Us
+                Contact
               </Link>
             </li>
           </ul>

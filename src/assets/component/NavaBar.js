@@ -205,7 +205,7 @@ const NavaBar = () => {
               <Link
                 onClick={() => setOpen(false)}
                 className={
-                  splitLocation[1] === "Portfolio"
+                  splitLocation[1] === "portfolio"
                     ? "active nav-link"
                     : "nav-link"
                 }
@@ -218,11 +218,11 @@ const NavaBar = () => {
               <Link
                 onClick={() => setOpen(false)}
                 className={
-                  splitLocation[1] === "contact-us"
+                  splitLocation[1] === "contact"
                     ? "active nav-link"
                     : "nav-link"
                 }
-                to="/contact-us"
+                to="/contact"
               >
                 Contact Us
               </Link>

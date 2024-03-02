@@ -150,13 +150,13 @@ const NavaBar = () => {
                   <li>
                     <Link
                       className={
-                        splitLocation[1] === "contact-us"
+                        splitLocation[1] === "contact"
                           ? "active nav-link"
                           : "nav-link"
                       }
-                      to="/contact-us"
+                      to="/contact"
                     >
-                      Contact Us
+                      Contact
                     </Link>
                   </li>
                 </ul>

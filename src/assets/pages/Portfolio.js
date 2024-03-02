@@ -58,20 +58,15 @@ const Portfolio = () => {
   const [show, setShow] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
   const [rating, setRating] = useState("")
-
   const handleClose = () => setShow(false);
-  const handleShow = (project) => {
-    setSelectedProject(project);
-    setShow(true);
-  };
   const ratingChanged = (countRating) => {
     setRating(countRating);
   };
-  const Verypooar = "Very Pooar";
-  const Pooar = "Pooar";
-  const Good = "Good";
-  const Verygood = "Very Good";
-  const Excellent = "Excellent"
+  const Verypooar = "very Pooar";
+  const Pooar = "pooar";
+  const Good = "good";
+  const Verygood = "very good";
+  const Excellent = "excellent"
   const ratingArray = ["", Verypooar, Pooar, Good, Verygood, Excellent];
   const handleOk = (i) => {
     if (rating === "") {
@@ -83,6 +78,11 @@ const Portfolio = () => {
       setRating("");
     }
   }
+  const handleShow = (project) => {
+    setSelectedProject(project);
+    setShow(true);
+    setRating("")
+  };
 
   return (
     <>
@@ -136,32 +136,32 @@ const Portfolio = () => {
                       className="text-primary text-break"
                       href={selectedProject.link}
                     >
-                    {selectedProject.link}
-                  </a>
-                </Col>
-                <Col className="d-flex align-items-center" sm={4}>
-                  Review :-
-                </Col>
-                <Col sm={8}>
-                  <ReactStars
-                    count={5}
-                    onChange={ratingChanged}
-                    size={24}
-                    activeColor={activeColor}
-                  />
-                </Col>
-                <Col sm={12} className="text-center">
-                  <Button onClick={() => handleClose(setShow(false))} variant="outline" type="button" className="btn-outline-primary me-3">Cancel</Button>
-                  <Button onClick={() => handleOk(rating)} type="button" className="btn-primary">Ok</Button>
-                </Col>
-              </Row>
-          </>
+                      {selectedProject.link}
+                    </a>
+                  </Col>
+                  <Col className="d-flex align-items-center" sm={4}>
+                    Review :-
+                  </Col>
+                  <Col sm={8}>
+                    <ReactStars
+                      count={5}
+                      onChange={ratingChanged}
+                      size={24}
+                      activeColor={activeColor}
+                    />
+                  </Col>
+                  <Col sm={12} className="text-center">
+                    <Button onClick={() => handleClose(setShow(false))} variant="outline" type="button" className="btn-outline-primary me-3">Cancel</Button>
+                    <Button onClick={() => handleOk(rating)} type="button" className="btn-primary">Ok</Button>
+                  </Col>
+                </Row>
+              </>
             )}
-        </Modal.Body>
-      </Modal>
+          </Modal.Body>
+        </Modal>
 
-      <ToastContainer />
-    </Container >
+        <ToastContainer />
+      </Container >
       <div data-aos="zoom-in" data-aos-delay="1000" style={{ width: "60px", height: "60px", top: "90px", left: "10px" }} className="d-none d-lg-block position-fixed z-2">
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
           <path fill="#e70448" d="M31.9,-25.6C46.7,-6.9,67.8,6.7,70.4,24.4C73,42.1,57.2,64,36.1,73.7C15,83.4,-11.4,81,-26.2,68.5C-40.9,56,-43.9,33.3,-44.9,14.5C-45.8,-4.4,-44.7,-19.6,-36.8,-36.6C-29,-53.7,-14.5,-72.7,-3,-70.4C8.6,-68,17.1,-44.2,31.9,-25.6Z" transform="translate(100 100)" />

@@ -142,7 +142,7 @@ const NavaBar = () => {
                           ? "active nav-link"
                           : "nav-link"
                       }
-                      to="/Portfolio"
+                      to="/portfolio"
                     >
                       Portfolio
                     </Link>
@@ -209,7 +209,7 @@ const NavaBar = () => {
                     ? "active nav-link"
                     : "nav-link"
                 }
-                to="/Portfolio"
+                to="/portfolio"
               >
                 Portfolio
               </Link>

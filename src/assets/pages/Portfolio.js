@@ -105,7 +105,7 @@ const Portfolio = () => {
                 variant="outline-primary"
                 onClick={() => handleShow(item)}
               >
-                Veiw Project
+                Veiw Details
               </Button>
             </Col>
           ))}

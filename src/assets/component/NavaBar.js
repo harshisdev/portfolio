@@ -138,7 +138,7 @@ const NavaBar = () => {
                   <li>
                     <Link
                       className={
-                        splitLocation[1] === "Portfolio"
+                        splitLocation[1] === "portfolio"
                           ? "active nav-link"
                           : "nav-link"
                       }

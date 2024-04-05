@@ -194,7 +194,7 @@ const AboutPages = () => {
                 </Col>
                 <Col className="d-flex align-items-center" sm={6} xl={3}>
                   <label className="me-3">
-                    Git/Lab <FaGithub color="#e70448" />
+                    Git/Github <FaGithub color="#e70448" />
                   </label>
                   <ReactStars
                     count={5}

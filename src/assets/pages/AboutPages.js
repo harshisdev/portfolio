@@ -28,7 +28,7 @@ const AboutPages = () => {
   const dataSource = [
     {
       key: "1",
-      course: "Diploma Multimedia (Web Design)",
+      course: "Diploma Multimedia (Web)",
       school: "Oxford Institute Rajouri  Garden, New Delhi",
       passing: "2022",
     },

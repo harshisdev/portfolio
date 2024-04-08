@@ -218,7 +218,7 @@ const AboutPages = () => {
                 <tbody>
                   <tr>
                     <td style={{ width: "130px" }}>Father’s Name:-</td>
-                    <td>Sri Rajeev Kumar Choudhary</td>
+                    <td>Shri Rajeev Kumar Choudhary</td>
                   </tr>
                   <tr>
                     <td>Date of Birth:-</td>

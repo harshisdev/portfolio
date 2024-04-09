@@ -91,7 +91,7 @@ const ContactUs = () => {
       toast.success("Your message sent successfully");
       setTimeout(() => {
         toast.success("Thank you for reaching out!");
-      }, 2000);
+      }, 4000);
     }, 500);
   }
 

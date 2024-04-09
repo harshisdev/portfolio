@@ -8,12 +8,14 @@ import {
   ProjectFourth,
   ProjectSecond,
   ProjectSixth,
+  ProjectSeven,
   ProjectThird,
   ProjectTitleFifth,
   ProjectTitleFirst,
   ProjectTitleFourth,
   ProjectTitleSecond,
   ProjectTitleSixth,
+  ProjectTitleSeven,
   ProjectTitleThird,
   activeColor,
 } from "../../constant";
@@ -52,6 +54,11 @@ const Portfolio = () => {
       id: 6,
       title: ProjectTitleSixth,
       link: ProjectSixth,
+    },
+    {
+      id: 7,
+      title: ProjectTitleSeven,
+      link: ProjectSeven,
     },
   ];
 

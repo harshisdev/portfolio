@@ -32,6 +32,7 @@ export const ProjectFourth =
   "https://www.myhealthcare.co/promo/physiotherapy-at-home/mumbai.html";
 export const ProjectFifth = "https://patient.spshospitals.com/";
 export const ProjectSixth = "https://patientportal.parashospitals.com/";
+export const ProjectSeven = "https://patient.sukoonhealth.com/";
 
 export const ProjectTitleFirst = "Myhealthcare";
 export const ProjectTitleSecond = "Full Body Check Ups";
@@ -39,3 +40,4 @@ export const ProjectTitleThird = "Full Body Check Ups Bogo";
 export const ProjectTitleFourth = "Physiotherapy at Home";
 export const ProjectTitleFifth = "SPS Hospitals";
 export const ProjectTitleSixth = "Parashospital";
+export const ProjectTitleSeven = "Sukoon Health";

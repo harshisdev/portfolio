@@ -89,10 +89,10 @@ const ContactUs = () => {
     setMessage("");
     setTimeout(() => {
       toast.success("Your message sent successfully");
+      setTimeout(() => {
+        toast.success("Thank you for reaching out!");
+      }, 2000);
     }, 500);
-    setTimeout(() => {
-      toast.success("Thank you for reaching out!");
-    }, 1500);
   }
 
   return (

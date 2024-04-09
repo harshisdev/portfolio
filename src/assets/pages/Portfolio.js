@@ -62,12 +62,12 @@ const Portfolio = () => {
   const ratingChanged = (countRating) => {
     setRating(countRating);
   };
-  const Verypooar = "very Pooar";
-  const Pooar = "pooar";
+  const Verypoor = "very poor";
+  const Poor = "poor";
   const Good = "good";
   const Verygood = "very good";
   const Excellent = "excellent"
-  const ratingArray = ["", Verypooar, Pooar, Good, Verygood, Excellent];
+  const ratingArray = ["", Verypoor, Poor, Good, Verygood, Excellent];
   const handleOk = (i) => {
     if (rating === "") {
       toast.error("Please give rating");

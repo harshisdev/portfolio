@@ -150,7 +150,7 @@ const Portfolio = () => {
                       activeColor={activeColor}
                     />
                   </Col>
-                  <Col sm={12} className="text-center">
+                  <Col sm={12} className="text-center mt-3">
                     <Button onClick={() => handleClose(setShow(false))} variant="outline" type="button" className="btn-outline-primary me-3">Cancel</Button>
                     <Button onClick={() => handleOk(rating)} type="button" className="btn-primary">Ok</Button>
                   </Col>

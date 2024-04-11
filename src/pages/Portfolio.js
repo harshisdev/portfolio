@@ -18,7 +18,7 @@ import {
   ProjectTitleSeven,
   ProjectTitleThird,
   activeColor,
-} from "../../constant";
+} from "../constant";
 import BredcrumComponent from "../component/BredcrumComponent";
 import ReactStars from "react-rating-stars-component";
 import { toast, ToastContainer } from "react-toastify";

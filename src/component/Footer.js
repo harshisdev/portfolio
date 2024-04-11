@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { Name } from "../../constant";
+import { Name } from "../constant";
 
 const Footer = () => {
   return (

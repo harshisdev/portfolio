@@ -1,14 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./assets/pages/Home";
-import Footer from "./assets/component/Footer";
-import AboutPages from "./assets/pages/AboutPages";
-import Erorr from "./assets/pages/Erorr";
-import ContactUs from "./assets/pages/ContactUs";
-import NavaBar from "./assets/component/NavaBar";
-import Portfolio from "./assets/pages/Portfolio";
+import Home from "./pages/Home";
+import Footer from "./component/Footer";
+import AboutPages from "./pages/AboutPages";
+import Erorr from "./pages/Erorr";
+import ContactUs from "./pages/ContactUs";
+import NavaBar from "./component/NavaBar";
+import Portfolio from "./pages/Portfolio";
 import { useEffect, useState } from "react";
 import Aos from "aos";
-import Loader from "./assets/component/Loader";
+import Loader from "./component/Loader";
 
 function App() {
 

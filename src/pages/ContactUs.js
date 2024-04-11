@@ -10,11 +10,11 @@ import {
   Modal,
   Row,
 } from "react-bootstrap";
-import { Name } from "../../constant";
+import { Name } from "../constant";
 import { Helmet } from "react-helmet";
 import { toast, ToastContainer } from "react-toastify";
 import BredcrumComponent from "../component/BredcrumComponent";
-import loaderIcon from "../../assets/images/loader.svg";
+import loaderIcon from "../assets/images/loader.svg";
 import { FaArrowRight } from "react-icons/fa6";
 import { CiMail } from "react-icons/ci";
 import { MdOutlineLocalPhone } from "react-icons/md";
@@ -23,7 +23,7 @@ import { CiLinkedin } from "react-icons/ci";
 import { FaWhatsapp } from "react-icons/fa";
 import { CiInstagram } from "react-icons/ci";
 import { FaGithub } from "react-icons/fa";
-import Freelancer from "../../assets/images/freelancer-img.png";
+import Freelancer from "../assets/images/freelancer-img.png";
 
 
 

@@ -7,10 +7,10 @@ import {
   Experiance,
   Name,
   activeColor,
-} from "../../constant";
+} from "../constant";
 import BredcrumComponent from "../component/BredcrumComponent";
-import Resume from "../images/HarshResume.pdf";
-import CompanyLogos from "../images/logo.svg";
+import Resume from "../assets/images/HarshResume.pdf";
+import CompanyLogos from "../assets/images/logo.svg";
 import { Table } from "antd";
 import ReactStars from "react-rating-stars-component";
 import {

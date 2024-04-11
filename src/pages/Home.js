@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
-import { JoinigDate, Name } from "../../constant";
+import { JoinigDate, Name } from "../constant";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
-import htmlImages from "../../assets/images/html-img.png";
-import cssImages from "../../assets/images/css-img.png";
-import jsImages from "../../assets/images/js-img.png";
-import bootstrapImages from "../../assets/images/bootstrap-img.png";
-import sassImages from "../../assets/images/sass-img.png";
-import reactImages from "../../assets/images/react-img.png";
-import jqueryImages from "../../assets/images/jquery-img.png";
-import responsiveImages from "../../assets/images/responsive-img.png";
-import gitImages from "../../assets/images/git-img.png";
-import iconNaukri from "../../assets/images/iconNaukri.png";
-import iconLinkedin from "../../assets/images/iconLinkedin.png";
-import iconGit from "../../assets/images/iconGit.png";
-import iconHackerrank from "../../assets/images/iconHackerrank.png";
+import htmlImages from "../assets/images/html-img.png";
+import cssImages from "../assets/images/css-img.png";
+import jsImages from "../assets/images/js-img.png";
+import bootstrapImages from "../assets/images/bootstrap-img.png";
+import sassImages from "../assets/images/sass-img.png";
+import reactImages from "../assets/images/react-img.png";
+import jqueryImages from "../assets/images/jquery-img.png";
+import responsiveImages from "../assets/images/responsive-img.png";
+import gitImages from "../assets/images/git-img.png";
+import iconNaukri from "../assets/images/iconNaukri.png";
+import iconLinkedin from "../assets/images/iconLinkedin.png";
+import iconGit from "../assets/images/iconGit.png";
+import iconHackerrank from "../assets/images/iconHackerrank.png";
 import { Popover } from "antd";
 
 

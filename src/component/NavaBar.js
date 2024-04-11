@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Col, Container, Modal, Nav, Navbar, Row } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
-import HarshLogo from "../images/Harsh-Kumar.png";
-import Harshimg from "../images/Harsh-Kumar.jpg";
-import Harshimg1 from "../images/Harsh-Kumar1.jpg";
+import HarshLogo from "../assets/images/Harsh-Kumar.png";
+import Harshimg from "../assets/images/Harsh-Kumar.jpg";
+import Harshimg1 from "../assets/images/Harsh-Kumar1.jpg";
 import Slider from "react-slick";
-import { Destination, Name } from "../../constant";
+import { Destination, Name } from "../constant.js";
 import { Drawer, Popover } from "antd";
 import { Typewriter } from "react-simple-typewriter";
 import { VscMenu } from "react-icons/vsc";
@@ -16,7 +16,7 @@ const NavaBar = () => {
   const splitLocation = pathname.split("/");
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
-  const viewImges = () => {
+  const viewImges = () => { 
     setShow(true);
   };
   const SliderSlick = {

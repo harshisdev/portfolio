@@ -23,7 +23,7 @@ import { CiLinkedin } from "react-icons/ci";
 import { FaWhatsapp } from "react-icons/fa";
 import { CiInstagram } from "react-icons/ci";
 import { FaGithub } from "react-icons/fa";
-import Freelancer from "../assets/images/freelancer-img.png";
+import Freelancer from "../assets/images/freelancer-img.jpeg";
 
 
 
@@ -107,7 +107,7 @@ const ContactUs = () => {
           <Col className="col-12 col-sm-6 order-2 order-sm-1 pt-4 pt-sm-0">
             <Card className="p-3 box-shadow_1">
               <div className="d-flex justify-content-center">
-                <Card className="w-25 overflow-hidden"><img src={Freelancer} alt="Contact With Me" /></Card>
+                <Card className="w-25 mb-2 mb-sm-0 overflow-hidden"><img src={Freelancer} alt="Contact With Me" /></Card>
               </div>
               <div className="contact__us">
                 <p className="mb-2">I am available for freelance work. Connect with me via and call in to my account.</p>

@@ -54,10 +54,26 @@ table {
         width: 28px;
         height: 28px;
         font-size: 1.3rem;
+
         :hover {
           color: $primary;
         }
       }
+    }
+  }
+}
+
+.ant-drawer-body {
+  ul li:last-child {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+
+    button {
+      color: $dark-gray;
+      background-color: transparent;
+      border: none;
+      font-size: 1.7rem;
     }
   }
 }
@@ -67,7 +83,7 @@ table {
   padding: 1.5rem 1rem;
 
   &.min-height-pagination {
-    min-height: calc(100vh - 112.41px);
+    min-height: calc(100vh - 120.41px);
   }
 
   .list-style {

@@ -5,7 +5,7 @@ const BredcrumComponent = (props) => {
   return (
     <>
       <div className="bredcrum-custom">
-        <Breadcrumb className="py-1 container">
+        <Breadcrumb className="py-2 container">
           <Breadcrumb.Item linkAs="span">
             <Link to="/" className="nav-link">Home</Link>
           </Breadcrumb.Item>

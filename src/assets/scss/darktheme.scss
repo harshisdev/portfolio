@@ -1,0 +1,128 @@
+.dark-theme {
+    background-color: $dark-gray-theme;
+    color: $border-color;
+
+    .navbar__custom {
+        background-color: $dark-gray-theme;
+        box-shadow: 0 2px 4px -1px $border-color;
+
+        .navbar-nav ul {
+            .nav-link {
+                color: $border-color;
+            }
+
+            li button {
+                color: $border-color;
+            }
+        }
+    }
+
+    .modal-content {
+        background-color: $dark-gray-theme;
+
+        .modal-header {
+            .modal-title h1 {
+                color: $border-color;
+            }
+
+            button {
+                background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="%23ccc"><path d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/></svg>');
+            }
+        }
+    }
+
+    .bredcrum-custom {
+        background-color: $dark-gray-theme;
+
+        .breadcrumb-item+.breadcrumb-item::before {
+            color: $border-color !important;
+        }
+    }
+
+    .card {
+        background-color: $dark-gray-theme !important;
+
+        .custom-nav-tabs {
+            .nav-item .nav-link {
+                color: $border-color !important;
+
+                &.active {
+                    background-color: $primary !important;
+                }
+            }
+
+            ~.tab-content>.active {
+                color: $border-color !important;
+            }
+        }
+
+        &.box-shadow_1 {
+            box-shadow: 0px 0px 5px 1px $border-color;
+        }
+
+        .contact__us {
+            p {
+                color: $border-color;
+            }
+
+            div,
+            a {
+                color: $border-color;
+            }
+
+            .card {
+                background-color: $primary !important;
+            }
+        }
+
+        .form-floating input,
+        textarea {
+            background-color: $border-color;
+        }
+
+        .form-floating>.form-control:not(:placeholder-shown)~label {
+            background-image: linear-gradient(transparent 40%, #ccc 40%, #ccc 60%, transparent 60%);
+        }
+    }
+
+    .ant-table {
+        background-color: $dark-gray-theme;
+        color: $border-color;
+    }
+
+    .ant-table-cell {
+        background-color: $dark-gray-theme !important;
+        color: $border-color !important;
+    }
+
+    .ant-popover-inner {
+        background-color: $border-color;
+    }
+
+    .ant-popover-arrow::before {
+        background-color: $border-color;
+    }
+
+    .btn-outline-primary {
+        color: $border-color;
+    }
+
+    .Toastify__toast-theme--light {
+        background-color: $dark-gray-theme;
+        color: $border-color;
+    }
+
+    .Toastify__close-button>svg {
+        color: $border-color;
+    }
+
+    footer {
+        background-color: $dark-gray-theme;
+        color: $border-color;
+        box-shadow: 0px 0px 5px 1px $border-color;
+    }
+
+    .loader {
+        background-color: $dark-gray-theme !important;
+    }
+}

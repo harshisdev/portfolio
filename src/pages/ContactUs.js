@@ -16,7 +16,7 @@ import { toast, ToastContainer } from "react-toastify";
 import BredcrumComponent from "../component/BredcrumComponent";
 import loaderIcon from "../assets/images/loader.svg";
 import { FaArrowRight } from "react-icons/fa6";
-import { CiMail } from "react-icons/ci";
+import { IoMailUnreadOutline } from "react-icons/io5";
 import { MdOutlineLocalPhone } from "react-icons/md";
 import { CiFacebook } from "react-icons/ci";
 import { CiLinkedin } from "react-icons/ci";
@@ -115,7 +115,8 @@ const ContactUs = () => {
                   <span className="pe-2"><MdOutlineLocalPhone /> </span> <a href="tel:6205044930">+91-6205044930</a>
                 </div>
                 <div>
-                  <span className="pe-2"><CiMail /> </span> <a href="mailto:harshch9931@gmail.com">harshch9931@gmail.com</a>
+                  <span className="pe-2"><IoMailUnreadOutline />
+                  </span> <a href="mailto:harshch9931@gmail.com">harshch9931@gmail.com</a>
                 </div>
                 <p className="py-2 mb-0  text-center fw-bold">FIND WITH ME</p>
                 <div className="d-flex justify-content-between">

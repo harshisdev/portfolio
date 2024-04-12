@@ -39,12 +39,24 @@ table {
         animation: 0.3s all ease-in;
 
         &:hover {
-          color: $primary;
+          color: $primary !important;
         }
       }
 
       li:last-child .nav-link {
         padding-right: 0px !important;
+      }
+
+      li button {
+        background-color: transparent;
+        border: none;
+        padding: 0px;
+        width: 28px;
+        height: 28px;
+        font-size: 1.3rem;
+        :hover {
+          color: $primary;
+        }
       }
     }
   }

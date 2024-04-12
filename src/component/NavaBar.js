@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Modal, Nav, Navbar, Row } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import HarshLogo from "../assets/images/Harsh-Kumar.png";
@@ -9,14 +9,21 @@ import { Destination, Name } from "../constant.js";
 import { Drawer, Popover } from "antd";
 import { Typewriter } from "react-simple-typewriter";
 import { VscMenu } from "react-icons/vsc";
+import { CiDark } from "react-icons/ci";
+import { CiLight } from "react-icons/ci";
+
 
 const NavaBar = () => {
+  const [isDarkTheme, setIsDarkTheme] = useState(
+    localStorage.getItem('isDarkTheme') === 'true'
+  );
+
   const location = useLocation();
   const { pathname } = location;
   const splitLocation = pathname.split("/");
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
-  const viewImges = () => { 
+  const viewImges = () => {
     setShow(true);
   };
   const SliderSlick = {
@@ -53,6 +60,22 @@ const NavaBar = () => {
       images: Harshimg1,
     }
   ]
+  const toggleTheme = () => {
+    setIsDarkTheme(prevTheme => {
+      const newTheme = !prevTheme;
+      localStorage.setItem('isDarkTheme', newTheme);
+      return newTheme;
+    });
+  };
+
+  // Add class to body tag based on the theme
+  useEffect(() => {
+    if (isDarkTheme) {
+      document.body.classList.add('dark-theme');
+    } else {
+      document.body.classList.remove('dark-theme');
+    }
+  }, [isDarkTheme]);
 
   return (
     <>
@@ -159,6 +182,18 @@ const NavaBar = () => {
                       Contact
                     </Link>
                   </li>
+                  <li>
+                    <button onClick={toggleTheme}>
+                      {isDarkTheme ?
+                        <Popover content="Light Theme" placement="right" trigger="hover">
+                          <CiLight />
+                        </Popover>
+                        :
+                        <Popover content="Dark Theme" placement="right" trigger="hover">
+                          <CiDark />
+                        </Popover>}
+                    </button>
+                  </li>
                 </ul>
               </Nav>
             </Col>
@@ -226,6 +261,18 @@ const NavaBar = () => {
               >
                 Contact
               </Link>
+            </li>
+            <li>
+              <button onClick={toggleTheme}>
+                {isDarkTheme ?
+                  <Popover content="Light Theme" placement="right" trigger="hover">
+                    <CiLight />
+                  </Popover>
+                  :
+                  <Popover content="Dark Theme" placement="right" trigger="hover">
+                    <CiDark />
+                  </Popover>}
+              </button>
             </li>
           </ul>
         </Nav>

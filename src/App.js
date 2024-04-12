@@ -28,7 +28,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setPageLoading(false);
-    }, [reloadTime + 1000]);
+    }, [reloadTime + 1500]);
   }, []);
 
   useEffect(() => {

@@ -183,7 +183,7 @@ const NavaBar = () => {
                     </Link>
                   </li>
                   <li>
-                    <button onClick={toggleTheme}>
+                    <button className="dark-theme-btn" onClick={toggleTheme}>
                       {isDarkTheme ?
                         <Popover content="Light Theme" placement="right" trigger="hover">
                           <CiLight />
@@ -198,6 +198,16 @@ const NavaBar = () => {
               </Nav>
             </Col>
             <Col className="col-auto d-flex align-items-center d-flex d-sm-none">
+              <button className="dark-theme-btn me-2 me-sm-0" onClick={toggleTheme}>
+                {isDarkTheme ?
+                  <Popover content="Light Theme" placement="right" trigger="hover">
+                    <CiLight />
+                  </Popover>
+                  :
+                  <Popover content="Dark Theme" placement="right" trigger="hover">
+                    <CiDark />
+                  </Popover>}
+              </button>
               <VscMenu onClick={showDrawer} className="fs-2" />
             </Col>
           </Row>
@@ -261,18 +271,6 @@ const NavaBar = () => {
               >
                 Contact
               </Link>
-            </li>
-            <li>
-              <button onClick={toggleTheme}>
-                {isDarkTheme ?
-                  <Popover content="Light Theme" placement="right" trigger="hover">
-                    <CiLight />
-                  </Popover>
-                  :
-                  <Popover content="Dark Theme" placement="right" trigger="hover">
-                    <CiDark />
-                  </Popover>}
-              </button>
             </li>
           </ul>
         </Nav>

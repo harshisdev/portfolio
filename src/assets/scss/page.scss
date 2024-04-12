@@ -29,6 +29,7 @@ table {
   .navbar-nav {
     ul {
       display: flex;
+      align-items: center;
       list-style-type: none;
       padding: 0px;
       margin: 0px;
@@ -46,36 +47,16 @@ table {
       li:last-child .nav-link {
         padding-right: 0px !important;
       }
-
-      li button {
-        background-color: transparent;
-        border: none;
-        padding: 0px;
-        width: 28px;
-        height: 28px;
-        font-size: 1.3rem;
-
-        :hover {
-          color: $primary;
-        }
-      }
     }
   }
 }
 
-.ant-drawer-body {
-  ul li:last-child {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-
-    button {
-      color: $dark-gray;
-      background-color: transparent;
-      border: none;
-      font-size: 1.7rem;
-    }
-  }
+.dark-theme-btn {
+  color: $dark-gray;
+  background-color: transparent;
+  border: none;
+  font-size: 1.6rem;
+  padding: 0px;
 }
 
 .min-height {
@@ -84,6 +65,7 @@ table {
 
   &.min-height-pagination {
     min-height: calc(100vh - 120.41px);
+    padding-top: 5px;
   }
 
   .list-style {

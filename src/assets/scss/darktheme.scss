@@ -10,11 +10,11 @@
             .nav-link {
                 color: $border-color;
             }
-
-            li button {
-                color: $border-color;
-            }
         }
+    }
+
+    .dark-theme-btn {
+        color: $border-color;
     }
 
     .modal-content {
@@ -134,22 +134,12 @@
             }
         }
 
-        .ant-drawer-body {
-            ul li:last-child {
-                list-style: none;
-                display: flex;
-                justify-content: center;
-                button {
-                    color: $border-color;
-                    background-color: transparent;
-                    border: none;
-                    font-size: 1.7rem;
-                }
-            }
-        }
-
         .nav-link {
             color: $border-color !important;
+
+            &.active {
+                color: $primary !important;
+            }
         }
     }
 

@@ -97,7 +97,7 @@ const Portfolio = () => {
         <title>{Name} - Portfolio</title>
       </Helmet>
       <BredcrumComponent pageName="Portfolio" />
-      <Container className="min-height">
+      <Container className="min-height min-height-pagination">
         <Row>
           {AllProject.map((item) => (
             <Col className="text-center pb-4 pb-md-2" key={item.id} sm={12} md={6} xl={4}>

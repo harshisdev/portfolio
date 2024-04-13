@@ -39,5 +39,5 @@ export const ProjectTitleSecond = "Full Body Check Ups";
 export const ProjectTitleThird = "Full Body Check Ups Bogo";
 export const ProjectTitleFourth = "Physiotherapy at Home";
 export const ProjectTitleFifth = "SPS Hospitals";
-export const ProjectTitleSixth = "Parashospital";
+export const ProjectTitleSixth = "Paras Hospital";
 export const ProjectTitleSeven = "Sukoon Health";

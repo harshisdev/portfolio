@@ -80,6 +80,7 @@ const ContactUs = () => {
     };
 
     const handleYes = () => {
+        setLoader(true);
         emailjs
             .sendForm('service_mupmc8l', 'template_4ns6e4f', form.current, {
                 publicKey: 'MPhPUQIdgkUqoKusv',
@@ -288,7 +289,20 @@ const ContactUs = () => {
                         No
                     </Button>
                     <Button variant="primary" onClick={handleYes}>
-                        Yes
+                        Yes 
+                        {loader ? (
+                                <>
+                                    <img
+                                    src={loaderIcon}
+                                    alt="Loader"
+                                    style={{
+                                    width: "34px",
+                                    height: "auto",
+                                    paddingLeft: "10px",
+                                    }}
+                                    />
+                                </>
+                                ) : null}
                     </Button>
                 </Modal.Footer>
             </Modal>

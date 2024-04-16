@@ -61,12 +61,17 @@ const NavaBar = () => {
     }
   ]
   const toggleTheme = () => {
-    setIsDarkTheme(prevTheme => {
-      const newTheme = !prevTheme;
+  const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  setIsDarkTheme(prevTheme => {
+    const newTheme = !prevTheme;
+    if (newTheme === systemPrefersDark) {
+      localStorage.removeItem('isDarkTheme');
+    } else {
       localStorage.setItem('isDarkTheme', newTheme);
-      return newTheme;
-    });
-  };
+    }
+    return newTheme;
+  });
+};
 
   useEffect(() => {
     if (isDarkTheme) {

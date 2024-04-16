@@ -288,10 +288,10 @@ const ContactUs = () => {
                     <Button variant="outline-primary" onClick={handleClose}>
                         No
                     </Button>
-                    <Button variant="primary" onClick={handleYes}>
-                        Yes 
+                     
                         {loader ? (
                                 <>
+                                    <Button variant="primary">
                                     <img
                                     src={loaderIcon}
                                     alt="Loader"
@@ -301,9 +301,10 @@ const ContactUs = () => {
                                     paddingLeft: "10px",
                                     }}
                                     />
+                                    </Button>                                   
                                 </>
-                                ) : null}
-                    </Button>
+                                ) : <Button variant="primary" onClick={handleYes}>Yes</Button>}
+                    
                 </Modal.Footer>
             </Modal>
         </>

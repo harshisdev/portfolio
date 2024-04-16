@@ -68,13 +68,15 @@ const ContactUs = () => {
             toast.error("Message is required");
         } else {
             setLoader(true);
-            setShow(true);
+             setTimeout(() => {
+                setShow(true);
+                setLoader(false);
+              }, 2500);
         }
     };
 
     const handleClose = () => {
         setShow(false);
-        toast.error("Your message was not submitted");
     };
 
     const handleYes = () => {

@@ -68,6 +68,7 @@ const ContactUs = () => {
             toast.error("Message is required");
         } else {
             setLoader(true);
+            setShow(true);
         }
     };
 

@@ -256,7 +256,7 @@ const ContactUs = () => {
                 <Modal.Header closeButton>
                     <Modal.Title>
                         <h1 className="text-primary fs-6 mb-0">
-                            Are you sure you want to send the message?
+                            Sure you want to send?
                         </h1>
                     </Modal.Title>
                 </Modal.Header>

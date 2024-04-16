@@ -60,35 +60,38 @@ const NavaBar = () => {
       images: Harshimg1,
     }
   ]
-  const toggleTheme = () => {
-  const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  setIsDarkTheme(prevTheme => {
-    const newTheme = !prevTheme;
-    if (newTheme === systemPrefersDark) {
-      localStorage.removeItem('isDarkTheme');
-    } else {
-      localStorage.setItem('isDarkTheme', newTheme);
-    }
-    return newTheme;
-  });
-};
 
+  const toggleTheme = () => {
+    const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setIsDarkTheme(prevTheme => {
+      const newTheme = !prevTheme;
+      if (newTheme === systemPrefersDark) {
+        localStorage.removeItem('isDarkTheme');
+      } else {
+        localStorage.setItem('isDarkTheme', newTheme);
+      }
+      return newTheme;
+    });
+  };
+
+  // Add class to body tag based on the theme
   useEffect(() => {
     if (isDarkTheme) {
       document.body.classList.add('dark-theme');
       document.querySelector('meta[name="theme-color"]').setAttribute('content', '#121212');
-      
     } else {
       document.body.classList.remove('dark-theme');
       document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ff014f');
     }
   }, [isDarkTheme]);
 
-   useEffect(() => {
+  // Detect system color scheme preference
+  useEffect(() => {
     const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const listener = event => {
       setIsDarkTheme(event.matches);
     };
+    setIsDarkTheme(darkModeMediaQuery.matches);
     darkModeMediaQuery.addListener(listener);
     return () => {
       darkModeMediaQuery.removeListener(listener);

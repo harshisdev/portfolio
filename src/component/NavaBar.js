@@ -68,7 +68,6 @@ const NavaBar = () => {
     });
   };
 
-  // Add class to body tag based on the theme
   useEffect(() => {
     if (isDarkTheme) {
       document.body.classList.add('dark-theme');
@@ -79,6 +78,17 @@ const NavaBar = () => {
       document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ff014f');
     }
   }, [isDarkTheme]);
+
+   useEffect(() => {
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const listener = event => {
+      setIsDarkTheme(event.matches);
+    };
+    darkModeMediaQuery.addListener(listener);
+    return () => {
+      darkModeMediaQuery.removeListener(listener);
+    };
+  }, []);
 
   return (
     <>

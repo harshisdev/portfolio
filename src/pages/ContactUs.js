@@ -86,18 +86,18 @@ const ContactUs = () => {
             })
             .then(
                 () => {
+                    setLoader(false);
+                    setShow(false);
+                    setName("");
+                    setMobile("");
+                    setEmail("");
+                    setMessage("");
                     toast.success("Your message sent successfully");
                 },
                 (error) => {
                     toast.error("Failed to send message. Please try again");
                 }
             )
-        setLoader(false);
-        setShow(false);
-        setName("");
-        setMobile("");
-        setEmail("");
-        setMessage("");
     };
 
     return (

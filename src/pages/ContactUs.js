@@ -1,15 +1,15 @@
 import React, { useState, useRef } from "react";
 import emailjs from '@emailjs/browser';
 import {
-  Button,
-  Card,
-  Col,
-  Container,
-  Form,
-  FormControl,
-  FormGroup,
-  Modal,
-  Row,
+    Button,
+    Card,
+    Col,
+    Container,
+    Form,
+    FormControl,
+    FormGroup,
+    Modal,
+    Row,
 } from "react-bootstrap";
 import { Name } from "../constant";
 import { Helmet } from "react-helmet";
@@ -27,273 +27,270 @@ import { FaGithub } from "react-icons/fa";
 import Freelancer from "../assets/images/freelancer-img.jpeg";
 
 const ContactUs = () => {
-  const [show, setShow] = useState(false);
-  const [name, setName] = useState("");
-  const [mobile, setMobile] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [loader, setLoader] = useState(false);
+    const [show, setShow] = useState(false);
+    const [name, setName] = useState("");
+    const [mobile, setMobile] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+    const [loader, setLoader] = useState(false);
 
-  const form = useRef();
+    const form = useRef();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    if (name === "user_name") {
-      setName(value);
-    } else if (name === "user_mobile") {
-      setMobile(value);
-    } else if (name === "user_email") {
-      setEmail(value);
-    } else if (name === "user_message") {
-      setMessage(value);
-    }
-  };
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        if (name === "user_name") {
+            setName(value);
+        } else if (name === "user_mobile") {
+            setMobile(value);
+        } else if (name === "user_email") {
+            setEmail(value);
+        } else if (name === "user_message") {
+            setMessage(value);
+        }
+    };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (name === "") {
-      toast.error("Name is required");
-    } else if (mobile === "" || mobile.length < 10) {
-      toast.error("Mobile number is required");
-    } else if (
-      email === "" ||
-      !email.includes("@") ||
-      !email.includes(".") ||
-      email.length < 5 ||
-      email.length > 50 ||
-      !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email)
-    ) {
-      toast.error("Valid email is required");
-    } else if (message === "") {
-      toast.error("Message is required");
-    } else {
-      setLoader(true);
-      emailjs
-        .sendForm('service_mupmc8l', 'template_4ns6e4f', form.current, {
-          publicKey: 'MPhPUQIdgkUqoKusv',
-        })
-        .then(
-          () => {
-            toast.success("Your message sent successfully");
-          },
-          (error) => {
-            toast.error("Failed to send message. Please try again");
-          }
-        )
-        .finally(() => {
-          setShow(true);
-          setLoader(false);
-          setName("");
-          setMobile("");
-          setEmail("");
-          setMessage("");
-        });
-    }
-  };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (name === "") {
+            toast.error("Name is required");
+        } else if (mobile === "" || mobile.length < 10) {
+            toast.error("Mobile number is required");
+        } else if (
+            email === "" ||
+            !email.includes("@") ||
+            !email.includes(".") ||
+            email.length < 5 ||
+            email.length > 50 ||
+            !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email)
+        ) {
+            toast.error("Valid email is required");
+        } else if (message === "") {
+            toast.error("Message is required");
+        } else {
+            setLoader(true);
+        }
+    };
 
-  const handleClose = () => {
-    setShow(false);
-    toast.error("Your message was not submitted");
-  };
+    const handleClose = () => {
+        setShow(false);
+        toast.error("Your message was not submitted");
+    };
 
-  const handleYes = () => {
-    setShow(false);
-  };
+    const handleYes = () => {
+        emailjs
+            .sendForm('service_mupmc8l', 'template_4ns6e4f', form.current, {
+                publicKey: 'MPhPUQIdgkUqoKusv',
+            })
+            .then(
+                () => {
+                    toast.success("Your message sent successfully");
+                },
+                (error) => {
+                    toast.error("Failed to send message. Please try again");
+                }
+            )
+        setLoader(false);
+        setShow(false);
+        setName("");
+        setMobile("");
+        setEmail("");
+        setMessage("");
+    };
 
-  return (
-    <>
-      <Helmet>
-        <title>{Name} - Contact</title>
-      </Helmet>
-      <BredcrumComponent pageName="Contact" />
-      <Container className="min-height min-height-pagination">
-        <Row>
-          <Col xl={12}><h1 className="fs-5 text-center mb-0 pb-4">Contact With Me</h1></Col>
-          {/* Contact information section */}
-          <Col className="col-12 col-sm-6 order-2 order-sm-1 pt-4 pt-sm-0">
-            {/* Contact card */}
-            <Card className="p-3 box-shadow_1">
-              <div className="d-flex justify-content-center">
-                <Card className="w-25 mb-2 overflow-hidden"><img src={Freelancer} alt="Contact With Me" /></Card>
-              </div>
-              <div className="contact__us">
-                <p className="mb-2">I am available for freelance work.</p>
-                <div>
-                  <span className="pe-2"><MdOutlineLocalPhone /> </span> <a href="tel:6205044930">+91-6205044930</a>
-                </div>
-                <div>
-                  <span className="pe-2"><IoMailUnreadOutline />
-                  </span> <a href="mailto:harshch9931@gmail.com">harshch9931@gmail.com</a>
-                </div>
-                {/* Social media links */}
-                <p className="py-2 mb-0  text-center fw-bold">FIND WITH ME</p>
-                <div className="d-flex justify-content-between">
-                  <Card className="p-2"><a href="https://www.facebook.com/harshkumar1208200" target="__blank"><CiFacebook className="fs-3" />
-                  </a></Card>
-                  <Card className="p-2"><a href="https://www.linkedin.com/in/harsh-kumar-593a19232/" target="__blank"><CiLinkedin className="fs-3" /></a>
-                  </Card>
-                  <Card className="p-2"><a href="https://wa.me/+916205044930?text=Hi Harsh," target="__blank"><FaWhatsapp className="fs-3" /></a>
-                  </Card>
-                  <Card className="p-2"><a href="https://www.instagram.com/harshch9931/" target="__blank"><CiInstagram className="fs-3" /></a>
-                  </Card>
-                  <Card className="p-2"><a href="https://github.com/harshisdev" target="__blank"><FaGithub className="fs-3" />
-                  </a></Card>
-                </div>
-              </div>
-            </Card>
-          </Col>
-          {/* Contact form section */}
-          <Col className="col-12 col-sm-6 order-1 order-sm-2">
-            <Form ref={form} onSubmit={handleSubmit}>
-              <Card className="p-3 box-shadow_1">
+    return (
+        <>
+            <Helmet>
+                <title>{Name} - Contact</title>
+            </Helmet>
+            <BredcrumComponent pageName="Contact" />
+            <Container className="min-height min-height-pagination">
                 <Row>
-                  <Col sm={12}>
-                    <FormGroup className="form-floating">
-                      <FormControl
-                        type="text"
-                        name="user_name"
-                        value={name}
-                        onChange={handleChange}
-                        placeholder="Name *"
-                        autoComplete="off"
-                        className="form-control"
-                      />
-                      <label htmlFor="name">Name <span className="text-primary">*</span></label>
-                    </FormGroup>
-                  </Col>
-                  <Col className="mt-3" sm={12}>
-                    <FormGroup className="form-floating">
-                      <FormControl
-                        type="text"
-                        name="user_mobile"
-                        value={mobile}
-                        onChange={handleChange}
-                        placeholder="Mobile Number *"
-                        autoComplete="off"
-                        className="form-control"
-                        maxLength={10}
-                        onKeyPress={(event) => {
-                          if (!/[0-9]/.test(event.key)) {
-                            event.preventDefault();
-                          }
-                        }}
-                      />
-                      <label htmlFor="mobile">Mobile Number <span className="text-primary">*</span></label>
-                    </FormGroup>
-                  </Col>
-                  <Col className="mt-3" sm={12}>
-                    <FormGroup className="form-floating">
-                      <FormControl
-                        className="form-control"
-                        type="email"
-                        name="user_email"
-                        id="email"
-                        onChange={handleChange}
-                        value={email}
-                        placeholder="Email"
-                        autoComplete="off"
-                      />
-                      <label htmlFor="email">Email <span className="text-primary">*</span></label>
-                    </FormGroup>
-                  </Col>
-                  <Col className="mt-3" sm={12}>
-                    <FormGroup className="form-floating">
-                      <FormControl
-                        type="text"
-                        as="textarea"
-                        name="user_message"
-                        id="message"
-                        className="form-control py-2"
-                        value={message}
-                        onChange={handleChange}
-                        placeholder="Message"
-                        autoComplete="off"
-                      />
-                      <label htmlFor="message">Message <span className="text-primary">*</span></label>
-                    </FormGroup>
-                  </Col>
-                  <Col className="d-flex justify-content-center mt-3" sm={12}>
-                    <Button
-                      className="d-flex align-items-center"
-                      variant="outline-primary"
-                      type="submit"
-                    >
-                      Send Message
-                      {loader ? (
-                        <>
-                          <img
-                            src={loaderIcon}
-                            alt="Loader"
-                            style={{
-                              width: "34px",
-                              height: "auto",
-                              paddingLeft: "10px",
-                            }}
-                          />
-                        </>
-                      ) : (
-                        <FaArrowRight className="ms-2" />
-                      )}
-                    </Button>
-                  </Col>
+                    <Col xl={12}><h1 className="fs-5 text-center mb-0 pb-4">Contact With Me</h1></Col>
+                    {/* Contact information section */}
+                    <Col className="col-12 col-sm-6 order-2 order-sm-1 pt-4 pt-sm-0">
+                        {/* Contact card */}
+                        <Card className="p-3 box-shadow_1">
+                            <div className="d-flex justify-content-center">
+                                <Card className="w-25 mb-2 overflow-hidden"><img src={Freelancer} alt="Contact With Me" /></Card>
+                            </div>
+                            <div className="contact__us">
+                                <p className="mb-2">I am available for freelance work.</p>
+                                <div>
+                                    <span className="pe-2"><MdOutlineLocalPhone /> </span> <a href="tel:6205044930">+91-6205044930</a>
+                                </div>
+                                <div>
+                                    <span className="pe-2"><IoMailUnreadOutline />
+                                    </span> <a href="mailto:harshch9931@gmail.com">harshch9931@gmail.com</a>
+                                </div>
+                                {/* Social media links */}
+                                <p className="py-2 mb-0  text-center fw-bold">FIND WITH ME</p>
+                                <div className="d-flex justify-content-between">
+                                    <Card className="p-2"><a href="https://www.facebook.com/harshkumar1208200" target="__blank"><CiFacebook className="fs-3" />
+                                    </a></Card>
+                                    <Card className="p-2"><a href="https://www.linkedin.com/in/harsh-kumar-593a19232/" target="__blank"><CiLinkedin className="fs-3" /></a>
+                                    </Card>
+                                    <Card className="p-2"><a href="https://wa.me/+916205044930?text=Hi Harsh," target="__blank"><FaWhatsapp className="fs-3" /></a>
+                                    </Card>
+                                    <Card className="p-2"><a href="https://www.instagram.com/harshch9931/" target="__blank"><CiInstagram className="fs-3" /></a>
+                                    </Card>
+                                    <Card className="p-2"><a href="https://github.com/harshisdev" target="__blank"><FaGithub className="fs-3" />
+                                    </a></Card>
+                                </div>
+                            </div>
+                        </Card>
+                    </Col>
+                    {/* Contact form section */}
+                    <Col className="col-12 col-sm-6 order-1 order-sm-2">
+                        <Form ref={form} onSubmit={handleSubmit}>
+                            <Card className="p-3 box-shadow_1">
+                                <Row>
+                                    <Col sm={12}>
+                                        <FormGroup className="form-floating">
+                                            <FormControl
+                                                type="text"
+                                                name="user_name"
+                                                value={name}
+                                                onChange={handleChange}
+                                                placeholder="Name *"
+                                                autoComplete="off"
+                                                className="form-control"
+                                            />
+                                            <label htmlFor="name">Name <span className="text-primary">*</span></label>
+                                        </FormGroup>
+                                    </Col>
+                                    <Col className="mt-3" sm={12}>
+                                        <FormGroup className="form-floating">
+                                            <FormControl
+                                                type="text"
+                                                name="user_mobile"
+                                                value={mobile}
+                                                onChange={handleChange}
+                                                placeholder="Mobile Number *"
+                                                autoComplete="off"
+                                                className="form-control"
+                                                maxLength={10}
+                                                onKeyPress={(event) => {
+                                                    if (!/[0-9]/.test(event.key)) {
+                                                        event.preventDefault();
+                                                    }
+                                                }}
+                                            />
+                                            <label htmlFor="mobile">Mobile Number <span className="text-primary">*</span></label>
+                                        </FormGroup>
+                                    </Col>
+                                    <Col className="mt-3" sm={12}>
+                                        <FormGroup className="form-floating">
+                                            <FormControl
+                                                className="form-control"
+                                                type="email"
+                                                name="user_email"
+                                                id="email"
+                                                onChange={handleChange}
+                                                value={email}
+                                                placeholder="Email"
+                                                autoComplete="off"
+                                            />
+                                            <label htmlFor="email">Email <span className="text-primary">*</span></label>
+                                        </FormGroup>
+                                    </Col>
+                                    <Col className="mt-3" sm={12}>
+                                        <FormGroup className="form-floating">
+                                            <FormControl
+                                                type="text"
+                                                as="textarea"
+                                                name="user_message"
+                                                id="message"
+                                                className="form-control py-2"
+                                                value={message}
+                                                onChange={handleChange}
+                                                placeholder="Message"
+                                                autoComplete="off"
+                                            />
+                                            <label htmlFor="message">Message <span className="text-primary">*</span></label>
+                                        </FormGroup>
+                                    </Col>
+                                    <Col className="d-flex justify-content-center mt-3" sm={12}>
+                                        <Button
+                                            className="d-flex align-items-center"
+                                            variant="outline-primary"
+                                            type="submit"
+                                        >
+                                            Send Message
+                                            {loader ? (
+                                                <>
+                                                    <img
+                                                        src={loaderIcon}
+                                                        alt="Loader"
+                                                        style={{
+                                                            width: "34px",
+                                                            height: "auto",
+                                                            paddingLeft: "10px",
+                                                        }}
+                                                    />
+                                                </>
+                                            ) : (
+                                                <FaArrowRight className="ms-2" />
+                                            )}
+                                        </Button>
+                                    </Col>
+                                </Row>
+                            </Card>
+                        </Form>
+                    </Col>
                 </Row>
-              </Card>
-            </Form>
-          </Col>
-        </Row>
-      </Container>
-      {/* Toast container for displaying messages */}
-      <ToastContainer />
-      {/* Modal for confirming message submission */}
-      <Modal
-        show={show}
-        backdrop="static"
-        keyboard={false}
-        onHide={handleClose}
-        size="md"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title>
-            <h1 className="text-primary fs-6 mb-0">
-              Are you sure you want to send the message?
-            </h1>
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <table>
-            <tr>
-              <td>Name </td>
-              <td>:-</td>
-              <td>{name}</td>
-            </tr>
-            <tr>
-              <td style={{ minWidth: "115px" }}>Mobile Number</td>
-              <td>:-</td>
-              <td>{mobile}</td>
-            </tr>
-            <tr>
-              <td>Email</td>
-              <td>:-</td>
-              <td>{email}</td>
-            </tr>
-            <tr>
-              <td>Message</td>
-              <td>:-</td>
-              <td style={{ wordBreak: "break-all" }}>{message}</td>
-            </tr>
-          </table>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="outline-primary" onClick={handleClose}>
-            No
-          </Button>
-          <Button variant="primary" onClick={handleYes}>
-            Yes
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </>
-  );
+            </Container>
+            {/* Toast container for displaying messages */}
+            <ToastContainer />
+            {/* Modal for confirming message submission */}
+            <Modal
+                show={show}
+                backdrop="static"
+                keyboard={false}
+                onHide={handleClose}
+                size="md"
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title>
+                        <h1 className="text-primary fs-6 mb-0">
+                            Are you sure you want to send the message?
+                        </h1>
+                    </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <table>
+                        <tr>
+                            <td>Name </td>
+                            <td>:-</td>
+                            <td>{name}</td>
+                        </tr>
+                        <tr>
+                            <td style={{ minWidth: "115px" }}>Mobile Number</td>
+                            <td>:-</td>
+                            <td>{mobile}</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>:-</td>
+                            <td>{email}</td>
+                        </tr>
+                        <tr>
+                            <td>Message</td>
+                            <td>:-</td>
+                            <td style={{ wordBreak: "break-all" }}>{message}</td>
+                        </tr>
+                    </table>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="outline-primary" onClick={handleClose}>
+                        No
+                    </Button>
+                    <Button variant="primary" onClick={handleYes}>
+                        Yes
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+        </>
+    );
 };
 
 export default ContactUs;

@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react"
 import Home from "./pages/Home";
 import Footer from "./component/Footer";
 import AboutPages from "./pages/AboutPages";
@@ -54,6 +55,7 @@ function App() {
                   <Route path="*" element={<Erorr />} />
                 </Routes>
                 <Footer />
+                <Analytics />
               </>
             )
         }

@@ -206,28 +206,20 @@ const NavaBar = () => {
                   <li>
                     <button className="dark-theme-btn" onClick={toggleTheme}>
                       {isDarkTheme ?
-                        <Popover content="Light Theme" placement="right" trigger="hover">
-                          <CiLight />
-                        </Popover>
+                         <CiLight />
                         :
-                        <Popover content="Dark Theme" placement="right" trigger="hover">
                           <CiDark />
-                        </Popover>}
                     </button>
                   </li>
                 </ul>
               </Nav>
             </Col>
-            <Col className="col-auto d-flex align-items-center d-flex d-sm-none">
+            <Col className="col-auto d-flex align-items-center d-flex pe-2 pe-sm-0 d-sm-none">
               <button className="dark-theme-btn me-2 me-sm-0" onClick={toggleTheme}>
                 {isDarkTheme ?
-                  <Popover content="Light Theme" placement="right" trigger="hover">
-                    <CiLight />
-                  </Popover>
+                   <CiLight />
                   :
-                  <Popover content="Dark Theme" placement="right" trigger="hover">
-                    <CiDark />
-                  </Popover>}
+                  <CiDark />
               </button>
               <VscMenu onClick={showDrawer} className="fs-2" />
             </Col>

@@ -31,6 +31,8 @@ const ContactUs = () => {
     const [name, setName] = useState("");
     const [mobile, setMobile] = useState("");
     const [email, setEmail] = useState("");
+    const [subject, setSubject] = useState("");
+    const [touch, setTouch] = useState("");
     const [message, setMessage] = useState("");
     const [loader, setLoader] = useState(false);
 
@@ -44,6 +46,10 @@ const ContactUs = () => {
             setMobile(value);
         } else if (name === "user_email") {
             setEmail(value);
+        } else if (name === "user_subject") {
+            setSubject(value);
+        } else if (name === "user_touch") {
+            setTouch(value);
         } else if (name === "user_message") {
             setMessage(value);
         }
@@ -55,23 +61,29 @@ const ContactUs = () => {
             toast.error("Name is required");
         } else if (mobile === "" || mobile.length < 10) {
             toast.error("Mobile number is required");
-        } else if (
-            email === "" ||
-            !email.includes("@") ||
+        } else if (email === "") {
+            toast.error("Email is required");
+        } else if (!email.includes("@") ||
             !email.includes(".") ||
             email.length < 5 ||
             email.length > 50 ||
-            !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email)
-        ) {
-            toast.error("Valid email is required");
-        } else if (message === "") {
+            !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email)) {
+            toast.error("Invalid email address");
+        } else if (subject === "") {
+            toast.error("Subject is required");
+        }
+        else if (touch === "") {
+            toast.error("Touch is required");
+        }
+        else if (message === "") {
             toast.error("Message is required");
-        } else {
+        }
+        else {
             setLoader(true);
-             setTimeout(() => {
+            setTimeout(() => {
                 setShow(true);
                 setLoader(false);
-              }, 2500);
+            }, 2000);
         }
     };
 
@@ -87,13 +99,14 @@ const ContactUs = () => {
             })
             .then(
                 () => {
-                    setLoader(false);
+                    toast.success("Your message sent successfully");
                     setShow(false);
                     setName("");
                     setMobile("");
                     setEmail("");
+                    setSubject("");
+                    setTouch("");
                     setMessage("");
-                    toast.success("Your message sent successfully");
                 },
                 (error) => {
                     toast.error("Failed to send message. Please try again");
@@ -118,7 +131,7 @@ const ContactUs = () => {
                                 <Card className="w-25 mb-2 overflow-hidden"><img src={Freelancer} alt="Contact With Me" /></Card>
                             </div>
                             <div className="contact__us">
-                                <p className="mb-2">I am available for freelance work.</p>
+                                <p className="mb-2">Experienced frontend developer available for freelance projects. Proficient in HTML5, CSS3, JavaScript, React.js. Specializing in crafting captivating user interfaces and ensuring seamless user experiences. Let's collaborate to elevate your online presence. Contact me to discuss your project requirements and achieve your goals together!</p>
                                 <div>
                                     <span className="pe-2"><MdOutlineLocalPhone /> </span> <a href="tel:6205044930">+91-6205044930</a>
                                 </div>
@@ -200,6 +213,31 @@ const ContactUs = () => {
                                     <Col className="mt-3" sm={12}>
                                         <FormGroup className="form-floating">
                                             <FormControl
+                                                className="form-control"
+                                                type="text"
+                                                name="user_subject"
+                                                id="subject"
+                                                onChange={handleChange}
+                                                value={subject}
+                                                placeholder="Subject"
+                                                autoComplete="off"
+                                            />
+                                            <label htmlFor="subject">Subject <span className="text-primary">*</span></label>
+                                        </FormGroup>
+                                    </Col>
+                                    <Col className="mt-3" sm={12}>
+                                        <FormGroup className="form-floating">
+                                            <Form.Select className="form-control py-2" aria-label="Touch For" name="user_touch" onChange={handleChange} value={touch}>
+                                                <option>Touch For <span className="text-primary">*</span></option>
+                                                <option value="Some talk with you">Some talk with you</option>
+                                                <option value="I want to Hire">I want to Hire</option>
+                                                <option value="Freelance Work">Freelance Work</option>
+                                            </Form.Select>
+                                        </FormGroup>
+                                    </Col>
+                                    <Col className="mt-3" sm={12}>
+                                        <FormGroup className="form-floating">
+                                            <FormControl
                                                 type="text"
                                                 as="textarea"
                                                 name="user_message"
@@ -265,17 +303,27 @@ const ContactUs = () => {
                         <tr>
                             <td>Name </td>
                             <td>:-</td>
-                            <td>{name}</td>
+                            <td style={{ wordBreak: "break-all" }}>{name}</td>
                         </tr>
                         <tr>
                             <td style={{ minWidth: "115px" }}>Mobile Number</td>
                             <td>:-</td>
-                            <td>{mobile}</td>
+                            <td style={{ wordBreak: "break-all" }}>{mobile}</td>
                         </tr>
                         <tr>
                             <td>Email</td>
                             <td>:-</td>
-                            <td>{email}</td>
+                            <td style={{ wordBreak: "break-all" }}>{email}</td>
+                        </tr>
+                        <tr>
+                            <td>Subject</td>
+                            <td>:-</td>
+                            <td style={{ wordBreak: "break-all" }}>{subject}</td>
+                        </tr>
+                        <tr>
+                            <td>Touch For</td>
+                            <td>:-</td>
+                            <td style={{ wordBreak: "break-all" }}>{touch}</td>
                         </tr>
                         <tr>
                             <td>Message</td>
@@ -288,23 +336,23 @@ const ContactUs = () => {
                     <Button variant="outline-primary" onClick={handleClose}>
                         No
                     </Button>
-                     
-                        {loader ? (
-                                <>
-                                    <Button variant="primary">
-                                    <img
+
+                    {loader ? (
+                        <>
+                            <Button variant="primary">
+                                <img
                                     src={loaderIcon}
                                     alt="Loader"
                                     style={{
-                                    width: "34px",
-                                    height: "auto",
-                                    paddingLeft: "10px",
+                                        width: "34px",
+                                        height: "auto",
+                                        paddingLeft: "10px",
                                     }}
-                                    />
-                                    </Button>                                   
-                                </>
-                                ) : <Button variant="primary" onClick={handleYes}>Yes</Button>}
-                    
+                                />
+                            </Button>
+                        </>
+                    ) : <Button variant="primary" onClick={handleYes}>Yes</Button>}
+
                 </Modal.Footer>
             </Modal>
         </>

@@ -110,6 +110,7 @@ const ContactUs = () => {
                     setEmail("");
                     setSubject("");
                     setTouch("");
+                    setTouchSelected(value !== '');
                     setMessage("");
                 },
                 (error) => {

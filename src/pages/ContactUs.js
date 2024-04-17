@@ -107,6 +107,7 @@ const ContactUs = () => {
                     setSubject("");
                     setTouch("");
                     setMessage("");
+                    setLoader(false);
                 },
                 (error) => {
                     toast.error("Failed to send message. Please try again");

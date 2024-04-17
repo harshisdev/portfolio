@@ -35,6 +35,8 @@ const ContactUs = () => {
     const [touch, setTouch] = useState("");
     const [message, setMessage] = useState("");
     const [loader, setLoader] = useState(false);
+    const [touchSelected, setTouchSelected] = useState(false);
+
 
     const form = useRef();
 
@@ -50,6 +52,7 @@ const ContactUs = () => {
             setSubject(value);
         } else if (name === "user_touch") {
             setTouch(value);
+            setTouchSelected(value !== '');
         } else if (name === "user_message") {
             setMessage(value);
         }
@@ -99,18 +102,19 @@ const ContactUs = () => {
             })
             .then(
                 () => {
-                    toast.success("Your message sent successfully");
+                    setLoader(false);
                     setShow(false);
+                    toast.success("Your message sent successfully");
                     setName("");
                     setMobile("");
                     setEmail("");
                     setSubject("");
                     setTouch("");
                     setMessage("");
-                    setLoader(false);
                 },
                 (error) => {
-                    toast.error("Failed to send message. Please try again");
+                    toast.error("Server issue. Please try after some time.");
+                    setLoader(false)
                 }
             )
     };
@@ -227,14 +231,14 @@ const ContactUs = () => {
                                         </FormGroup>
                                     </Col>
                                     <Col className="mt-3" sm={12}>
-                                        <FormGroup className="form-floating">
-                                            <Form.Select className="form-control py-2" aria-label="Touch For" name="user_touch" onChange={handleChange} value={touch}>
+                                        <FormGroup className={`form-floating ${touchSelected ? '' : 'selected'}`}>
+                                            <Form.Select className="form-control py-2" id="TouchFor" aria-label="Touch For" name="user_touch" onChange={handleChange} value={touch}>
                                                 <option value=""></option>
                                                 <option value="Some talk with you">Some talk with you</option>
                                                 <option value="I want to Hire">I want to Hire</option>
                                                 <option value="Freelance Work">Freelance Work</option>
                                             </Form.Select>
-                                            <label htmlFor="message">Touch For<span className="text-primary">*</span></label>
+                                            <label htmlFor="TouchFor">Touch For <span className="text-primary">*</span></label>
                                         </FormGroup>
                                     </Col>
                                     <Col className="mt-3" sm={12}>

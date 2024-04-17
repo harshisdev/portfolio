@@ -215,8 +215,8 @@ const NavaBar = () => {
                 </ul>
               </Nav>
             </Col>
-            <Col className="col-auto d-flex align-items-center d-flex pe-2 pe-sm-0 d-sm-none">
-              <button className="dark-theme-btn me-2 me-sm-0" onClick={toggleTheme}>
+            <Col className="col-auto d-flex align-items-center d-flex d-sm-none">
+              <button className="dark-theme-btn me-3 me-sm-0" onClick={toggleTheme}>
                  {isDarkTheme ?
                   <CiLight />
                   :

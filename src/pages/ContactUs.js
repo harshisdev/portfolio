@@ -228,11 +228,12 @@ const ContactUs = () => {
                                     <Col className="mt-3" sm={12}>
                                         <FormGroup className="form-floating">
                                             <Form.Select className="form-control py-2" aria-label="Touch For" name="user_touch" onChange={handleChange} value={touch}>
-                                                <option>Touch For <span className="text-primary">*</span></option>
+                                                <option disabled></option>
                                                 <option value="Some talk with you">Some talk with you</option>
                                                 <option value="I want to Hire">I want to Hire</option>
                                                 <option value="Freelance Work">Freelance Work</option>
                                             </Form.Select>
+                                            <label htmlFor="message">Touch For<span className="text-primary">*</span></label>
                                         </FormGroup>
                                     </Col>
                                     <Col className="mt-3" sm={12}>

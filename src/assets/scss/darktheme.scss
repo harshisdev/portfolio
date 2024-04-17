@@ -80,9 +80,19 @@
             background-color: $border-color;
         }
 
-        .form-floating>.form-control:not(:placeholder-shown)~label {
-            background-image: linear-gradient(transparent 40%, #ccc 40%, #ccc 60%, transparent 60%);
-        }
+        .form-control {
+      background-color: $border-color;
+    }
+    .form-floating > .form-control:focus ~ label,
+    .form-floating > .form-control:not(:placeholder-shown) ~ label,
+    .form-floating > .form-select ~ label {
+      background-image: linear-gradient(
+        transparent 40%,
+        #ccc 40%,
+        #ccc 60%,
+        transparent 60%
+      );
+    }
     }
 
     .ant-table {

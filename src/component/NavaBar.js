@@ -5,7 +5,7 @@ import HarshLogo from "../assets/images/Harsh-Kumar.png";
 import Harshimg from "../assets/images/Harsh-Kumar.jpg";
 import Harshimg1 from "../assets/images/Harsh-Kumar1.jpg";
 import Slider from "react-slick";
-import { Destination, Name } from "../constant.js";
+import { Designation, Name } from "../constant.js";
 import { Drawer, Popover } from "antd";
 import { Typewriter } from "react-simple-typewriter";
 import { VscMenu } from "react-icons/vsc";
@@ -130,7 +130,7 @@ const NavaBar = () => {
                       style={{ fontSize: "0.8rem", color: "#858282" }}
                       className="mb-0"
                     >
-                      ({Destination})
+                      ({Designation})
                     </p>
                   </Modal.Title>
                 </Modal.Header>

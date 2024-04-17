@@ -1,6 +1,6 @@
 export const Name = "Harsh Kumar";
 export const activeColor = "#e70448";
-export const Destination = "Software Engineer Frontend";
+export const Designation = "Software Engineer Frontend";
 export const Company = "MyHealthcare Technologies Private Limited, Gurgaon";
 export const JoinigDate = "08-08-2022";
 const monthNames = [
@@ -19,7 +19,7 @@ const monthNames = [
 ];
 const m = new Date();
 
-export const Experiance = `August 2022 - ${
+export const Experience = `August 2022 - ${
   monthNames[m.getMonth()]
 } ${new Date().getFullYear()}`;
 

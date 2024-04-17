@@ -3,8 +3,8 @@ import { Container, Col, Row, Tab, Tabs } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import {
   Company,
-  Destination,
-  Experiance,
+  Designation,
+  Experience,
   Name,
   activeColor,
 } from "../constant";
@@ -87,9 +87,9 @@ const AboutPages = () => {
                 alt={Company}
               />
               <br />
-              Destination:- <br className="d-sm-none" /> {Destination}
+              Designation:- <br className="d-sm-none" /> {Designation}
               <br />
-              Experiance:- <br className="d-sm-none" /> {Experiance}
+              Experience:- <br className="d-sm-none" /> {Experience}
               <ul>
                 <li>Developed and maintained the company's website.</li>
                 <li>

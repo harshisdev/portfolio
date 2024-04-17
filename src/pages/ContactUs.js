@@ -312,7 +312,7 @@ const ContactUs = () => {
                             <td style={{ wordBreak: "break-all" }}>{name}</td>
                         </tr>
                         <tr>
-                            <td style={{ minWidth: "115px" }}>Mobile Number</td>
+                            <td style={{ minWidth: "115px" }}>Mobile No</td>
                             <td>:-</td>
                             <td style={{ wordBreak: "break-all" }}>{mobile}</td>
                         </tr>

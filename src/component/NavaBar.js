@@ -206,9 +206,10 @@ const NavaBar = () => {
                   <li>
                     <button className="dark-theme-btn" onClick={toggleTheme}>
                       {isDarkTheme ?
-                         <CiLight />
-                        :
-                          <CiDark />
+                  <CiLight />
+                  :
+                  <CiDark />
+                }
                     </button>
                   </li>
                 </ul>
@@ -216,10 +217,11 @@ const NavaBar = () => {
             </Col>
             <Col className="col-auto d-flex align-items-center d-flex pe-2 pe-sm-0 d-sm-none">
               <button className="dark-theme-btn me-2 me-sm-0" onClick={toggleTheme}>
-                {isDarkTheme ?
-                   <CiLight />
+                 {isDarkTheme ?
+                  <CiLight />
                   :
                   <CiDark />
+                }
               </button>
               <VscMenu onClick={showDrawer} className="fs-2" />
             </Col>

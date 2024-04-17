@@ -103,15 +103,15 @@ const ContactUs = () => {
             .then(
                 () => {
                     setLoader(false);
-                    setShow(false);
-                    toast.success("Your message sent successfully");
                     setName("");
                     setMobile("");
                     setEmail("");
                     setSubject("");
                     setTouch("");
-                    setTouchSelected(value !== '');
+                    setTouchSelected(false);
                     setMessage("");
+                    setShow(false);
+                    toast.success("Your message sent successfully");
                 },
                 (error) => {
                     toast.error("Server issue. Please try after some time.");

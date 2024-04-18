@@ -452,3 +452,26 @@ td {
     color: $dark-gray;
   }
 }
+
+.arrowLeft {
+  color: $primary;
+  animation: leftRightScroll 4s infinite;
+  position: relative;
+}
+@keyframes leftRightScroll {
+  0% {
+    left: 0px;
+  }
+  25% {
+    left: 10px;
+  }
+  50% {
+    left: 20px;
+  }
+  75% {
+    left: 10px;
+  }
+  100% {
+    left: 0px;
+  }
+}

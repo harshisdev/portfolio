@@ -79,7 +79,7 @@ const AboutPages = () => {
       <BredcrumComponent pageName="About" />
       <Container className="min-height min-height-pagination">
         <Col className="card box-shadow bg-white p-3" xl={12}>
-          <FaArrowsLeftRight className='arrowLeft d-block d-lg-none' />
+          <FaArrowsLeftRight className='arrowLeft d-block d-md-none' />
           <Tabs className="custom-nav-tabs mb-4" defaultActiveKey={1}>
             <Tab eventKey={1} title="Experience">
               Company:- <br className="d-sm-none" /> {Company}{" "}

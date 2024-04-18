@@ -454,24 +454,26 @@ td {
 }
 
 .arrowLeft {
-  color: $primary;
   animation: leftRightScroll 4s infinite;
-  position: relative;
+  color: #e70448;
+  position: absolute;
+  top: 0px;
+  font-size: 0.8rem;
 }
 @keyframes leftRightScroll {
   0% {
-    left: 0px;
+    right: 0px;
   }
   25% {
-    left: 10px;
+    right: 10px;
   }
   50% {
-    left: 20px;
+    right: 20px;
   }
   75% {
-    left: 10px;
+    right: 10px;
   }
   100% {
-    left: 0px;
+    right: 0px;
   }
 }

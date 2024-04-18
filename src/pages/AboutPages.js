@@ -23,6 +23,8 @@ import {
 } from "react-icons/fa6";
 import { TbBrandJavascript } from "react-icons/tb";
 import { SiJquery } from "react-icons/si";
+import { FaArrowsLeftRight } from "react-icons/fa6";
+
 
 const AboutPages = () => {
   const dataSource = [
@@ -77,6 +79,7 @@ const AboutPages = () => {
       <BredcrumComponent pageName="About" />
       <Container className="min-height min-height-pagination">
         <Col className="card box-shadow bg-white p-3" xl={12}>
+          <FaArrowsLeftRight className='arrowLeft d-block d-lg-none' />
           <Tabs className="custom-nav-tabs mb-4" defaultActiveKey={1}>
             <Tab eventKey={1} title="Experience">
               Company:- <br className="d-sm-none" /> {Company}{" "}

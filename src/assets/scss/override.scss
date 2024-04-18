@@ -143,7 +143,7 @@ html {
 
 .form-floating>.form-control:focus~label,
 .form-floating>.form-control:not(:placeholder-shown)~label {
-  transform: scale(.85) translateY(-1.3rem) translateX(0rem) !important;
+  transform: scale(.85) translateY(-1.2rem) translateX(0rem) !important;
   color: $danger;
   transition: 0.3s all ease-out;
   background-image: linear-gradient(transparent 40%, white 40%, white 60%, transparent 60%);

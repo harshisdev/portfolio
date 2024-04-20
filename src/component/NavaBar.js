@@ -78,10 +78,10 @@ const NavaBar = () => {
   useEffect(() => {
     if (isDarkTheme) {
       document.body.classList.add('dark-theme');
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#121212');
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#1C242C');
     } else {
       document.body.classList.remove('dark-theme');
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ff014f');
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#144C8C');
     }
   }, [isDarkTheme]);
 

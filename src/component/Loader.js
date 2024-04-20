@@ -12,7 +12,7 @@ const Loader = () => {
                      ariaLabel="three-dots-loading"
                     wrapperStyle={{}}
                     wrapperClass="three-dots-loading"
-                    color="#ff014f"
+                    color="#1C242C"
                 />
             </div>
         </>

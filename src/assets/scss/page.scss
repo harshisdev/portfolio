@@ -56,7 +56,28 @@ table {
   background-color: transparent;
   border: none;
   font-size: 1.6rem;
-  padding: 0px;
+  padding: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  position: fixed;
+  top: 50%;
+  right: 0%;
+  background-color: $primary;
+  color: $white;
+  display: flex;
+  opacity: 0.8;
+  &:hover{
+    opacity: 1;
+  }
+
+  @media only screen and (max-width:576px) {
+    position: absolute;
+    top: 9px;
+    right: 50px;
+    background-color: unset;
+    color: $dark-gray;
+    z-index: 999;
+  }
 }
 
 .min-height {
@@ -83,6 +104,14 @@ table {
       a {
         text-decoration: none;
         color: $primary;
+
+        img {
+          filter: grayscale(1);
+
+          &:hover {
+            filter: unset;
+          }
+        }
 
         &:hover {
           text-decoration: underline;
@@ -134,6 +163,11 @@ table {
     width: auto;
     height: 50px;
     transition: 0.3s all ease-in-out;
+    filter: grayscale(1);
+    cursor: pointer;
+    &:hover{
+      filter: unset;
+    }
   }
 
   .slick-track {
@@ -218,7 +252,7 @@ table {
 // footer css
 footer {
   background-color: $dark-gray;
-  color: $white;
+  color: $border-color;
   font-size: 0.7rem;
 }
 
@@ -228,6 +262,10 @@ footer {
 
 .text-primary {
   color: $primary !important;
+}
+
+.text-danger{
+  color: $danger !important;
 }
 
 .btn-close:focus {
@@ -460,19 +498,24 @@ td {
   top: 1px;
   font-size: 0.8rem;
 }
+
 @keyframes leftRightScroll {
   0% {
     right: 16px;
   }
+
   25% {
     right: 26px;
   }
+
   50% {
     right: 36px;
   }
+
   75% {
     right: 26px;
   }
+
   100% {
     right: 16px;
   }

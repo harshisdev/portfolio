@@ -110,7 +110,7 @@ const NavaBar = () => {
                 </Popover>
               </Link>
               <h1 className="fs-6 mb-0 ps-2 fw-light"><strong>{Name}</strong> <br />
-                <span style={{ fontSize: "0.8rem", color: "#ff014f" }}>
+                <span style={{ fontSize: "0.8rem", color: "#144C8C" }}>
                   <Typewriter
                     words={['Frontend Developer', 'Web Developer', 'Ui Developer',]}
                     loop={5}
@@ -203,26 +203,10 @@ const NavaBar = () => {
                       Contact
                     </Link>
                   </li>
-                  <li>
-                    <button className="dark-theme-btn" onClick={toggleTheme}>
-                      {isDarkTheme ?
-                  <CiLight />
-                  :
-                  <CiDark />
-                }
-                    </button>
-                  </li>
                 </ul>
               </Nav>
             </Col>
             <Col className="col-auto d-flex align-items-center d-flex d-sm-none">
-              <button className="dark-theme-btn me-3 me-sm-0" onClick={toggleTheme}>
-                 {isDarkTheme ?
-                  <CiLight />
-                  :
-                  <CiDark />
-                }
-              </button>
               <VscMenu onClick={showDrawer} className="fs-2" />
             </Col>
           </Row>
@@ -290,6 +274,13 @@ const NavaBar = () => {
           </ul>
         </Nav>
       </Drawer>
+      <button className="dark-theme-btn" onClick={toggleTheme}>
+        {isDarkTheme ?
+          <CiLight />
+          :
+          <CiDark />
+        }
+      </button>
     </>
   );
 };

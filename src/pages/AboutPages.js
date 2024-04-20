@@ -1,5 +1,5 @@
-import React from "react";
-import { Container, Col, Row, Tab, Tabs } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container, Col, Row, Tab, Tabs, Button } from "react-bootstrap";
 import { Helmet } from "react-helmet";
 import {
   Company,
@@ -10,6 +10,7 @@ import {
 } from "../constant";
 import BredcrumComponent from "../component/BredcrumComponent";
 import Resume from "../assets/images/HarshResume.pdf";
+import ResumeImg from "../assets/images/HarshResumeImg.png"
 import CompanyLogos from "../assets/images/logo.svg";
 import { Table } from "antd";
 import ReactStars from "react-rating-stars-component";
@@ -24,9 +25,21 @@ import {
 import { TbBrandJavascript } from "react-icons/tb";
 import { SiJquery } from "react-icons/si";
 import { FaArrowsLeftRight } from "react-icons/fa6";
+import { MdOutlineFileDownload } from "react-icons/md";
+
 
 
 const AboutPages = () => {
+
+  const downloadResume = () => {
+    const link = document.createElement('a');
+    link.href = Resume;
+    link.download = 'HarshKumarCV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
   const dataSource = [
     {
       key: "1",
@@ -247,15 +260,11 @@ const AboutPages = () => {
               </table>
             </Tab>
             <Tab eventKey={5} title="Resume">
-              <Row className="justify-content-center">
-                <Col xl={8}>
-                  <iframe
-                    title="Resume"
-                    style={{ marginTop: "10px" }}
-                    width="100%"
-                    height="310px"
-                    src={Resume}
-                  ></iframe>
+              <Row style={{ height: "60vh" }} className="justify-content-center overflow-scroll">
+                <Col xl={11} className="position-relative">
+                  <Button className="btn btn-primary downloadbtn" onClick={downloadResume} ><span className="d-none d-sm-inline">Download CV</span> <span className="downloadbtnicon"><MdOutlineFileDownload /></span>
+                  </Button>
+                  <img className="img-fluid" src={ResumeImg} alt="Harsh Resume" />
                 </Col>
               </Row>
             </Tab>

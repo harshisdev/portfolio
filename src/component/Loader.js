@@ -10,7 +10,6 @@ const Loader = () => {
                     height="60"
                     width="60"
                      ariaLabel="three-dots-loading"
-                    wrapperStyle={{}}
                     wrapperClass="three-dots-loading"
                     color="#1C242C"
                 />

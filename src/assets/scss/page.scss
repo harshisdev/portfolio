@@ -66,12 +66,12 @@ table {
   color: $white;
   display: flex;
   opacity: 0.8;
-  &:hover{
+
+  &:hover {
     opacity: 1;
   }
 
   @media only screen and (max-width:576px) {
-    position: absolute;
     top: 9px;
     right: 50px;
     background-color: unset;
@@ -165,7 +165,8 @@ table {
     transition: 0.3s all ease-in-out;
     filter: grayscale(1);
     cursor: pointer;
-    &:hover{
+
+    &:hover {
       filter: unset;
     }
   }
@@ -264,7 +265,7 @@ footer {
   color: $primary !important;
 }
 
-.text-danger{
+.text-danger {
   color: $danger !important;
 }
 
@@ -518,5 +519,32 @@ td {
 
   100% {
     right: 16px;
+  }
+}
+
+@keyframes downloadbtnicon {
+  from {
+    top: -5px;
+  }
+
+  to {
+    top: 3px;
+  }
+}
+
+.downloadbtn {
+  width: max-content;
+  position: absolute;
+  top: 5px;
+  right: 16px;
+
+  @media only screen and (max-width:768px) {
+    top: unset;
+    bottom: 0px;
+  }
+
+  .downloadbtnicon {
+    position: relative;
+    animation: downloadbtnicon 3s infinite;
   }
 }

@@ -29,7 +29,7 @@ const Portfolio = () => {
       id: 1,
       title: ProjectTitleFirst,
       link: ProjectFirst,
-      skills: "React Js Bootstrap4"
+      skills: "React Js, Bootstrap4"
     },
     {
       id: 2,

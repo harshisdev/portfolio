@@ -29,45 +29,60 @@ const Portfolio = () => {
       id: 1,
       title: ProjectTitleFirst,
       link: ProjectFirst,
+      skills: "React Js Bootstrap4"
     },
     {
       id: 2,
       title: ProjectTitleSecond,
       link: ProjectSecond,
+      skills: "HTML5, CSS, JS, Jquery, Bootstrap5"
     },
     {
       id: 3,
       title: ProjectTitleThird,
       link: ProjectThird,
+      skills: "HTML5, CSS, JS, Bootstrap5"
     },
     {
       id: 4,
       title: ProjectTitleFourth,
       link: ProjectFourth,
+      skills: "HTML5, CSS, JS, Bootstrap5"
     },
     {
       id: 5,
       title: ProjectTitleFifth,
       link: ProjectFifth,
+      skills: "HTML5, CSS, JS, Bootstrap5"
     },
     {
       id: 6,
       title: ProjectTitleSixth,
       link: ProjectSixth,
+      skills: "React Js, Bootstrap4"
     },
     {
       id: 7,
       title: ProjectTitleSeven,
       link: ProjectSeven,
+      skills: "React Js, Bootstrap4"
     },
   ];
 
   const [show, setShow] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
-  const [rating, setRating] = useState("")
+  const [rating, setRating] = useState("");
+  const [showSkills, setShowSkills] = useState(false); // Renamed to showSkills for clarity
+  const [skillText, setSkillText] = useState("View Skills");
   const handleClose = () => setShow(false);
   const ratingChanged = (countRating) => {
     setRating(countRating);
+  };
+
+  // view skill 
+  const toggleSkills = () => {
+    setShowSkills(!showSkills);
+    setSkillText(showSkills ? "View Skills" : "Less Skills");
   };
   const Verypoor = "very poor";
   const Poor = "poor";
@@ -83,6 +98,7 @@ const Portfolio = () => {
       toast.success(`Thanks for your review ${ratingArray[i]}`);
       handleClose();
       setRating("");
+      setShowSkills(false);
     }
   }
   const handleShow = (project) => {
@@ -126,13 +142,23 @@ const Portfolio = () => {
           centered
           size="md"
         >
-          <Modal.Header closeButton>
-            <Modal.Title className="fs-6">UI Design & Development</Modal.Title>
+          <Modal.Header>
+            <Modal.Title className="fs-6 d-flex align-items-center justify-content-between w-100">UI Design & Development <button className={`btn ${showSkills ? "btn-outline-primary" : "btn-primary"}`} onClick={toggleSkills}>
+              {skillText}
+            </button></Modal.Title>
           </Modal.Header>
           <Modal.Body>
             {selectedProject && (
               <>
                 <Row>
+                  {showSkills && ( // Conditional rendering for skills
+                    <>
+                      <Col sm={4}>Used Skills :-</Col>
+                      <Col sm={8}>
+                        <p className="mb-1">{selectedProject.skills}</p>
+                      </Col>
+                    </>
+                  )}
                   <Col sm={4}>Project Name :-</Col>
                   <Col sm={8}>{selectedProject.title}</Col>
                   <Col sm={4}>Project Link :-</Col>
@@ -157,8 +183,8 @@ const Portfolio = () => {
                       activeColor={activeColor}
                     />
                   </Col>
-                  <Col sm={12} className="text-center mt-3">
-                    <Button onClick={() => handleClose(setShow(false))} variant="outline" type="button" className="btn-outline-primary me-3">Cancel</Button>
+                  <Col sm={12} className="text-center mt-2">
+                    <Button onClick={() => handleClose(setShow(false),setShowSkills(false))} variant="outline" type="button" className="btn-outline-primary me-3">Cancel</Button>
                     <Button onClick={() => handleOk(rating)} type="button" className="btn-primary">Ok</Button>
                   </Col>
                 </Row>

@@ -146,7 +146,7 @@ const ContactUs = () => {
                                     </span> <a href="mailto:harshch9931@gmail.com">harshch9931@gmail.com</a>
                                 </div>
                                 {/* Social media links */}
-                                <p className="py-2 mb-0 fs-6 text-center">Find With Me</p>
+                                <h2 className="py-2 mb-0 fs-6 text-center">Find With Me</h2>
                                 <div className="d-flex justify-content-between">
                                     <Card className="p-2"><a href="https://www.facebook.com/harshkumar1208200" target="__blank"><CiFacebook className="fs-3" />
                                     </a></Card>

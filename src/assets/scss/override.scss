@@ -17,7 +17,6 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: $primary;
-  border-radius: 5px;
 }
 
 /* Handle on hover */
@@ -131,7 +130,7 @@ html {
     transition: all 0.3s ease-in-out;
     font-size: 0.85rem;
     padding: 0px;
-    top: 10px;
+    top: 8px;
     left: 12px;
     height: auto;
 
@@ -143,7 +142,7 @@ html {
 
 .form-floating>.form-control:focus~label,
 .form-floating>.form-control:not(:placeholder-shown)~label {
-  transform: scale(.85) translateY(-1.2rem) translateX(0rem) !important;
+  transform: scale(.85) translateY(-1.3rem) translateX(0rem) !important;
   color: $danger;
   transition: 0.3s all ease-out;
   background-image: linear-gradient(transparent 40%, white 40%, white 60%, transparent 60%);

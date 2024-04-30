@@ -177,6 +177,7 @@ const ContactUs = () => {
                                                 placeholder="Name *"
                                                 autoComplete="off"
                                                 className="form-control"
+                                                id="name"
                                             />
                                             <label htmlFor="name">Name <span className="text-danger">*</span></label>
                                         </FormGroup>
@@ -192,6 +193,7 @@ const ContactUs = () => {
                                                 autoComplete="off"
                                                 className="form-control"
                                                 maxLength={10}
+                                                id="mobile"
                                                 onKeyPress={(event) => {
                                                     if (!/[0-9]/.test(event.key)) {
                                                         event.preventDefault();

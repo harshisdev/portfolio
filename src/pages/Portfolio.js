@@ -128,7 +128,7 @@ const Portfolio = () => {
                 variant="outline-primary"
                 onClick={() => handleShow(item)}
               >
-                Veiw Details
+                View Details
               </Button>
             </Col>
           ))}

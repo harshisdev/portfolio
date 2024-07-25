@@ -43,14 +43,14 @@ const AboutPages = () => {
   const dataSource = [
     {
       key: "1",
-      course: "Diploma Multimedia (Web)",
-      school: "Oxford Institute Rajouri  Garden, New Delhi",
+      course: "Diploma in Multimedia",
+      school: "Oxford Software Institute New Delhi",
       passing: "2022",
     },
     {
       key: "2",
       course: "B.A (Eng. Hons)",
-      school: "LNMU University, Darbhanga",
+      school: "L.N.M University, Darbhanga",
       passing: "2021",
     },
     {

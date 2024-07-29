@@ -1,66 +1,37 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
-import Home from "./pages/Home";
-import Footer from "./component/Footer";
-import AboutPages from "./pages/AboutPages";
-import Erorr from "./pages/Erorr";
-import ContactUs from "./pages/ContactUs";
-import NavaBar from "./component/NavaBar";
-import Portfolio from "./pages/Portfolio";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Aos from "aos";
-import Loader from "./component/Loader";
+import NavaBar from "./component/NavaBar";
+import About from "./pages/About";
+import Portfolio from "./pages/Portfolio";
+import Contact from "./pages/Contact";
+import Erorr from "./pages/Erorr";
+import Footer from "./component/Footer";
+import Home from "./pages/Home";
 
 function App() {
-
-  const [pageLoading, setPageLoading] = useState(true);
-  const [reloadTime, setReloadTime] = useState(null);
-
   useEffect(() => {
-    const loadEventEnd = window.performance.timing.loadEventEnd;
-    const navigationStart = window.performance.timing.navigationStart;
-
-    if (loadEventEnd && navigationStart) {
-      const timeToReload = loadEventEnd - navigationStart;
-      setReloadTime(timeToReload);
-    }
-  }, []);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setPageLoading(false);
-    }, [reloadTime + 1500]);
-  }, []);
-
-  useEffect(() => {
-    Aos.init();
+    Aos.init({
+      duration: 2000,
+      delay: 100,
+    });
   }, [])
   return (
     <>
       <BrowserRouter>
-        {
-          pageLoading ?
-            (
-              <Loader />
-            )
-            :
-            (
-              <>
-                <NavaBar />
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/about" element={<AboutPages />} />
-                  <Route path="/portfolio" element={<Portfolio />} />
-                  <Route path="/contact" element={<ContactUs />} />
-                  <Route path="*" element={<Erorr />} />
-                </Routes>
-                <Footer />
-                <Analytics />
-                <SpeedInsights />
-              </>
-            )
-        }
+        <NavaBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Erorr />} />
+        </Routes>
+        <Footer />
+        <Analytics />
+        <SpeedInsights />
       </BrowserRouter>
     </>
   );

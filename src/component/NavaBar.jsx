@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Modal, Nav, Navbar, Row } from "react-bootstrap";
+import { Button, Col, Container, Modal, Nav, Navbar, Row } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import HarshLogo from "../assets/images/Harsh-Kumar.png";
 import Harshimg from "../assets/images/Harsh-Kumar.jpg";
@@ -9,14 +9,16 @@ import { Designation, Name } from "../constant.js";
 import { Drawer, Popover } from "antd";
 import { Typewriter } from "react-simple-typewriter";
 import { VscMenu } from "react-icons/vsc";
+import { MdOutlineFileDownload } from "react-icons/md";
 import { CiDark } from "react-icons/ci";
 import { CiLight } from "react-icons/ci";
+import Resume from "../assets/images/Harsh-CV.pdf";
 
 
 const NavaBar = () => {
-  const [isDarkTheme, setIsDarkTheme] = useState(
-    localStorage.getItem('isDarkTheme') === 'true'
-  );
+  // const [isDarkTheme, setIsDarkTheme] = useState(
+  //   localStorage.getItem('isDarkTheme') === 'true'
+  // );
 
   const location = useLocation();
   const { pathname } = location;
@@ -26,6 +28,16 @@ const NavaBar = () => {
   const viewImges = () => {
     setShow(true);
   };
+
+  const downloadResume = () => {
+    const link = document.createElement('a');
+    link.href = Resume;
+    link.download = 'HarshKumarCV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
   const SliderSlick = {
     dots: true,
     infinite: true,
@@ -61,42 +73,42 @@ const NavaBar = () => {
     }
   ]
 
-  const toggleTheme = () => {
-    const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setIsDarkTheme(prevTheme => {
-      const newTheme = !prevTheme;
-      if (newTheme === systemPrefersDark) {
-        localStorage.removeItem('isDarkTheme');
-      } else {
-        localStorage.setItem('isDarkTheme', newTheme);
-      }
-      return newTheme;
-    });
-  };
+  // const toggleTheme = () => {
+  //   const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  //   setIsDarkTheme(prevTheme => {
+  //     const newTheme = !prevTheme;
+  //     if (newTheme === systemPrefersDark) {
+  //       localStorage.removeItem('isDarkTheme');
+  //     } else {
+  //       localStorage.setItem('isDarkTheme', newTheme);
+  //     }
+  //     return newTheme;
+  //   });
+  // };
 
   // Add class to body tag based on the theme
-  useEffect(() => {
-    if (isDarkTheme) {
-      document.body.classList.add('dark-theme');
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#1C242C');
-    } else {
-      document.body.classList.remove('dark-theme');
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#144C8C');
-    }
-  }, [isDarkTheme]);
+  // useEffect(() => {
+  //   if (isDarkTheme) {
+  //     document.body.classList.add('dark-theme');
+  //     document.querySelector('meta[name="theme-color"]').setAttribute('content', '#1C242C');
+  //   } else {
+  //     document.body.classList.remove('dark-theme');
+  //     document.querySelector('meta[name="theme-color"]').setAttribute('content', '#144C8C');
+  //   }
+  // }, [isDarkTheme]);
 
   // Detect system color scheme preference
-  useEffect(() => {
-    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const listener = event => {
-      setIsDarkTheme(event.matches);
-    };
-    setIsDarkTheme(darkModeMediaQuery.matches);
-    darkModeMediaQuery.addListener(listener);
-    return () => {
-      darkModeMediaQuery.removeListener(listener);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  //   const listener = event => {
+  //     setIsDarkTheme(event.matches);
+  //   };
+  //   setIsDarkTheme(darkModeMediaQuery.matches);
+  //   darkModeMediaQuery.addListener(listener);
+  //   return () => {
+  //     darkModeMediaQuery.removeListener(listener);
+  //   };
+  // }, []);
 
   return (
     <>
@@ -104,15 +116,13 @@ const NavaBar = () => {
         <Container className="d-block">
           <Row className="justify-content-between">
             <div className="col-auto d-flex align-items-center">
-              <Link onClick={viewImges}>
-                <Popover content={content} trigger="hover">
-                  <img src={HarshLogo} alt={Name} className="rounded-circle" />
-                </Popover>
+              <Link>
+                <img src={HarshLogo} alt={Name} className="rounded-circle" />
               </Link>
               <h1 className="fs-6 mb-0 ps-2 fw-light"><strong>{Name}</strong> <br />
-                <span style={{ fontSize: "0.8rem", color: "#144C8C" }}>
+                <span style={{ fontSize: "0.85rem", color: "#ffc107" }}>
                   <Typewriter
-                    words={['Frontend Developer', 'Web Developer', 'Ui Developer',]}
+                    words={['software Developer','Frontend Developer', 'Web Developer', 'Ui Developer',]}
                     loop={5}
                     cursor
                     typeSpeed={70}
@@ -121,36 +131,6 @@ const NavaBar = () => {
                   />
                 </span>
               </h1>
-
-              <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                  <Modal.Title>
-                    <h1 className="fs-6 mb-1">{Name}</h1>
-                    <p
-                      style={{ fontSize: "0.8rem", color: "#858282" }}
-                      className="mb-0"
-                    >
-                      ({Designation})
-                    </p>
-                  </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                  <Slider {...SliderSlick}>
-                    {
-                      profileImage.map((item) => (
-                        <div key={item.id}>
-                          <img
-                            src={item.images}
-                            width="100%"
-                            height="auto"
-                            alt={Name}
-                          />
-                        </div>
-                      ))
-                    }
-                  </Slider>
-                </Modal.Body>
-              </Modal>
             </div>
             <Col
               className="col-auto align-items-center d-none d-sm-flex"
@@ -203,6 +183,8 @@ const NavaBar = () => {
                       Contact
                     </Link>
                   </li>
+                  <Button className="downloadbtn" onClick={downloadResume} ><span className="d-none d-sm-inline">Download CV</span> <span className="downloadbtnicon"><MdOutlineFileDownload /></span>
+                  </Button>
                 </ul>
               </Nav>
             </Col>
@@ -274,13 +256,13 @@ const NavaBar = () => {
           </ul>
         </Nav>
       </Drawer>
-      <button className="dark-theme-btn" onClick={toggleTheme}>
+      {/* <button className="dark-theme-btn" onClick={toggleTheme}>
         {isDarkTheme ?
           <CiLight />
           :
           <CiDark />
         }
-      </button>
+      </button> */}
     </>
   );
 };

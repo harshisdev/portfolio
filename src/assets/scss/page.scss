@@ -71,7 +71,7 @@ table {
     opacity: 1;
   }
 
-  @media only screen and (max-width:576px) {
+  @media only screen and (max-width: 576px) {
     top: 9px;
     right: 50px;
     background-color: unset;
@@ -85,7 +85,7 @@ table {
   padding: 1.5rem 1rem;
 
   &.min-height-pagination {
-    min-height: calc(100vh - 120.41px);
+    min-height: calc(100vh - 85.69px);
     padding-top: 5px;
   }
 
@@ -105,14 +105,6 @@ table {
         text-decoration: none;
         color: $primary;
 
-        img {
-          filter: grayscale(1);
-
-          &:hover {
-            filter: unset;
-          }
-        }
-
         &:hover {
           text-decoration: underline;
         }
@@ -124,11 +116,13 @@ table {
 // animation text design
 .animate-charcter {
   padding-bottom: 10px;
-  background-image: linear-gradient(225deg,
-      $dark-gray 0%,
-      #44107a 29%,
-      #ff1361 67%,
-      $primary 100%);
+  background-image: linear-gradient(
+    225deg,
+    $dark-gray 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    $primary 100%
+  );
   background-size: 200% auto;
   color: $white;
   -webkit-background-clip: text;
@@ -163,12 +157,7 @@ table {
     width: auto;
     height: 50px;
     transition: 0.3s all ease-in-out;
-    filter: grayscale(1);
     cursor: pointer;
-
-    &:hover {
-      filter: unset;
-    }
   }
 
   .slick-track {
@@ -250,11 +239,473 @@ table {
   }
 }
 
+// skills css
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+$sign-color: #355691;
+$darker-sign-color: darken($sign-color, 20%);
+$circle-bg: rgba(141, 166, 179, 0.4);
+$circle-size: 120px;
+$transition-length: 2s;
+$inset-size: 85px;
+$inset-color: #fbfbfb;
+$shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
+$increment: 180deg/100;
+$percentage-color: #455fae;
+$percentage-font-size: 22px;
+$percentage-text-width: 44px;
+$space-between: 25px;
+
+$values: 90, 80, 70, 70, 70, 80;
+$skill-count: 6;
+.skill-progress {
+  display: inline-block;
+  background-color: $circle-bg;
+  width: $circle-size;
+  height: $circle-size;
+  border-radius: 50%;
+  margin-right: $space-between;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  .circle {
+    .mask {
+      width: $circle-size;
+      height: $circle-size;
+      position: absolute;
+      border-radius: 50%;
+      transition: -webkit-transform $transition-length;
+      transition: -ms-transform $transition-length;
+      transition: transform $transition-length;
+      -webkit-backface-visibility: hidden;
+      clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
+
+      &:before {
+        @extend .mask;
+        display: block;
+        content: "";
+        clip: rect(0px, $circle-size/2, $circle-size, 0px);
+        background-color: $primary;
+      }
+    }
+
+    &:before {
+      content: "";
+      display: block;
+      width: $circle-size;
+      height: $circle-size;
+      position: absolute;
+      border-radius: 50%;
+      box-shadow: $shadow inset;
+    }
+  }
+
+  .inset {
+    width: $inset-size;
+    height: $inset-size;
+    position: absolute;
+    margin-left: ($circle-size - $inset-size)/2;
+    margin-top: ($circle-size - $inset-size)/2;
+    background-color: $inset-color;
+    border-radius: 50%;
+    box-shadow: $shadow;
+
+    &:before {
+      content: attr(data-number);
+      display: block;
+      width: $percentage-text-width;
+      height: $percentage-font-size;
+      position: absolute;
+      top: ($inset-size - $percentage-font-size) / 2;
+      left: ($inset-size - $percentage-text-width) / 2;
+      line-height: 1;
+      transition: width $transition-length 3s;
+      overflow: hidden;
+      color: #8c8c8e;
+    }
+
+    .numbers {
+      margin-top: -$percentage-font-size;
+      transition: width $transition-length;
+    }
+  }
+}
+
+.go {
+}
+
+// about css
+.text-hover:hover .btn {
+  background-color: $primary;
+  transition: 0.55s all ease;
+  color: $white;
+}
+.about-secition {
+  ul {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    li {
+      list-style-type: none;
+      position: relative;
+      float: left;
+      width: 100%;
+      &.hoverafter {
+        &::after {
+          top: 40%;
+          transition: 0.55s all ease;
+        }
+        span {
+          opacity: 1;
+          transition: 0.55s all ease;
+          &::after {
+            transition: 0.55s all ease;
+          }
+        }
+      }
+      span {
+        opacity: 0;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 34%;
+          left: 48.7%;
+          height: 30px;
+          width: 30px;
+          border-radius: 50px;
+          background-color: $primary;
+          animation: puls 3s infinite;
+          transition: 0.55s all ease;
+        }
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        width: 2px;
+        background-color: #191923;
+        top: 0px;
+        right: 50%;
+        height: 100%;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        border: 2px solid $primary;
+        top: 45%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        height: 15px;
+        width: 15px;
+        border-radius: 50px;
+        background-color: $white;
+        transition: 0.55s all ease;
+      }
+      .card {
+        background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
+        padding: 20px;
+        max-width: 500px;
+        width: 500px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        border-radius: 0px;
+        color: $white;
+        font-size: 1rem;
+        float: left;
+        transition: 0.55s all ease;
+        &:hover {
+          transform: translateY(-10px) !important;
+          transition: 0.55s all ease;
+          .year {
+            box-shadow: 0px 1px 8px 3px $primary;
+            transition: 0.55s all ease;
+            color: #9e9ea5;
+          }
+          p::before {
+            opacity: 1;
+            transition: 0.55s all ease;
+          }
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          top: 39%;
+          right: -8px;
+          width: 15px;
+          height: 15px;
+          background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
+          transform: rotate(-45deg);
+        }
+        .heading {
+          h1 {
+            font-size: 1rem;
+            margin-bottom: 0px;
+          }
+          p {
+            font-size: 0.85rem;
+            color: #646466;
+            margin-bottom: 0px;
+            font-style: italic;
+          }
+        }
+        .year {
+          background-color: #20202a;
+          color: #646466;
+          min-width: 150px;
+          border-radius: 50px;
+          font-size: 0.85rem;
+          align-items: center;
+          justify-content: center;
+          display: flex;
+          height: 35px;
+          transition: 0.55s all ease;
+        }
+        i {
+          font-size: 0.85rem;
+        }
+        p {
+          font-size: 0.85rem;
+          font-style: italic;
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            top: 15%;
+            left: 0px;
+            width: 8px;
+            height: 8px;
+            background-color: $primary;
+            border-radius: 50px;
+            opacity: 0.5;
+            transition: 0.55s all ease;
+          }
+        }
+      }
+      &:nth-child(even) {
+        .card {
+          float: right;
+          &::after {
+            left: -8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// portfolio css
+.portfolio-section {
+  ul {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    li {
+      list-style-type: none;
+      position: relative;
+      float: left;
+      width: 100%;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 2px;
+        background-color: #191923;
+        top: 0px;
+        right: 50%;
+        height: 100%;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        width: 25%;
+        background-color: #ffc107;
+        top: 50%;
+        left: 12%;
+        transform: translate(50%, 50%);
+        height: 1px;
+      }
+      .project-section {
+        position: relative;
+        padding-right: 25%;
+        width: 50%;
+        float: left;
+        &:hover span::before {
+          display: block;
+        }
+        span {
+          &::after {
+            content: "";
+            position: absolute;
+            border: 2px solid $primary;
+            top: 50%;
+            right: 0%;
+            transform: translate(45%, -50%);
+            height: 15px;
+            width: 15px;
+            border-radius: 50px;
+            background-color: $white;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            top: 45%;
+            right: -14px;
+            height: 30px;
+            width: 30px;
+            border-radius: 50px;
+            background-color: $primary;
+            animation: puls 3s infinite;
+            transition: ease-in-out;
+            display: none;
+          }
+        }
+        .card {
+          border: 1px solid;
+          border-color: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
+          min-height: 250px;
+          position: relative;
+          z-index: 1;
+          cursor: pointer;
+          border-radius: 0px;
+          transition: 0.4s all ease-out;
+          overflow: hidden;
+          margin: 20px 0px;
+          max-height: 275px;
+          img {
+            transition: 0.55s ease-in-out;
+          }
+          .project-details {
+            position: absolute;
+            top: 40%;
+            bottom: 0px;
+            right: 0px;
+            width: 100%;
+            z-index: 99;
+            background: linear-gradient(
+              159deg,
+              rgba(57, 57, 71, 0.98) 0%,
+              rgba(66, 66, 80, 0.98) 100%
+            );
+            padding: 10px;
+            transition: 0.55s ease-in-out;
+            transform: translateY(100%);
+            h1 {
+              color: $white;
+              font-size: 1.5rem;
+            }
+            p {
+              font-size: 1rem;
+              color: $white;
+              margin-bottom: 6px;
+            }
+            a {
+              text-decoration: none;
+              color: $primary;
+            }
+          }
+          .project-view {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            transition: 0.55s ease-in-out;
+            transform: translateY(-150%);
+            background-color: linear-gradient(
+              159deg,
+              rgba(45, 45, 58, 0.88) 0%,
+              rgba(43, 43, 53, 0.88) 100%
+            );
+            border: none;
+            outline: none;
+            padding: 0px;
+            color: $primary;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            width: 35px;
+            height: 35px;
+          }
+          &:hover {
+            .project-details {
+              transform: translateY(0);
+            }
+            .project-view {
+              transform: translateY(0);
+            }
+            img {
+              transform: scale(0.8);
+              transition: 0.55s ease-in-out;
+            }
+          }
+        }
+      }
+      &:nth-child(even) {
+        float: right;
+        &::after {
+          left: 38%;
+        }
+        .project-section {
+          float: right;
+          padding-left: 25%;
+          padding-right: 0px;
+          span {
+            &::after {
+              left: -16px;
+            }
+            &::before {
+              left: -17px;
+            }
+          }
+        }
+        .project-details-slide {
+          padding-left: 0px;
+          padding-right: 20px;
+        }
+      }
+    }
+  }
+  .project-details-slide {
+    width: 50%;
+    float: right;
+    min-height: 250px;
+    padding-left: 20px;
+    transition: 0.55s all ease-in-out;
+    margin-top: 15px;
+  }
+}
+.h-250 {
+  height: 250px;
+  margin-bottom: 20px;
+  img {
+    height: 240px !important;
+  }
+
+  .slick-list {
+    height: 250px;
+  }
+  .slick-track {
+    height: 250px;
+  }
+}
+@keyframes puls {
+  0% {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
 // footer css
 footer {
-  background-color: $dark-gray;
-  color: $border-color;
-  font-size: 0.7rem;
+  background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
+  color: #8c8c8e;
+  font-size: 0.825rem;
 }
 
 .center {
@@ -313,7 +764,7 @@ footer {
     }
   }
 
-  ~.tab-content>.active {
+  ~ .tab-content > .active {
     color: $dark-gray !important;
 
     ul {
@@ -333,8 +784,7 @@ td {
 .ant-table-content {
   box-shadow: 2px 2px 4px 2px rgba(57, 76, 96, 0.15);
 
-
-  @media screen and (max-width:992px) {
+  @media screen and (max-width: 992px) {
     overflow-x: scroll;
 
     .ant-table-thead tr th:nth-child(1) {
@@ -374,7 +824,6 @@ td {
 }
 
 @keyframes mulShdSpin {
-
   0%,
   100% {
     box-shadow: 0em -2.6em 0em 0em #ffffff,
@@ -533,21 +982,29 @@ td {
 }
 
 .downloadbtn {
-  width: max-content;
-  position: absolute;
-  top: 5px;
-  right: 16px;
+  padding: 5px 10px;
+  border-radius: 50px;
+  margin-left: 5px;
+  // width: max-content;
+  // position: absolute;
+  // top: 5px;
+  // right: 16px;
 
-  @media only screen and (max-width:768px) {
-    top: unset;
-    bottom: 5px;
-  }
+  // @media only screen and (max-width: 768px) {
+  //   top: unset;
+  //   bottom: 5px;
+  // }
 
   .downloadbtnicon {
     position: relative;
     animation: downloadbtnicon 3s infinite;
   }
 }
-.dark-theme-bg{
+.dark-theme-bg {
   background-color: $dark-gray-theme;
+}
+
+::selection {
+  background-color: $primary;
+  color: $white;
 }

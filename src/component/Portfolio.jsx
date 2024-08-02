@@ -127,10 +127,10 @@ const Portfolio = () => {
 
   return (
     <>
-      <div className="container pb-4">
+      <div className="container">
         <div className="row">
           <div className="col-12 d-flex justify-content-center">
-            <button className='btn btn-outline-primary border-top-0 rounded-top-0'>Latest Works</button>
+            <button className='btn btn-outline-primary'>Latest Works</button>
           </div>
           <div className="col-12">
             <div className='portfolio-section'>

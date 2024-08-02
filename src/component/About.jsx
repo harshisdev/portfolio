@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import { Helmet } from "react-helmet";
-import { Name } from "../constant";
-
 
 const About = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -149,10 +146,7 @@ const About = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{Name} - About</title>
-      </Helmet>
-      <div className="container pb-4">
+      <div className="container">
         <div className="row mt-4 text-hover">
           <div className="col-12 mb-4 d-flex justify-content-center"><button className='btn btn-outline-primary' data-aos="zoom-in-down">Technical skills</button>
           </div>
@@ -160,7 +154,7 @@ const About = () => {
             Skills.map((items, index) => (
               <div data-aos={items.animation} class="col-2 mb-3" key={index}>
                 <div className="w-100 d-flex justify-content-center">
-                  <div className={`eb-progress-bar ${hoverClass === true ? "animation" : '' }`} style={{ '--value': items.percentage }}>
+                  <div className={`eb-progress-bar ${hoverClass === true ? "animation" : ''}`} style={{ '--value': items.percentage }}>
                     <progress id={items.skill} min="0" max="100" value={items.percentage}></progress>
                   </div>
                 </div>

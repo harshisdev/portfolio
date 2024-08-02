@@ -10,7 +10,7 @@ const Footer = () => {
               © 2023 - {(new Date().getFullYear())}. All Right Reserved
             </div>
             <div className="col-6 d-flex justify-content-end">
-              Made with 💛 by Harsh
+              Made with 💛 Harsh
             </div>
           </div>
         </div>

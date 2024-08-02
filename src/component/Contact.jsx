@@ -120,12 +120,9 @@ const Contact = () => {
 
     return (
         <>
-            <Helmet>
-                <title>Get in touch</title>
-            </Helmet>
-            <Container className="min-height min-height-pagination">
+            <Container className="pb-4">
                 <Row>
-                    <Col xl={12}><h1 className="fs-6 text-center mb-0 pt-3 pb-4">Get in touch</h1></Col>
+                    <Col xl={12} className="col-12 d-flex justify-content-center mb-4"><button class="btn btn-outline-primary">Get in touch</button></Col>
                     {/* Contact information section */}
                     <Col className="col-12 col-sm-6 order-2 order-sm-1 pt-4 pt-sm-0">
                         {/* Contact card */}

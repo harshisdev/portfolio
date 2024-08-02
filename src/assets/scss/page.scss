@@ -289,6 +289,9 @@ table {
       align-items: center;
       justify-content: center;
     }
+    &:hover > .eb-progress-bar-title h2 {
+      font-size: 1rem;
+    }
   }
 
   &-title {
@@ -904,11 +907,12 @@ td {
 .contact__us {
   .card {
     cursor: pointer;
-
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0px 0px 7px 2px #ccc;
     &:hover {
       background-color: $primary;
       transition: 0.3s all ease-in-out;
-
       a svg {
         color: $white;
         transition: 0.3s all ease-in-out;

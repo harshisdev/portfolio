@@ -15,13 +15,13 @@ function App() {
   useEffect(() => {
     Aos.init({
       duration: 2000,
-      delay: 100,
+      offset: 0,
     });
   }, [])
   return (
     <>
       <BrowserRouter>
-        <NavaBar />
+        {/* <NavaBar /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -29,7 +29,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Erorr />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
         <Analytics />
         <SpeedInsights />
       </BrowserRouter>

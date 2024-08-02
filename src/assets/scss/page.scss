@@ -240,105 +240,80 @@ table {
 }
 
 // skills css
-@mixin center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+@property --eb-progress-value {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 0;
 }
 
-$sign-color: #355691;
-$darker-sign-color: darken($sign-color, 20%);
-$circle-bg: rgba(141, 166, 179, 0.4);
-$circle-size: 120px;
-$transition-length: 2s;
-$inset-size: 85px;
-$inset-color: #fbfbfb;
-$shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
-$increment: 180deg/100;
-$percentage-color: #455fae;
-$percentage-font-size: 22px;
-$percentage-text-width: 44px;
-$space-between: 25px;
+@keyframes eb-progress {
+  to {
+    --eb-progress-value: var(--value);
+  }
+}
 
-$values: 90, 80, 70, 70, 70, 80;
-$skill-count: 6;
-.skill-progress {
-  display: inline-block;
-  background-color: $circle-bg;
-  width: $circle-size;
-  height: $circle-size;
+.eb-progress-bar {
+  --secondary-color: #dfe0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  font-size: 1rem;
+  color: $primary;
+  background: radial-gradient(closest-side, #ccc 85%, transparent 80% 100%),
+    conic-gradient(
+      $primary calc(var(--eb-progress-value) * 1%),
+      var(--secondary-color) 0
+    );
   border-radius: 50%;
-  margin-right: $space-between;
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  .circle {
-    .mask {
-      width: $circle-size;
-      height: $circle-size;
-      position: absolute;
-      border-radius: 50%;
-      transition: -webkit-transform $transition-length;
-      transition: -ms-transform $transition-length;
-      transition: transform $transition-length;
-      -webkit-backface-visibility: hidden;
-      clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
-
-      &:before {
-        @extend .mask;
-        display: block;
-        content: "";
-        clip: rect(0px, $circle-size/2, $circle-size, 0px);
-        background-color: $primary;
-      }
+  &.animation {
+    &,
+    &::before {
+      animation: eb-progress 2s 1 forwards;
     }
-
-    &:before {
-      content: "";
-      display: block;
-      width: $circle-size;
-      height: $circle-size;
-      position: absolute;
+    &::before {
+      counter-reset: percentage var(--eb-progress-value);
+      content: counter(percentage) "%";
+      font-weight: 500;
+      font-size: 1rem;
+      color: #9e9e9e;
+      background: $white;
+      padding: 20px 15px;
       border-radius: 50%;
-      box-shadow: $shadow inset;
+      z-index: 1;
+      position: relative;
+      width: 68px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 
-  .inset {
-    width: $inset-size;
-    height: $inset-size;
-    position: absolute;
-    margin-left: ($circle-size - $inset-size)/2;
-    margin-top: ($circle-size - $inset-size)/2;
-    background-color: $inset-color;
-    border-radius: 50%;
-    box-shadow: $shadow;
+  &-title {
+    text-align: center;
+    color: $black;
+    font-size: 0.85rem;
+    width: 100%;
+  }
 
-    &:before {
-      content: attr(data-number);
-      display: block;
-      width: $percentage-text-width;
-      height: $percentage-font-size;
-      position: absolute;
-      top: ($inset-size - $percentage-font-size) / 2;
-      left: ($inset-size - $percentage-text-width) / 2;
-      line-height: 1;
-      transition: width $transition-length 3s;
-      overflow: hidden;
-      color: #8c8c8e;
-    }
-
-    .numbers {
-      margin-top: -$percentage-font-size;
-      transition: width $transition-length;
-    }
+  progress {
+    visibility: hidden;
+    width: 0;
+    height: 0;
   }
 }
 
-.go {
+h2 {
+  font-size: 0.85rem;
+  cursor: auto;
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 64px;
+  }
 }
 
 // about css
@@ -359,7 +334,7 @@ $skill-count: 6;
       width: 100%;
       &.hoverafter {
         &::after {
-          top: 40%;
+          top: 47%;
           transition: 0.55s all ease;
         }
         span {
@@ -375,8 +350,9 @@ $skill-count: 6;
         &::after {
           content: "";
           position: absolute;
-          top: 34%;
-          left: 48.7%;
+          top: 47%;
+          left: 48.5%;
+          transform: translate(50%, 50%);
           height: 30px;
           width: 30px;
           border-radius: 50px;
@@ -398,9 +374,9 @@ $skill-count: 6;
         content: "";
         position: absolute;
         border: 2px solid $primary;
-        top: 45%;
+        top: 49%;
         right: 50%;
-        transform: translate(50%, -50%);
+        transform: translate(50%, 50%);
         height: 15px;
         width: 15px;
         border-radius: 50px;
@@ -419,6 +395,8 @@ $skill-count: 6;
         font-size: 1rem;
         float: left;
         transition: 0.55s all ease;
+        position: relative;
+        border-radius: 15px;
         &:hover {
           transform: translateY(-10px) !important;
           transition: 0.55s all ease;
@@ -435,7 +413,7 @@ $skill-count: 6;
         &::after {
           content: "";
           position: absolute;
-          top: 39%;
+          top: 50%;
           right: -8px;
           width: 15px;
           height: 15px;
@@ -594,6 +572,9 @@ $skill-count: 6;
             padding: 10px;
             transition: 0.55s ease-in-out;
             transform: translateY(100%);
+            &:first-child {
+              margin-top: 10px;
+            }
             h1 {
               color: $white;
               font-size: 1.5rem;

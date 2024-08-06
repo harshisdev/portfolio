@@ -1,4 +1,11 @@
 import React, { useState } from "react";
+import AdvancedReact from '../assets/images/certification/AdvancedReact.png';
+import ReactBasics from '../assets/images/certification/ReactBasics.png';
+import JavaScript from '../assets/images/certification/JavaScript.png';
+import HTMLCSS from '../assets/images/certification/HTMLCSS.png';
+import FrontEndDevelopment from '../assets/images/certification/FrontEndDevelopment.png';
+import VersionControle from '../assets/images/certification/VersionControl.png';
+
 
 const About = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -33,13 +40,13 @@ const About = () => {
       skill: "jQuery",
       percentage: 75,
       animation: "fade-down"
-    }
-    , {
+    },
+    {
       skill: "HTML5",
       percentage: 85,
       animation: "fade-left"
-    }
-    , {
+    },
+    {
       skill: "CSS3/Sass",
       percentage: 80,
       animation: "fade-right"
@@ -63,18 +70,18 @@ const About = () => {
 
   const experienceData = [
     {
-      company: "xxxxxx",
-      role: "xxxx",
-      duration: "Till Now",
+      company: "MyHealthcare Technologies Private Limited",
+      role: "Software Developer Frontend",
+      duration: "12 Aug 2022 to Till Now",
       description: [
         {
-          text: "Developed and maintained web applications using React.js, Node.js, and MongoDB."
+          text: "Developed and maintained web applications using React.js"
         },
         {
+          text: "Develop and execute unit,functional,integration testing of developed software components."
+        }
+        , {
           text: "Collaborated with cross-functional teams to deliver high-quality products."
-        },
-        {
-          text: "Implemented authentication and authorization mechanisms for secure access to web applications."
         }
       ],
       animation: "fade-right"
@@ -82,37 +89,47 @@ const About = () => {
   ];
   const CertificationData = [
     {
-      certificateName: "Meta",
-      certificateCourseName: "React.js",
-      certificateLink: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-      certificateImages: "xxxx",
-      certificateDate: "Till Now",
+      certificateCourseName: "Advanced React",
+      certificateLink: "https://www.coursera.org/account/accomplishments/certificate/4CUVK9G58MZV",
+      certificateImages: AdvancedReact,
+      certificateDate: "June 1, 2024",
       animation: "fade-right"
     },
     {
-      certificateName: "Meta",
-      certificateCourseName: "React.js",
-      certificateLink: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-      certificateImages: "xxxx",
-      certificateDate: "Till Now",
+      certificateCourseName: "React Basics",
+      certificateLink: "https://www.coursera.org/account/accomplishments/certificate/XC7NRRY8KLLU",
+      certificateImages: ReactBasics,
+      certificateDate: "May 27, 2024",
       animation: "fade-left"
     },
     {
-      certificateName: "Meta",
-      certificateCourseName: "React.js",
-      certificateLink: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-      certificateImages: "xxxx",
-      certificateDate: "Till Now",
+      certificateCourseName: "Programming with JavaScript",
+      certificateLink: "https://www.coursera.org/account/accomplishments/certificate/N8QVVSD49LGR",
+      certificateImages: JavaScript,
+      certificateDate: "May 22, 2024",
       animation: "fade-right"
     },
     {
-      certificateName: "Meta",
-      certificateCourseName: "React.js",
-      certificateLink: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-      certificateImages: "xxxx",
-      certificateDate: "Till Now",
+      certificateCourseName: "HTML and CSS in depth",
+      certificateLink: "https://www.coursera.org/account/accomplishments/certificate/2CWZCCX26GCM",
+      certificateImages: HTMLCSS,
+      certificateDate: "May 19, 2024",
       animation: "fade-left"
     },
+    {
+      certificateCourseName: "Introduction to Front-End Development",
+      certificateLink: "https://www.coursera.org/account/accomplishments/certificate/UCWPJU348VDV",
+      certificateImages: FrontEndDevelopment,
+      certificateDate: "May 12, 2024",
+      animation: "fade-left"
+    },
+    {
+      certificateCourseName: "Version Control",
+      certificateLink: "https://www.coursera.org/account/accomplishments/certificate/GL2XCDDAUXTA",
+      certificateImages: VersionControle,
+      certificateDate: "June 1, 2024",
+      animation: "fade-left"
+    }
   ];
 
   const EducationData = [
@@ -148,7 +165,8 @@ const About = () => {
     <>
       <div className="container">
         <div className="row mt-4 text-hover">
-          <div className="col-12 mb-4 d-flex justify-content-center"><button className='btn btn-outline-primary' data-aos="zoom-in-down">Technical skills</button>
+          <div className="col-12 mb-4 d-flex justify-content-center">
+            <h1 className="fs-6" data-aos="zoom-in">Technical skills</h1>
           </div>
           {
             Skills.map((items, index) => (
@@ -168,7 +186,8 @@ const About = () => {
         <div className="row text-hover justify-content-center">
           <div className="col-12">
             <div className='about-secition'>
-              <div className="d-flex justify-content-center"><button className='btn btn-outline-primary ' data-aos="zoom-in">Experiance</button>
+              <div className="d-flex justify-content-center">
+                <h1 className="fs-6" data-aos="zoom-in">Experiance</h1>
               </div>
               <ul>
                 {experienceData.map((experience, index) => (
@@ -202,7 +221,8 @@ const About = () => {
         <div className="row text-hover justify-content-center">
           <div className="col-12">
             <div className='about-secition'>
-              <div className="d-flex justify-content-center"><button className='btn btn-outline-primary ' data-aos="zoom-in">Certification</button>
+              <div className="d-flex justify-content-center">
+                <h1 className="fs-6" data-aos="zoom-in">Certification</h1>
               </div>
               <ul>
                 {CertificationData.map((certifiate, index) => (
@@ -212,15 +232,14 @@ const About = () => {
                       onMouseLeave={() => setHoveredIndex(null)} data-aos={certifiate.animation} className="card">
                       <div className="d-flex justify-content-between">
                         <div className="heading">
-                          <h1>{certifiate.certificateCourseName}</h1>
-                          <i>{certifiate.certificateName}</i>
+                          <h1>{certifiate.certificateCourseName}, <i>Meta</i></h1>
                         </div>
                         <div className="year">
                           {certifiate.certificateDate}
                         </div>
                       </div>
-                      <div style={{ height: "350px" }}>
-                        <img className="img-fluid" src={certifiate.certificateImages} alt={certifiate.certificateCourseName} />
+                      <div className="d-flex justify-content-center py-3" style={{ height: "350px" }}>
+                        <img style={{ height: "100%", width: "auto" }} src={certifiate.certificateImages} alt={certifiate.certificateCourseName} />
                       </div>
                       <div className="d-flex justify-content-center">
                         <a href={certifiate.certificateLink} target="_blank" className="btn btn-primary mt-2">View Certificate</a>
@@ -235,7 +254,8 @@ const About = () => {
         <div className="row text-hover justify-content-center">
           <div className="col-12">
             <div className='about-secition'>
-              <div className="d-flex justify-content-center"><button className='btn btn-outline-primary ' data-aos="zoom-in">Education</button>
+              <div className="d-flex justify-content-center">
+                <h1 className="fs-6" data-aos="zoom-in">Education</h1>
               </div>
               <ul>
                 {EducationData.map((education, index) => (

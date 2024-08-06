@@ -320,10 +320,26 @@ h2 {
 }
 
 // about css
-.text-hover:hover .btn {
-  background-color: $primary;
-  transition: 0.55s all ease;
-  color: $white;
+.text-hover h1 {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 25%;
+    bottom: -10px;
+    width: 50%;
+    height: 2px;
+    background-color: $primary;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    left: 16%;
+    bottom: -18px;
+    width: 70%;
+    height: 2px;
+    background-color: $primary;
+  }
 }
 .about-secition {
   ul {
@@ -369,15 +385,15 @@ h2 {
         position: absolute;
         width: 2px;
         background-color: #191923;
-        top: 0px;
+        top: 10px;
         right: 50%;
-        height: 100%;
+        height: 85%;
       }
       &::after {
         content: "";
         position: absolute;
         border: 2px solid $primary;
-        top: 49%;
+        top: 47%;
         right: 50%;
         transform: translate(50%, 50%);
         height: 15px;
@@ -387,24 +403,28 @@ h2 {
         transition: 0.55s all ease;
       }
       .card {
-        background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
+        // background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
+        background: $white;
         padding: 20px;
         max-width: 500px;
         width: 500px;
         margin-top: 30px;
         margin-bottom: 30px;
         border-radius: 0px;
-        color: $white;
+        color: $black;
         font-size: 1rem;
         float: left;
         transition: 0.55s all ease;
         position: relative;
         border-radius: 15px;
+        border: none;
+        box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.0509803922);
+        z-index: 1;
         &:hover {
           transform: translateY(-10px) !important;
           transition: 0.55s all ease;
           .year {
-            box-shadow: 0px 1px 8px 3px $primary;
+            box-shadow: 0px 0px 10px -1px $primary;
             transition: 0.55s all ease;
             color: #9e9ea5;
           }
@@ -417,16 +437,22 @@ h2 {
           content: "";
           position: absolute;
           top: 50%;
-          right: -8px;
-          width: 15px;
-          height: 15px;
-          background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
-          transform: rotate(-45deg);
+          right: -60px;
+          width: 100px;
+          height: 1px;
+          z-index: -2;
+          background-color: $primary;
+          // background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
+          // transform: rotate(-45deg);
         }
         .heading {
           h1 {
-            font-size: 1rem;
+            font-size: 0.85rem;
             margin-bottom: 0px;
+            &::after,
+            &::before {
+              content: unset;
+            }
           }
           p {
             font-size: 0.85rem;
@@ -436,9 +462,10 @@ h2 {
           }
         }
         .year {
-          background-color: #20202a;
+          // background-color: #20202a;
+          background-color: transparent;
           color: #646466;
-          min-width: 150px;
+          min-width: 180px;
           border-radius: 50px;
           font-size: 0.85rem;
           align-items: center;
@@ -446,6 +473,7 @@ h2 {
           display: flex;
           height: 35px;
           transition: 0.55s all ease;
+          box-shadow: 0px 0px 10px 1px #ccc;
         }
         i {
           font-size: 0.85rem;

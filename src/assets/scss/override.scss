@@ -4,7 +4,6 @@
   width: 8px;
 }
 
-
 ::-webkit-scrollbar:horizontal {
   height: 0px !important;
 }
@@ -32,12 +31,22 @@ html {
   ul {
     padding-left: 20px !important;
   }
-
+  .nav-item {
+    &:first-child {
+      margin-left: 0px;
+    }
+    margin-left: 20px;
+  }
   .nav-link {
     color: $nav-color !important;
+    border-radius: 0px;
+    border-radius: 0px;
+    padding: 0px;
 
     &.active {
       color: $primary !important;
+      background-color: transparent !important;
+      border-bottom: 1px solid;
     }
   }
 }
@@ -140,22 +149,27 @@ html {
   }
 }
 
-.form-floating>.form-control:focus~label,
-.form-floating>.form-control:not(:placeholder-shown)~label {
-  transform: scale(.85) translateY(-1.3rem) translateX(0rem) !important;
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+  transform: scale(0.85) translateY(-1.3rem) translateX(0rem) !important;
   color: $danger;
   transition: 0.3s all ease-out;
-  background-image: linear-gradient(transparent 40%, white 40%, white 60%, transparent 60%);
+  background-image: linear-gradient(
+    transparent 40%,
+    white 40%,
+    white 60%,
+    transparent 60%
+  );
 }
 
-.selected>.form-control:not(:placeholder-shown)~label {
-  transform: scale(.85) translateY(0.2rem) translateX(0rem) !important;
+.selected > .form-control:not(:placeholder-shown) ~ label {
+  transform: scale(0.85) translateY(0.2rem) translateX(0rem) !important;
   color: $dark-gray;
   font-size: 1rem !important;
 }
 
-.form-floating>.form-control:focus,
-.form-floating>.form-control:not(:placeholder-shown) {
+.form-floating > .form-control:focus,
+.form-floating > .form-control:not(:placeholder-shown) {
   padding-top: 0px;
   padding-bottom: 0px;
 }
@@ -183,7 +197,6 @@ html {
 }
 
 @keyframes blink-caret {
-
   to {
     border-color: transparent;
   }

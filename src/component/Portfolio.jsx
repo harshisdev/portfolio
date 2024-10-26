@@ -128,9 +128,11 @@ const Portfolio = () => {
   return (
     <>
       <div className="container" id='portfolio'>
-        <div className="row">
+        <div className="row text-hover">
           <div className="col-12 d-flex justify-content-center row-hover">
-            <h1>Latest Works</h1>
+            <div className="about-secition">
+              <h1 className='fs-6' data-aos="zoom-in">Latest Works</h1>
+            </div>
           </div>
           <div className="col-12">
             <div className='portfolio-section'>
@@ -139,7 +141,7 @@ const Portfolio = () => {
                   <li key={item.id}>
                     <div className='project-section'>
                       <span></span>
-                      <div className='card' data-aos={item.animation}>
+                      <div className='card d-flex' data-aos={item.animation}>
                         <img src={item.homeimages} alt={item.title} />
                         <div className='project-details'>
                           <h1>{item.title}</h1>

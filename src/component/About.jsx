@@ -121,7 +121,7 @@ const About = () => {
       certificateLink: "https://www.coursera.org/account/accomplishments/certificate/UCWPJU348VDV",
       certificateImages: FrontEndDevelopment,
       certificateDate: "May 12, 2024",
-      animation: "fade-left"
+      animation: "fade-right"
     },
     {
       certificateCourseName: "Version Control",
@@ -168,20 +168,21 @@ const About = () => {
           <div className="col-12 mb-4 d-flex justify-content-center">
             <h1 className="fs-6" data-aos="zoom-in">Technical skills</h1>
           </div>
-          {
-            Skills.map((items, index) => (
-              <div data-aos={items.animation} class="col-2 mb-3" key={index}>
-                <div className="w-100 d-flex justify-content-center">
-                  <div className={`eb-progress-bar ${hoverClass === true ? "animation" : ''}`} style={{ '--value': items.percentage }}>
-                    <progress id={items.skill} min="0" max="100" value={items.percentage}></progress>
+          <div className="col-12 d-flex">
+            <div className="row justify-content-between">
+              {
+                Skills.map((items, index) => (
+                  <div data-aos={items.animation} className="col-auto mb-3" key={index}>
+                    <div className={`eb-progress-bar ${hoverClass === true ? "animation" : ''}`} style={{ '--value': items.percentage }}>
+                    </div>
+                    <label htmlFor={items.skill} className="eb-progress-bar-title">
+                      <h2>{items.skill}</h2>
+                    </label>
                   </div>
-                </div>
-                <label htmlFor={items.skill} className="eb-progress-bar-title">
-                  <h2>{items.skill}</h2>
-                </label>
-              </div>
-            ))
-          }
+                ))
+              }
+            </div>
+          </div>
         </div>
         <div className="row text-hover justify-content-center">
           <div className="col-12">
@@ -242,7 +243,7 @@ const About = () => {
                         <img style={{ height: "100%", width: "auto" }} src={certifiate.certificateImages} alt={certifiate.certificateCourseName} />
                       </div>
                       <div className="d-flex justify-content-center">
-                        <a href={certifiate.certificateLink} target="_blank" className="btn btn-primary mt-2">View Certificate</a>
+                        <a href={certifiate.certificateLink} target="_blank" className="btn btn-outline-primary px-4 rounded-pill mt-2">View Certificate</a>
                       </div>
                     </div>
                   </li>

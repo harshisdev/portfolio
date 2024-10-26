@@ -351,6 +351,12 @@ h2 {
       position: relative;
       float: left;
       width: 100%;
+      &:first-child {
+        margin-top: 10px;
+      }
+      &:last-child {
+        margin-bottom: 20px;
+      }
       &.hoverafter {
         &::after {
           top: 47%;
@@ -364,22 +370,22 @@ h2 {
           }
         }
       }
-      span {
-        opacity: 0;
-        &::after {
-          content: "";
-          position: absolute;
-          top: 47%;
-          left: 48.5%;
-          transform: translate(50%, 50%);
-          height: 30px;
-          width: 30px;
-          border-radius: 50px;
-          background-color: $primary;
-          animation: puls 3s infinite;
-          transition: 0.55s all ease;
-        }
-      }
+      // span {
+      //   opacity: 0;
+      //   &::after {
+      //     content: "";
+      //     position: absolute;
+      //     top: 47%;
+      //     left: 48.5%;
+      //     transform: translate(50%, 50%);
+      //     height: 30px;
+      //     width: 30px;
+      //     border-radius: 50px;
+      //     background-color: $primary;
+      //     animation: puls 3s infinite;
+      //     transition: 0.55s all ease;
+      //   }
+      // }
       &::before {
         content: "";
         position: absolute;
@@ -387,21 +393,21 @@ h2 {
         background-color: #191923;
         top: 10px;
         right: 50%;
-        height: 85%;
+        height: 100%;
       }
-      &::after {
-        content: "";
-        position: absolute;
-        border: 2px solid $primary;
-        top: 47%;
-        right: 50%;
-        transform: translate(50%, 50%);
-        height: 15px;
-        width: 15px;
-        border-radius: 50px;
-        background-color: $white;
-        transition: 0.55s all ease;
-      }
+      // &::after {
+      //   content: "";
+      //   position: absolute;
+      //   border: 2px solid $primary;
+      //   top: 47%;
+      //   right: 50%;
+      //   transform: translate(50%, 50%);
+      //   height: 15px;
+      //   width: 15px;
+      //   border-radius: 50px;
+      //   background-color: $white;
+      //   transition: 0.55s all ease;
+      // }
       .card {
         // background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
         background: $white;
@@ -433,18 +439,18 @@ h2 {
             transition: 0.55s all ease;
           }
         }
-        &::after {
-          content: "";
-          position: absolute;
-          top: 50%;
-          right: -60px;
-          width: 100px;
-          height: 1px;
-          z-index: -2;
-          background-color: $primary;
-          // background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
-          // transform: rotate(-45deg);
-        }
+        // &::after {
+        //   content: "";
+        //   position: absolute;
+        //   top: 50%;
+        //   right: -60px;
+        //   width: 100px;
+        //   height: 1px;
+        //   z-index: -2;
+        //   background-color: $primary;
+        //   // background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
+        //   // transform: rotate(-45deg);
+        // }
         .heading {
           h1 {
             font-size: 0.85rem;
@@ -519,6 +525,15 @@ h2 {
       position: relative;
       float: left;
       width: 100%;
+      &:first-child {
+        margin-top: 20px;
+      }
+      &:last-child {
+        margin-bottom: 10px;
+      }
+      &:nth-child(odd) .project-details {
+        padding-left: 15px;
+      }
       &::before {
         content: "";
         position: absolute;
@@ -573,6 +588,17 @@ h2 {
             display: none;
           }
         }
+        .card{
+          padding: 20px;
+        }
+        .project-details h1 {
+          &::before {
+            content: unset;
+          }
+          &::after {
+            content: unset;
+          }
+        }
         .card {
           border: 1px solid;
           border-color: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
@@ -608,10 +634,10 @@ h2 {
             }
             h1 {
               color: $white;
-              font-size: 1.5rem;
+              font-size: 1.2rem;
             }
             p {
-              font-size: 1rem;
+              font-size: 0.85rem;
               color: $white;
               margin-bottom: 6px;
             }
@@ -1020,4 +1046,8 @@ td {
 ::selection {
   background-color: $primary;
   color: $white;
+}
+.project-details {
+  width: 50%;
+  float: right;
 }

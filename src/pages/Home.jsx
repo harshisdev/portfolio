@@ -3,8 +3,9 @@ import { Helmet } from "react-helmet";
 import NavaBar from "../component/NavaBar";
 import About from "../component/About";
 import Portfolio from "../component/Portfolio";
-import Contact from "../component/Contact";
 import Footer from "../component/Footer";
+import Contact from "../component/Contact";
+import Banner from "../component/Banner";
 
 const Home = () => {
   useEffect(() => {
@@ -21,6 +22,7 @@ const Home = () => {
       </Helmet>
       <NavaBar />
       <div data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-offset="0" tabIndex="0">
+        <Banner />
         <About />
         <Portfolio />
         <Contact />

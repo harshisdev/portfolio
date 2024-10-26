@@ -5,6 +5,7 @@ import { Drawer } from "antd";
 import { VscMenu } from "react-icons/vsc";
 import { MdOutlineFileDownload } from "react-icons/md";
 import Resume from "../assets/images/Harsh-CV.pdf";
+import harshLogo from '../assets/images/harsh-logo.png'
 
 
 const NavaBar = () => {
@@ -70,20 +71,19 @@ const NavaBar = () => {
   return (
     <>
       <Navbar className="navbar__custom">
-        <Container className="d-block">
-          <Row className="justify-content-between">
-            <div className="col-auto d-flex align-items-center">
+        <div className="container d-block">
+          <Row className="w-100">
+            <div className="col-2 d-flex align-items-center">
               <Link>
-                <img src="" alt="Harsh Kumar" className="rounded-circle" />
+                <img src={harshLogo} alt="Harsh Kumar" className="rounded-circle" />
               </Link>
             </div>
             {/* desktop view nav bar */}
-            <Col className="col-auto d-none d-sm-flex align-items-center">
-              <nav id="navbar-example" className="navbar navbar-light bg-light fixed-top">
-                <a className="navbar-brand" href="#">Navbar</a>
+            <Col>
+              <nav id="navbar-example" className="navbar justify-content-center">
                 <ul className="nav nav-pills">
                   <li className="nav-item">
-                    <a className="nav-link" href="#home">Home</a>
+                    <a className="nav-link active" href="#home">Home</a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link" href="#about">About</a>
@@ -91,20 +91,21 @@ const NavaBar = () => {
                   <li className="nav-item">
                     <a className="nav-link" href="#portfolio">Portfolio</a>
                   </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#contact">Contact</a>
+                  </li>
                 </ul>
               </nav>
             </Col>
-            <Col
-              className="col-auto align-items-center d-none d-sm-flex"
-            >
-              <Button className="downloadbtn" onClick={downloadResume} ><span className="d-none d-sm-inline">Download CV</span> <span className="downloadbtnicon"><MdOutlineFileDownload /></span>
+            <Col className="col-auto d-flex align-items-center">
+              <Button className="rounded-pill px-4" onClick={downloadResume} ><span className="d-none d-sm-inline">Download CV</span> <span className="downloadbtnicon"><MdOutlineFileDownload /></span>
               </Button>
             </Col>
             <Col className="col-auto d-flex align-items-center d-flex d-sm-none">
               <VscMenu onClick={showDrawer} className="fs-2" />
             </Col>
           </Row>
-        </Container>
+        </div>
       </Navbar>
       {/* mobile view nav bar */}
       <Drawer

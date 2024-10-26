@@ -29,12 +29,12 @@ const About = () => {
     {
       skill: "Restfull API",
       percentage: 75,
-      animation: "fade-down-right"
+      animation: "fade-up"
     },
     {
       skill: "JavaScript",
       percentage: 80,
-      animation: "fade-down-left"
+      animation: "zoom-in"
     },
     {
       skill: "jQuery",
@@ -44,12 +44,12 @@ const About = () => {
     {
       skill: "HTML5",
       percentage: 85,
-      animation: "fade-left"
+      animation: "fade-up"
     },
     {
       skill: "CSS3/Sass",
       percentage: 80,
-      animation: "fade-right"
+      animation: "fade-down"
     },
     {
       skill: "Bootstrap5",
@@ -59,12 +59,12 @@ const About = () => {
     {
       skill: "Tailwind CSS",
       percentage: 80,
-      animation: "fade-up"
+      animation: "zoom-in"
     },
     {
       skill: "Git/Gitlab",
       percentage: 75,
-      animation: "fade-up-right"
+      animation: "fade-left"
     }
   ];
 

@@ -72,7 +72,7 @@ const NavaBar = () => {
     <>
       <Navbar className="navbar__custom">
         <div className="container d-block">
-          <Row className="w-100">
+          <Row>
             <div className="col-2 d-flex align-items-center">
               <Link>
                 <img src={harshLogo} alt="Harsh Kumar" className="rounded-circle" />
@@ -98,7 +98,7 @@ const NavaBar = () => {
               </nav>
             </Col>
             <Col className="col-auto d-flex align-items-center">
-              <Button className="rounded-pill px-4" onClick={downloadResume} ><span className="d-none d-sm-inline">Download CV</span> <span className="downloadbtnicon"><MdOutlineFileDownload /></span>
+              <Button className="rounded-pill px-4 downloadbtn" onClick={downloadResume} ><span className="d-none d-sm-inline">Download CV</span> <span className="downloadbtnicon"><MdOutlineFileDownload /></span>
               </Button>
             </Col>
             <Col className="col-auto d-flex align-items-center d-flex d-sm-none">

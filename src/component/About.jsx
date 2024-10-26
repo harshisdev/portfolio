@@ -163,7 +163,7 @@ const About = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="container" id="about">
         <div className="row mt-4 text-hover">
           <div className="col-12 mb-4 d-flex justify-content-center">
             <h1 className="fs-6" data-aos="zoom-in">Technical skills</h1>

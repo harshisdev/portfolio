@@ -120,9 +120,9 @@ const Contact = () => {
 
     return (
         <>
-            <Container className="pb-4">
+            <Container className="pb-4" id="contact">
                 <Row>
-                    <Col xl={12} className="col-12 d-flex justify-content-center mb-4"><button class="btn btn-outline-primary">Get in touch</button></Col>
+                    <Col xl={12} className="col-12 d-flex justify-content-center mb-4"><button className="btn btn-outline-primary">Get in touch</button></Col>
                     {/* Contact information section */}
                     <Col className="col-12 col-sm-6 order-2 order-sm-1 pt-4 pt-sm-0">
                         {/* Contact card */}

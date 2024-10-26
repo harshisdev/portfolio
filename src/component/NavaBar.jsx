@@ -77,6 +77,23 @@ const NavaBar = () => {
                 <img src="" alt="Harsh Kumar" className="rounded-circle" />
               </Link>
             </div>
+            {/* desktop view nav bar */}
+            <Col className="col-auto d-none d-sm-flex align-items-center">
+              <nav id="navbar-example" className="navbar navbar-light bg-light fixed-top">
+                <a className="navbar-brand" href="#">Navbar</a>
+                <ul className="nav nav-pills">
+                  <li className="nav-item">
+                    <a className="nav-link" href="#home">Home</a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#about">About</a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#portfolio">Portfolio</a>
+                  </li>
+                </ul>
+              </nav>
+            </Col>
             <Col
               className="col-auto align-items-center d-none d-sm-flex"
             >

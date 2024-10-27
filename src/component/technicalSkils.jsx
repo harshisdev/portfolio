@@ -34,22 +34,22 @@ const TechnicalSkils = () => {
     {
       skill: "JavaScript",
       percentage: 80,
-      animation: "zoom-in"
+      animation: "fade-down"
     },
     {
       skill: "jQuery",
       percentage: 75,
-      animation: "fade-down"
+      animation: "fade-up"
     },
     {
       skill: "HTML5",
       percentage: 95,
-      animation: "fade-up"
+      animation: "fade-down"
     },
     {
       skill: "CSS3/Sass/Less",
       percentage: 90,
-      animation: "fade-down"
+      animation: "zoom-in"
     },
     {
       skill: "Bootstrap5",

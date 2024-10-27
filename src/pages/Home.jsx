@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import NavaBar from "../component/NavaBar";
-import About from "../component/About";
 import Portfolio from "../component/Portfolio";
 import Footer from "../component/Footer";
 import Contact from "../component/Contact";
 import Banner from "../component/Banner";
+import TechnicalSkils from "../component/technicalSkils";
+import ScrollToTop from "../component/scrollTop";
 
 const Home = () => {
   useEffect(() => {
@@ -23,9 +24,10 @@ const Home = () => {
       <NavaBar />
       <div data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-offset="0" tabIndex="0">
         <Banner />
-        <About />
+        <TechnicalSkils />
         <Portfolio />
         <Contact />
+        <ScrollToTop />
       </div>
       <Footer />
     </>

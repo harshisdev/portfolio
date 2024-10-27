@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useEffect, useState } from 'react';
 import { Button, Col, Container, Navbar, Row } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import { Drawer } from "antd";
@@ -12,6 +12,22 @@ const NavaBar = () => {
   // const [isDarkTheme, setIsDarkTheme] = useState(
   //   localStorage.getItem('isDarkTheme') === 'true'
   // );
+  const [sticky, setSticky] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      setSticky(true);
+    } else {
+      setSticky(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const downloadResume = () => {
     const link = document.createElement('a');
@@ -70,7 +86,7 @@ const NavaBar = () => {
 
   return (
     <>
-      <Navbar className="navbar__custom">
+      <Navbar className={`navbar__custom ${sticky === true ? "nav-sticky" : ''}`}>
         <div className="container d-block">
           <Row>
             <div className="col-2 d-flex align-items-center">
@@ -79,8 +95,8 @@ const NavaBar = () => {
               </Link>
             </div>
             {/* desktop view nav bar */}
-            <Col>
-              <nav id="navbar-example" className="navbar justify-content-center">
+            <Col className='d-flex justify-content-center'>
+              <nav id="navbar-example" className="navbar">
                 <ul className="nav nav-pills">
                   <li className="nav-item">
                     <a className="nav-link active" href="#home">Home</a>

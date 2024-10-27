@@ -7,17 +7,17 @@ import FrontEndDevelopment from '../assets/images/certification/FrontEndDevelopm
 import VersionControle from '../assets/images/certification/VersionControl.png';
 
 
-const About = () => {
+const TechnicalSkils = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [hoverClass, setHoverClass] = useState(false);
 
   setTimeout(() => {
     setHoverClass(true)
-  }, 1500);
+  }, 1000);
 
   const Skills = [
     {
-      skill: "React.js",
+      skill: "React js",
       percentage: 85,
       animation: "fade-right"
     },
@@ -27,7 +27,7 @@ const About = () => {
       animation: "fade-down"
     },
     {
-      skill: "Restfull API",
+      skill: "Rest API",
       percentage: 75,
       animation: "fade-up"
     },
@@ -43,28 +43,28 @@ const About = () => {
     },
     {
       skill: "HTML5",
-      percentage: 85,
+      percentage: 95,
       animation: "fade-up"
     },
     {
-      skill: "CSS3/Sass",
-      percentage: 80,
+      skill: "CSS3/Sass/Less",
+      percentage: 90,
       animation: "fade-down"
     },
     {
       skill: "Bootstrap5",
-      percentage: 75,
+      percentage: 95,
       animation: "fade-up"
     },
     {
       skill: "Tailwind CSS",
       percentage: 80,
-      animation: "zoom-in"
+      animation: "fade-left"
     },
     {
       skill: "Git/Gitlab",
-      percentage: 75,
-      animation: "fade-left"
+      percentage: 70,
+      animation: "fade-right"
     }
   ];
 
@@ -166,7 +166,7 @@ const About = () => {
       <div className="container" id="about">
         <div className="row mt-4 text-hover">
           <div className="col-12 mb-4 d-flex justify-content-center">
-            <h1 className="fs-6" data-aos="zoom-in">Technical skills</h1>
+            <h1 className="fs-5" data-aos="zoom-in">Technical skills</h1>
           </div>
           <div className="col-12 d-flex">
             <div className="row justify-content-between">
@@ -188,7 +188,7 @@ const About = () => {
           <div className="col-12">
             <div className='about-secition'>
               <div className="d-flex justify-content-center">
-                <h1 className="fs-6" data-aos="zoom-in">Experiance</h1>
+                <h1 className="fs-5" data-aos="zoom-in">Experiance</h1>
               </div>
               <ul>
                 {experienceData.map((experience, index) => (
@@ -223,7 +223,7 @@ const About = () => {
           <div className="col-12">
             <div className='about-secition'>
               <div className="d-flex justify-content-center">
-                <h1 className="fs-6" data-aos="zoom-in">Certification</h1>
+                <h1 className="fs-5" data-aos="zoom-in">Certification</h1>
               </div>
               <ul>
                 {CertificationData.map((certifiate, index) => (
@@ -231,7 +231,7 @@ const About = () => {
                     <span></span>
                     <div onMouseEnter={() => setHoveredIndex(index)}
                       onMouseLeave={() => setHoveredIndex(null)} data-aos={certifiate.animation} className="card">
-                      <div className="d-flex justify-content-between">
+                      <div className="d-flex justify-content-between align-items-center">
                         <div className="heading">
                           <h1>{certifiate.certificateCourseName}, <i>Meta</i></h1>
                         </div>
@@ -239,11 +239,11 @@ const About = () => {
                           {certifiate.certificateDate}
                         </div>
                       </div>
-                      <div className="d-flex justify-content-center py-3" style={{ height: "350px" }}>
+                      <div className="d-flex justify-content-center py-3" style={{ height: "300px" }}>
                         <img style={{ height: "100%", width: "auto" }} src={certifiate.certificateImages} alt={certifiate.certificateCourseName} />
                       </div>
                       <div className="d-flex justify-content-center">
-                        <a href={certifiate.certificateLink} target="_blank" className="btn btn-outline-primary px-4 rounded-pill mt-2">View Certificate</a>
+                        <a href={certifiate.certificateLink} target="_blank" className="btn btn-outline-primary px-4 rounded-pill">View Certificate</a>
                       </div>
                     </div>
                   </li>
@@ -256,7 +256,7 @@ const About = () => {
           <div className="col-12">
             <div className='about-secition'>
               <div className="d-flex justify-content-center">
-                <h1 className="fs-6" data-aos="zoom-in">Education</h1>
+                <h1 className="fs-5" data-aos="zoom-in">Education</h1>
               </div>
               <ul>
                 {EducationData.map((education, index) => (
@@ -289,4 +289,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default TechnicalSkils;

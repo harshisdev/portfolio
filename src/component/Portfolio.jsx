@@ -131,7 +131,7 @@ const Portfolio = () => {
         <div className="row text-hover">
           <div className="col-12 d-flex justify-content-center row-hover">
             <div className="about-secition">
-              <h1 className='fs-6' data-aos="zoom-in">Latest Works</h1>
+              <h1 className='fs-5' data-aos="zoom-in">Latest Works</h1>
             </div>
           </div>
           <div className="col-12">

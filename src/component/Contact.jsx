@@ -28,7 +28,6 @@ const Contact = ({contactSectionRef}) => {
     const [name, setName] = useState("");
     const [mobile, setMobile] = useState("");
     const [email, setEmail] = useState("");
-    const [subject, setSubject] = useState("");
     const [touch, setTouch] = useState("");
     const [message, setMessage] = useState("");
     const [loader, setLoader] = useState(false);
@@ -45,8 +44,6 @@ const Contact = ({contactSectionRef}) => {
             setMobile(value);
         } else if (name === "user_email") {
             setEmail(value);
-        } else if (name === "user_subject") {
-            setSubject(value);
         } else if (name === "user_touch") {
             setTouch(value);
             setTouchSelected(value !== '');
@@ -69,10 +66,7 @@ const Contact = ({contactSectionRef}) => {
             email.length > 50 ||
             !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email)) {
             toast.error("Invalid email address");
-        } else if (subject === "") {
-            toast.error("Subject is required");
-        }
-        else if (touch === "") {
+        } else if (touch === "") {
             toast.error("Touch is required");
         }
         else if (message === "") {
@@ -90,7 +84,6 @@ const Contact = ({contactSectionRef}) => {
                         setName("");
                         setMobile("");
                         setEmail("");
-                        setSubject("");
                         setTouch("");
                         setTouchSelected(false);
                         setMessage("");
@@ -149,6 +142,7 @@ const Contact = ({contactSectionRef}) => {
                                                 autoComplete="off"
                                                 className="form-control"
                                                 id="name"
+                                                tabIndex="1"
                                             />
                                             <label htmlFor="name">Name <span className="text-danger">*</span></label>
                                         </FormGroup>
@@ -165,6 +159,7 @@ const Contact = ({contactSectionRef}) => {
                                                 className="form-control"
                                                 maxLength={10}
                                                 id="mobile"
+                                                tabIndex="2"
                                                 inputMode="numeric"
                                                 pattern="[0-9]*"
                                                 onKeyPress={(event) => {
@@ -183,6 +178,7 @@ const Contact = ({contactSectionRef}) => {
                                                 type="email"
                                                 name="user_email"
                                                 id="email"
+                                                tabIndex="3"
                                                 onChange={handleChange}
                                                 value={email}
                                                 placeholder="Email"
@@ -192,23 +188,8 @@ const Contact = ({contactSectionRef}) => {
                                         </FormGroup>
                                     </Col>
                                     <Col className="mt-3" sm={6}>
-                                        <FormGroup className="form-floating">
-                                            <FormControl
-                                                className="form-control"
-                                                type="text"
-                                                name="user_subject"
-                                                id="subject"
-                                                onChange={handleChange}
-                                                value={subject}
-                                                placeholder="Subject"
-                                                autoComplete="off"
-                                            />
-                                            <label htmlFor="subject">Subject <span className="text-danger">*</span></label>
-                                        </FormGroup>
-                                    </Col>
-                                    <Col className="mt-3" sm={6}>
                                         <FormGroup className={`form-floating ${touchSelected ? '' : 'selected'}`}>
-                                            <Form.Select className="form-control py-2" id="TouchFor" aria-label="Touch For" name="user_touch" onChange={handleChange} value={touch}>
+                                            <Form.Select className="form-control py-2" id="TouchFor" aria-label="Touch For" name="user_touch" onChange={handleChange} tabIndex="4" value={touch}>
                                                 <option value=""></option>
                                                 <option value="Some talk with you">Some talk with you</option>
                                                 <option value="I want to Hire">I want to Hire</option>
@@ -229,6 +210,7 @@ const Contact = ({contactSectionRef}) => {
                                                 onChange={handleChange}
                                                 placeholder="Message"
                                                 autoComplete="off"
+                                                tabIndex="5"
                                             />
                                             <label htmlFor="message">Message <span className="text-danger">*</span></label>
                                         </FormGroup>

@@ -165,7 +165,7 @@ const Contact = ({contactSectionRef}) => {
                                                 className="form-control"
                                                 maxLength={10}
                                                 id="mobile"
-                                                inputmode="numeric" 
+                                                inputMode="numeric"
                                                 pattern="[0-9]*"
                                                 onKeyPress={(event) => {
                                                     if (!/[0-9]/.test(event.key)) {

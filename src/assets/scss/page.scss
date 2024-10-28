@@ -42,6 +42,8 @@ table {
         color: $nav-color;
         font-size: 0.9rem;
         animation: 0.3s all ease-in;
+        cursor: pointer;
+
 
         &:hover {
           color: $primary !important;
@@ -863,6 +865,7 @@ footer {
       transition: 0.3s all ease-in-out;
       border: 1px solid #dee2e6;
       border-bottom: 0px;
+      cursor: pointer;
 
       &.active {
         color: $primary !important;

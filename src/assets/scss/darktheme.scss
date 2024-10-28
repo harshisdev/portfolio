@@ -16,6 +16,10 @@
     color: $primary;
     transition: 0.3s all ease;
   }
+  .contact__us div span{
+    color: $primary;
+    transition: 0.3s all ease;
+  }
   .about-secition ul li::before,
   .portfolio-section ul li::before {
     background: $white;

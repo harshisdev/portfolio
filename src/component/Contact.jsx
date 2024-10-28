@@ -24,7 +24,7 @@ import { CiInstagram } from "react-icons/ci";
 import { FaGithub } from "react-icons/fa";
 import Freelancer from "../assets/images/freelancer-img.jpeg";
 
-const Contact = () => {
+const Contact = ({contactSectionRef}) => {
     const [name, setName] = useState("");
     const [mobile, setMobile] = useState("");
     const [email, setEmail] = useState("");
@@ -106,7 +106,7 @@ const Contact = () => {
 
     return (
         <>
-            <div className="contact-bg" id="contact">
+            <div className="contact-bg" ref={contactSectionRef}>
                 <div className="container">
                     <div className="row text-hover pb-2">
                         <div className="col-12 d-flex justify-content-center mb-4">

@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import harshImages from '../assets/images/harshimg.png'
 import { Typewriter } from "react-simple-typewriter";
 
 
-const Banner = () => {
+const Banner = ({homeSectionRef}) => {
+
   return (
-    <div className='container' id='home'>
+    <div className='container' ref={homeSectionRef}>
       <div className="row pt-4">
         <div className="col-12 col-lg-9" data-aos="zoom-in">
           <h1 className='fs-6 text-center'>Ohh you found me? Hello!!!!</h1>

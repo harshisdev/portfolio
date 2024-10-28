@@ -10,7 +10,7 @@ import { CiDark } from "react-icons/ci";
 import { CiLight } from "react-icons/ci";
 
 
-const Headers = () => {
+const Headers = ({ scrollToSection, activeSection }) => {
   const [isDarkTheme, setIsDarkTheme] = useState(
     localStorage.getItem('isDarkTheme') === 'true'
   );
@@ -110,25 +110,27 @@ const Headers = () => {
               </Link>
             </div>
             {/* desktop view nav bar */}
-            <Col className='d-none d-lg-flex justify-content-center'>
-              <nav className="navbar">
-                <ul className="nav nav-pills">
-                  <li className="nav-item">
-                    <a className="nav-link active" href="#home">Home</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#about">About</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#portfolio">Portfolio</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#contact">Contact</a>
-                  </li>
-                </ul>
-              </nav>
-            </Col>
-            <Col className={`col col-lg-auto d-flex align-items-center ${errPage == true ? 'justify-content-center' : 'justify-content-end'}`}>
+            {errPage == true ?
+              <Col className='d-none d-lg-flex justify-content-center'>
+                <nav className="navbar">
+                  <ul className="nav nav-pills">
+                    <li className="nav-item">
+                      <a className={`nav-link ${activeSection === 'home' ? 'active' : ''}`} onClick={() => scrollToSection('home')}>Home</a>
+                    </li>
+                    <li className="nav-item">
+                      <a className={`nav-link ${activeSection === 'about' ? 'active' : ''}`} onClick={() => scrollToSection('about')}>About</a>
+                    </li>
+                    <li className="nav-item">
+                      <a className={`nav-link ${activeSection === 'portfolio' ? 'active' : ''}`} onClick={() => scrollToSection('portfolio')}>Portfolio</a>
+                    </li>
+                    <li className="nav-item">
+                      <a className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`} onClick={() => scrollToSection('contact')}>Contact</a>
+                    </li>
+                  </ul>
+                </nav>
+              </Col>
+              : null}
+            <Col className={`col col-lg-${errPage == true ? "auto" : ''} d-flex align-items-center ${errPage == true ? 'justify-content-center' : 'justify-content-end'}`}>
               <Button className="rounded-pill px-4 downloadbtn" onClick={downloadResume} >Download CV <span className="downloadbtnicon"><MdOutlineFileDownload /></span>
               </Button>
             </Col>
@@ -151,16 +153,16 @@ const Headers = () => {
         <nav className="navbar">
           <ul className="nav nav-pills d-block">
             <li className="nav-item mt-2">
-              <a className="nav-link" onClick={(e) => setOpen(false)} href="#home">Home</a>
+              <a className={`nav-link ${activeSection === 'home' ? 'active' : ''}`} onClick={() => { scrollToSection('home'); setOpen(false) }}>Home</a>
             </li>
             <li className="nav-item mt-3">
-              <a className="nav-link" onClick={(e) => setOpen(false)} href="#about">About</a>
+              <a className={`nav-link ${activeSection === 'about' ? 'active' : ''}`} onClick={() => { scrollToSection('about'); setOpen(false) }}>About</a>
             </li>
             <li className="nav-item mt-3">
-              <a className="nav-link" onClick={(e) => setOpen(false)} href="#portfolio">Portfolio</a>
+              <a className={`nav-link ${activeSection === 'portfolio' ? 'active' : ''}`} onClick={() => { scrollToSection('portfolio'); setOpen(false) }}>Portfolio</a>
             </li>
             <li className="nav-item mt-3">
-              <a className="nav-link" onClick={(e) => setOpen(false)} href="#contact">Contact</a>
+              <a className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`} onClick={() => { scrollToSection('contact'); setOpen(false) }}>Contact</a>
             </li>
           </ul>
         </nav>

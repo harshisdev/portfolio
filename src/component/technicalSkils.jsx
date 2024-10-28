@@ -7,7 +7,7 @@ import FrontEndDevelopment from '../assets/images/certification/FrontEndDevelopm
 import VersionControle from '../assets/images/certification/VersionControl.png';
 
 
-const TechnicalSkils = () => {
+const TechnicalSkils = ({aboutSectionRef}) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [hoverClass, setHoverClass] = useState(false);
 
@@ -163,7 +163,7 @@ const TechnicalSkils = () => {
 
   return (
     <>
-      <div className="container" id="about">
+      <div className="container" ref={aboutSectionRef}>
         <div className="row mt-0 mt-lg-4 text-hover">
           <div className="col-12 mb-4 d-flex justify-content-center">
             <h1 className="fs-5" data-aos="zoom-in">Technical skills</h1>

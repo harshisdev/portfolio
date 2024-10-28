@@ -6,7 +6,7 @@ import jsImages from "../assets/images/js-img.png";
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 
-const Portfolio = () => {
+const Portfolio = ({portfolioSectionRef}) => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const SliderSlick = {
@@ -127,7 +127,7 @@ const Portfolio = () => {
 
   return (
     <>
-      <div className="container" id='portfolio'>
+      <div className="container" ref={portfolioSectionRef}>
         <div className="row text-hover">
           <div className="col-12 d-flex justify-content-center row-hover">
             <div className="about-secition">

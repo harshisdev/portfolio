@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
 import Portfolio from "../component/Portfolio";
 import Footer from "../component/Footer";
@@ -9,26 +9,79 @@ import ScrollToTop from "../component/scrollTop";
 import Headers from "../component/Header";
 
 const Home = () => {
-  useEffect(() => {
-    import('bootstrap').then(({ ScrollSpy }) => {
-      new ScrollSpy(document.body, {
-        target: '.navbar'
+  const [activeSection, setActiveSection] = useState('home');
+  const [open, setOpen] = useState(false);
+
+  const homeSectionRef = useRef(null);
+  const aboutSectionRef = useRef(null);
+  const portfolioSectionRef = useRef(null);
+  const contactSectionRef = useRef(null);
+
+  const scrollToSection = (section) => {
+    if (open === true) {
+      setOpen(true)
+    }
+    setActiveSection(section);
+    const scrollOptions = { behavior: 'smooth' };
+
+    if (section === 'home' && homeSectionRef.current) {
+      window.scrollTo({
+        top: homeSectionRef.current.offsetTop - 70,
+        ...scrollOptions,
       });
-    });
+    } else if (section === 'about' && aboutSectionRef.current) {
+      window.scrollTo({
+        top: aboutSectionRef.current.offsetTop - 70,
+        ...scrollOptions,
+      });
+    }
+    else if (section === 'portfolio' && portfolioSectionRef.current) {
+      window.scrollTo({
+        top: portfolioSectionRef.current.offsetTop - 70,
+        ...scrollOptions,
+      });
+    }
+    else if (section === 'contact' && contactSectionRef.current) {
+      window.scrollTo({
+        top: contactSectionRef.current.offsetTop - 70,
+        ...scrollOptions,
+      });
+    }
+  };
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+
+      // Check which section is in view in reverse order (from bottom to top)
+      if (contactSectionRef.current && scrollPosition >= contactSectionRef.current.offsetTop - 90) {
+        setActiveSection('contact');
+      } else if (portfolioSectionRef.current && scrollPosition >= portfolioSectionRef.current.offsetTop - 90) {
+        setActiveSection('portfolio');
+      } else if (aboutSectionRef.current && scrollPosition >= aboutSectionRef.current.offsetTop - 90) {
+        setActiveSection('about');
+      } else if (homeSectionRef.current && scrollPosition >= homeSectionRef.current.offsetTop - 90) {
+        setActiveSection('home');
+      }
+    };
+
+    // Attach the scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup listener on component unmount
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   return (
     <>
       <Helmet>
         <title>Harsh Kumar || Ui Developer || Software Developer || Frontend Developer</title>
       </Helmet>
-      <Headers />
-      <div data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-offset="0" tabIndex="0">
-        <Banner />
-        <TechnicalSkils />
-        <Portfolio />
-        <Contact />
-        <ScrollToTop />
-      </div>
+      <Headers scrollToSection={scrollToSection} activeSection={activeSection} />
+      <Banner homeSectionRef={homeSectionRef} />
+      <TechnicalSkils aboutSectionRef={aboutSectionRef} />
+      <Portfolio portfolioSectionRef={portfolioSectionRef} />
+      <Contact contactSectionRef={contactSectionRef} />
+      <ScrollToTop />
       <Footer />
     </>
   );

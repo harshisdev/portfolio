@@ -570,6 +570,9 @@ h2 {
       }
       &:nth-child(odd) .project-details {
         padding-left: 15px;
+        @media only screen and (max-width: 990px) {
+          padding-left: 0px;
+        }
       }
       &::before {
         content: "";

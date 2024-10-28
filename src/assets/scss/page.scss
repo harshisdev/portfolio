@@ -5,6 +5,9 @@ body {
   color: $dark-gray;
   overflow-x: hidden;
 }
+.container{
+  overflow: hidden;
+}
 
 table {
   font-family: "Roboto", sans-serif !important;
@@ -72,9 +75,9 @@ table {
     opacity: 1;
   }
 
-  @media only screen and (max-width: 576px) {
+  @media only screen and (max-width: 990px) {
     top: 9px;
-    right: 50px;
+    right: 150px;
     background-color: unset;
     color: $dark-gray;
     z-index: 999;

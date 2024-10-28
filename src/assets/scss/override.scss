@@ -36,6 +36,9 @@ html {
       margin-left: 0px;
     }
     margin-left: 40px;
+    @media only screen and (max-width: 990px) {
+      margin-left: 0px;
+    }
   }
   .nav-link {
     color: $nav-color !important;

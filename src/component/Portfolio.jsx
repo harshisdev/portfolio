@@ -154,7 +154,7 @@ const Portfolio = () => {
                       </div>
                     </div>
                     {selectedProject !== item.id && (
-                      <div className="project-details">
+                      <div className="project-details ps-0 pl-lg-auto">
                         <span>{item.details}</span>
                       </div>
                     )}

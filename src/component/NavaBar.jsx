@@ -95,7 +95,7 @@ const NavaBar = () => {
               </Link>
             </div>
             {/* desktop view nav bar */}
-            <Col className='d-flex justify-content-center'>
+            <Col className='d-none d-lg-flex justify-content-center'>
               <nav id="navbar-example" className="navbar">
                 <ul className="nav nav-pills">
                   <li className="nav-item">
@@ -113,11 +113,11 @@ const NavaBar = () => {
                 </ul>
               </nav>
             </Col>
-            <Col className="col-auto d-flex align-items-center">
-              <Button className="rounded-pill px-4 downloadbtn" onClick={downloadResume} ><span className="d-none d-sm-inline">Download CV</span> <span className="downloadbtnicon"><MdOutlineFileDownload /></span>
+            <Col className="col col-lg-auto d-flex justify-content-center align-items-center">
+              <Button className="rounded-pill px-4 downloadbtn" onClick={downloadResume} >Download CV <span className="downloadbtnicon"><MdOutlineFileDownload /></span>
               </Button>
             </Col>
-            <Col className="col-auto d-flex align-items-center d-flex d-sm-none">
+            <Col className="col-auto align-items-center d-flex d-lg-none">
               <VscMenu onClick={showDrawer} className="fs-2" />
             </Col>
           </Row>

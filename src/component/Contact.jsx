@@ -112,7 +112,7 @@ const Contact = () => {
                         <div className="col-12 d-flex justify-content-center mb-4">
                             <h1 className="fs-5" data-aos="zoom-in">Get in touch</h1>
                         </div>
-                        <div className="col-6">
+                        <div className="col-12 col-lg-6">
                             <div className="contact__us">
                                 <p className="mb-2">Experienced frontend developer available for freelance projects. Proficient in HTML5, CSS3, JavaScript, React.js. Specializing in crafting captivating user interfaces and ensuring seamless user experiences. Let's collaborate to elevate your online presence. Contact me to discuss your project requirements and achieve your goals together!</p>
                                 <div>
@@ -134,7 +134,7 @@ const Contact = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-6">
+                        <div className="col-12 col-lg-6 mt-4 mt-lg-0">
                             <Form ref={form} onSubmit={handleSubmit}>
                                 <Row>
                                     <Col sm={6}>
@@ -152,7 +152,7 @@ const Contact = () => {
                                             <label htmlFor="name">Name <span className="text-danger">*</span></label>
                                         </FormGroup>
                                     </Col>
-                                    <Col sm={6}>
+                                    <Col className="mt-3 mt-sm-0" sm={6}>
                                         <FormGroup className="form-floating">
                                             <FormControl
                                                 type="text"
@@ -230,7 +230,7 @@ const Contact = () => {
                                             <label htmlFor="message">Message <span className="text-danger">*</span></label>
                                         </FormGroup>
                                     </Col>
-                                    <Col className="d-flex justify-content-center mt-3" sm={12}>
+                                    <Col className="d-flex justify-content-center mt-4" sm={12}>
                                         <Button
                                             className="d-flex align-items-center box-shadow rounded-pill px-4"
                                             variant="outline-primary"

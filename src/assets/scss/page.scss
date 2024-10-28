@@ -355,9 +355,15 @@ h2 {
       width: 100%;
       &:first-child {
         margin-top: 10px;
+        @media only screen and (max-width: 990px) {
+          margin-top: 30px;
+        }
       }
       &:last-child {
         margin-bottom: 20px;
+        @media only screen and (max-width: 990px) {
+          margin-bottom: 0px;
+        }
       }
       span {
         content: "";
@@ -378,6 +384,13 @@ h2 {
           height: 1px;
           z-index: -9;
           background-color: $primary;
+          @media only screen and (max-width: 990px) {
+            content: unset;
+          }
+        }
+        @media only screen and (max-width: 990px) {
+          content: unset;
+          display: none;
         }
         &::after {
           content: "";
@@ -407,6 +420,9 @@ h2 {
         top: 10px;
         right: 50%;
         height: 100%;
+        @media only screen and (max-width: 990px) {
+          content: unset;
+        }
       }
       // &::after {
       //   content: "";
@@ -439,6 +455,11 @@ h2 {
         border: none;
         box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.0509803922);
         z-index: 1;
+        @media only screen and (max-width: 990px) {
+          width: 100%;
+          max-width: 100%;
+          margin-top: 0px;
+        }
         &:hover {
           transform: translateY(-10px) !important;
           transition: 0.55s all ease;
@@ -558,6 +579,9 @@ h2 {
         top: 0px;
         right: 50%;
         height: 100%;
+        @media only screen and (max-width: 990px) {
+          content: unset;
+        }
       }
       &::after {
         content: "";
@@ -568,12 +592,20 @@ h2 {
         left: 12%;
         transform: translate(50%, 50%);
         height: 1px;
+        @media only screen and (max-width: 990px) {
+          content: unset;
+        }
       }
       .project-section {
         position: relative;
         padding-right: 25%;
         width: 50%;
         float: left;
+        @media only screen and (max-width: 990px) {
+          padding-right: 0%;
+          float: unset;
+          width: 100%;
+        }
         &:hover span::before {
           display: block;
         }
@@ -601,6 +633,9 @@ h2 {
             background-color: $primary;
             animation: puls 3s infinite;
             transition: ease-in-out;
+            display: none;
+          }
+          @media only screen and (max-width: 990px) {
             display: none;
           }
         }
@@ -705,6 +740,9 @@ h2 {
           float: right;
           padding-left: 25%;
           padding-right: 0px;
+          @media only screen and (max-width: 990px) {
+            padding-left: 0px;
+          }
           span {
             &::after {
               left: -16px;
@@ -721,6 +759,7 @@ h2 {
       }
     }
   }
+
   .project-details-slide {
     width: 50%;
     float: right;
@@ -1066,6 +1105,11 @@ td {
 .project-details {
   width: 50%;
   float: right;
+  @media only screen and (max-width: 990px) {
+    float: unset;
+    width: 100%;
+    padding-bottom: 10px;
+  }
 }
 
 .contact-bg {

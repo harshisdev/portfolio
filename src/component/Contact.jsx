@@ -108,7 +108,7 @@ const Contact = () => {
         <>
             <div className="contact-bg" id="contact">
                 <div className="container">
-                    <div className="row text-hover">
+                    <div className="row text-hover pb-2">
                         <div className="col-12 d-flex justify-content-center mb-4">
                             <h1 className="fs-5" data-aos="zoom-in">Get in touch</h1>
                         </div>

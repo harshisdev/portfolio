@@ -98,7 +98,7 @@ const NavaBar = () => {
             </div>
             {/* desktop view nav bar */}
             <Col className='d-none d-lg-flex justify-content-center'>
-              <nav id="navbar-example" className="navbar">
+              <nav className="navbar">
                 <ul className="nav nav-pills">
                   <li className="nav-item">
                     <a className="nav-link active" href="#home">Home</a>
@@ -133,19 +133,19 @@ const NavaBar = () => {
         onClose={onClose}
         open={open}
       >
-        <nav id="navbar-example" className="navbar">
+        <nav className="navbar">
           <ul className="nav nav-pills d-block">
             <li className="nav-item">
-              <a className="nav-link active" href="#home">Home</a>
+              <a className="nav-link" onClick={(e) => setOpen(false)} href="#home">Home</a>
             </li>
             <li className="nav-item mt-3">
-              <a className="nav-link" href="#about">About</a>
+              <a className="nav-link" onClick={(e) => setOpen(false)} href="#about">About</a>
             </li>
             <li className="nav-item mt-3">
-              <a className="nav-link" href="#portfolio">Portfolio</a>
+              <a className="nav-link" onClick={(e) => setOpen(false)} href="#portfolio">Portfolio</a>
             </li>
             <li className="nav-item mt-3">
-              <a className="nav-link" href="#contact">Contact</a>
+              <a className="nav-link" onClick={(e) => setOpen(false)} href="#contact">Contact</a>
             </li>
           </ul>
         </nav>
@@ -158,12 +158,12 @@ const NavaBar = () => {
         </button>
       </Drawer>
       <button className="dark-theme-btn d-none d-lg-block" onClick={toggleTheme}>
-          {isDarkTheme ?
-            <CiLight />
-            :
-            <CiDark />
-          }
-        </button>
+        {isDarkTheme ?
+          <CiLight />
+          :
+          <CiDark />
+        }
+      </button>
     </>
   );
 };

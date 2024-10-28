@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     import('bootstrap').then(({ ScrollSpy }) => {
       new ScrollSpy(document.body, {
-        target: '#navbar-example'
+        target: '.navbar'
       });
     });
   }, []);

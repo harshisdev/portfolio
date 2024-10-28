@@ -79,10 +79,10 @@ const Headers = ({ scrollToSection, activeSection }) => {
   useEffect(() => {
     if (isDarkTheme) {
       document.body.classList.add('dark-theme');
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffc107');
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#144C8C');
     } else {
       document.body.classList.remove('dark-theme');
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#144C8C');
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffc107');
     }
   }, [isDarkTheme]);
 

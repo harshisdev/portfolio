@@ -164,7 +164,7 @@ const TechnicalSkils = () => {
   return (
     <>
       <div className="container" id="about">
-        <div className="row mt-4 text-hover">
+        <div className="row mt-0 mt-lg-4 text-hover">
           <div className="col-12 mb-4 d-flex justify-content-center">
             <h1 className="fs-5" data-aos="zoom-in">Technical skills</h1>
           </div>
@@ -196,12 +196,12 @@ const TechnicalSkils = () => {
                     <span></span>
                     <div onMouseEnter={() => setHoveredIndex(index)}
                       onMouseLeave={() => setHoveredIndex(null)} data-aos={experience.animation} className="card">
-                      <div className="d-flex justify-content-between">
+                      <div className="d-block d-sm-flex justify-content-between">
                         <div className="heading">
                           <h1>{experience.company}</h1>
                           <i>{experience.role}</i>
                         </div>
-                        <div className="year">
+                        <div className="year my-3 my-sm-0">
                           {experience.duration}
                         </div>
                       </div>
@@ -231,15 +231,15 @@ const TechnicalSkils = () => {
                     <span></span>
                     <div onMouseEnter={() => setHoveredIndex(index)}
                       onMouseLeave={() => setHoveredIndex(null)} data-aos={certifiate.animation} className="card">
-                      <div className="d-flex justify-content-between align-items-center">
+                      <div className="d-block d-sm-flex justify-content-between align-items-center">
                         <div className="heading">
                           <h1>{certifiate.certificateCourseName}, <i>Meta</i></h1>
                         </div>
-                        <div className="year">
+                        <div className="year mt-3 mt-sm-0">
                           {certifiate.certificateDate}
                         </div>
                       </div>
-                      <div className="d-flex justify-content-center py-3" style={{ height: "300px" }}>
+                      <div className="d-flex justify-content-center py-3 imgHeight">
                         <img style={{ height: "100%", width: "auto" }} src={certifiate.certificateImages} alt={certifiate.certificateCourseName} />
                       </div>
                       <div className="d-flex justify-content-center">
@@ -264,7 +264,7 @@ const TechnicalSkils = () => {
                     <span></span>
                     <div onMouseEnter={() => setHoveredIndex(index)}
                       onMouseLeave={() => setHoveredIndex(null)} data-aos={education.animation} className="card">
-                      <div className="d-flex justify-content-between">
+                      <div className="d-blcok d-sm-flex justify-content-between">
                         <div className="heading">
                           <h1>{education.instituteName}</h1>
                           <i>{education.degree}
@@ -273,7 +273,7 @@ const TechnicalSkils = () => {
                             }
                           </i>
                         </div>
-                        <div className="year">
+                        <div className="year mt-3 mt-sm-0">
                           {education.duration}
                         </div>
                       </div>

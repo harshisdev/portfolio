@@ -55,8 +55,10 @@ const NavaBar = () => {
       const newTheme = !prevTheme;
       if (newTheme === systemPrefersDark) {
         localStorage.removeItem('isDarkTheme');
+        setOpen(false)
       } else {
         localStorage.setItem('isDarkTheme', newTheme);
+        setOpen(false)
       }
       return newTheme;
     });
@@ -135,7 +137,7 @@ const NavaBar = () => {
       >
         <nav className="navbar">
           <ul className="nav nav-pills d-block">
-            <li className="nav-item">
+            <li className="nav-item mt-2">
               <a className="nav-link" onClick={(e) => setOpen(false)} href="#home">Home</a>
             </li>
             <li className="nav-item mt-3">

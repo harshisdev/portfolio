@@ -117,7 +117,8 @@ const Contact = () => {
                                 <p className="mb-2">Experienced frontend developer available for freelance projects. Proficient in HTML5, CSS3, JavaScript, React.js. Specializing in crafting captivating user interfaces and ensuring seamless user experiences. Let's collaborate to elevate your online presence. Contact me to discuss your project requirements and achieve your goals together!</p>
                                 <div>
                                     <span className="pe-2"><MdOutlineLocalPhone /> </span> <a href="tel:6205044930">+91-6205044930</a>
-                                    <span className="ps-3 pe-2"><IoMailUnreadOutline />
+                                    <br className="d-block d-sm-none" />
+                                    <span className="ps-0 ps-sm-3"><IoMailUnreadOutline />
                                     </span> <a href="mailto:harshch9931@gmail.com">harshch9931@gmail.com</a>
                                 </div>
                                 <div className="d-flex justify-content-between pt-3">

@@ -506,6 +506,7 @@ h2 {
           background-color: transparent;
           color: #646466;
           min-width: 180px;
+          max-width: 180px;
           border-radius: 50px;
           font-size: 0.85rem;
           align-items: center;
@@ -665,6 +666,10 @@ h2 {
           overflow: hidden;
           margin: 20px 0px;
           max-height: 275px;
+          @media only screen and (max-width: 990px) {
+            max-height: 240px;
+            min-height: 240px;
+          }
           img {
             transition: 0.55s ease-in-out;
           }
@@ -719,6 +724,9 @@ h2 {
             font-size: 1.5rem;
             width: 35px;
             height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
           }
           &:hover {
             .project-details {
@@ -805,7 +813,7 @@ h2 {
 footer {
   background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
   color: #8c8c8e;
-  font-size: 0.825rem;
+  font-size: 0.7rem;
 }
 
 .center {
@@ -1126,4 +1134,10 @@ td {
   background-position: right;
   width: 100%;
   padding: 0px 0px 30px;
+}
+.imgHeight {
+  height: 300px;
+  @media only screen and (max-width: 575px) {
+    height: 260px;
+  }
 }

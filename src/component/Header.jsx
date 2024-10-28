@@ -10,11 +10,22 @@ import { CiDark } from "react-icons/ci";
 import { CiLight } from "react-icons/ci";
 
 
-const NavaBar = () => {
+const Headers = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(
     localStorage.getItem('isDarkTheme') === 'true'
   );
   const [sticky, setSticky] = useState(false);
+  const [errPage, setErrPage] = useState(true);
+
+  useEffect(() => {
+    const pathname = window.location.pathname;
+
+    if (pathname.length > 1) {
+      setErrPage(false);
+    } else {
+      setErrPage(true);
+    }
+  }, [window.location.pathname]);
 
   const handleScroll = () => {
     if (window.scrollY > 50) {
@@ -117,13 +128,15 @@ const NavaBar = () => {
                 </ul>
               </nav>
             </Col>
-            <Col className="col col-lg-auto d-flex justify-content-center align-items-center">
+            <Col className={`col col-lg-auto d-flex align-items-center ${errPage == true ? 'justify-content-center' : 'justify-content-end'}`}>
               <Button className="rounded-pill px-4 downloadbtn" onClick={downloadResume} >Download CV <span className="downloadbtnicon"><MdOutlineFileDownload /></span>
               </Button>
             </Col>
-            <Col className="col-auto align-items-center d-flex d-lg-none">
-              <VscMenu onClick={showDrawer} className="fs-2" />
-            </Col>
+            {errPage == true ?
+              <Col className="col-auto align-items-center d-flex d-lg-none">
+                <VscMenu onClick={showDrawer} className="fs-2" />
+              </Col>
+              : null}
           </Row>
         </div>
       </Navbar>
@@ -170,4 +183,4 @@ const NavaBar = () => {
   );
 };
 
-export default NavaBar;
+export default Headers;

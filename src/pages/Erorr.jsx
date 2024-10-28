@@ -1,7 +1,10 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import Footer from "../component/Footer";
+import Headers from "../component/Header";
+
 
 
 const Erorr = () => {
@@ -10,9 +13,11 @@ const Erorr = () => {
       <Helmet>
         <title>Page Not Found</title>
       </Helmet>
+      <Headers />
       <Container className="min-height d-flex align-items-center justify-content-center">
-        <h1 className="fs-4">It seems like the page you're looking for is not available. <br />Check the URL or navigate back to the <Link style={{ color: "#e70448" }} to="/">Home page</Link>.</h1>
+        <h1 className="fs-5" data-aos="zoom-in">It seems like the page you're looking for is not available. <br />check the URL or navigate back to the <Link className="text-primary" to="/">Home Page</Link></h1>
       </Container>
+      <Footer />
     </>
   );
 };

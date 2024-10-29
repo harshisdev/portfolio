@@ -17,9 +17,8 @@ const Loader = () => {
             document.querySelector('meta[name="theme-color"]').setAttribute('content', '#1C242C');
         } else {
             document.body.classList.remove('dark-theme');
-            document.querySelector('meta[name="theme-color"]').setAttribute('content', '#144C8C');
+            document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffc107');
         }
-        localStorage.setItem('isDarkTheme', isDarkTheme);
     }, [isDarkTheme]);
 
     return (

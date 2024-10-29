@@ -4,14 +4,11 @@ import {
     Button,
     Card,
     Col,
-    Container,
     Form,
     FormControl,
     FormGroup,
-    Modal,
     Row,
 } from "react-bootstrap";
-import { Helmet } from "react-helmet";
 import { toast, ToastContainer } from "react-toastify";
 import loaderIcon from "../assets/images/loader.svg";
 import { FaArrowRight } from "react-icons/fa6";
@@ -22,7 +19,6 @@ import { CiLinkedin } from "react-icons/ci";
 import { FaWhatsapp } from "react-icons/fa";
 import { CiInstagram } from "react-icons/ci";
 import { FaGithub } from "react-icons/fa";
-import Freelancer from "../assets/images/freelancer-img.jpeg";
 
 const Contact = ({contactSectionRef}) => {
     const [name, setName] = useState("");

@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <>
       <footer>
-        <div className="py-2 container">
+        <div className="py-3 container">
           <div className="row">
             <div className="col-7 d-flex">
               © 2023 - {(new Date().getFullYear())}. All Right Reserved

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import harshImages from '../assets/images/harshimg.png'
 import { Typewriter } from "react-simple-typewriter";
 

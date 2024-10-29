@@ -243,7 +243,7 @@ const TechnicalSkils = ({aboutSectionRef}) => {
                         <img style={{ height: "100%", width: "auto" }} src={certifiate.certificateImages} alt={certifiate.certificateCourseName} />
                       </div>
                       <div className="d-flex justify-content-center">
-                        <a href={certifiate.certificateLink} target="_blank" className="btn btn-outline-primary px-4 rounded-pill">View Certificate</a>
+                        <a href={certifiate.certificateLink} rel="noreferrer" target="_blank" className="btn btn-outline-primary px-4 rounded-pill">View Certificate</a>
                       </div>
                     </div>
                   </li>

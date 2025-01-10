@@ -5,6 +5,7 @@ import cssImages from "../assets/images/css-img.png";
 import jsImages from "../assets/images/js-img.png";
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
+import myHealthcare1 from '../assets/images/myhealthcare/1.png'
 
 const Portfolio = ({portfolioSectionRef}) => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -16,7 +17,7 @@ const Portfolio = ({portfolioSectionRef}) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     className: "custom-slick-slider h-250",
-    autoplay: true,
+    autoplay: false,
     pauseOnHover: true,
     centerMode: true,
     autoplaySpeed: 2000,
@@ -29,99 +30,26 @@ const Portfolio = ({portfolioSectionRef}) => {
   const portFolioDetails = [
     {
       id: "1",
-      title: "Project First",
-      details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-      link: "https://www.google.com/",
-      homeimages: htmlImages,
+      title: "MyHealthcare",
+      link: "https://www.myhealthcare.co/",
+      homeimages: myHealthcare1,
       slideImages: [
         {
           id: "1",
-          img: htmlImages,
+          img: myHealthcare1,
         },
         {
           id: "2",
-          img: cssImages,
+          img: myHealthcare1,
         },
         {
           id: "3",
-          img: jsImages,
+          img: myHealthcare1,
         }
       ],
       skills: "React Js, Bootstrap4",
       animation: "fade-right",
-      projectdeatails: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum fuga quidem, rerum nihil, explicabo saepe, illum corrupti nemo reprehenderit perspiciatis dolor atque. Exercitationem reiciendis doloremque magni delectus pariatur voluptatem repudiandae!"
-    },
-    {
-      id: "2",
-      title: "Project Second",
-      details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-      link: "https://www.google.com/",
-      homeimages: cssImages,
-      slideImages: [
-        {
-          id: "1",
-          img: htmlImages,
-        },
-        {
-          id: "2",
-          img: cssImages,
-        },
-        {
-          id: "3",
-          img: jsImages,
-        }
-      ],
-      skills: "React Js, Bootstrap4",
-      animation: "fade-left",
-      projectdeatails: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum fuga quidem, rerum nihil, explicabo saepe, illum corrupti nemo reprehenderit perspiciatis dolor atque. Exercitationem reiciendis doloremque magni delectus pariatur voluptatem repudiandae!"
-    },
-    {
-      id: "3",
-      title: "Project Third",
-      details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-      link: "XXXXXXXXXXXXXXXXXXXXXXX",
-      homeimages: jsImages,
-      slideImages: [
-        {
-          id: "1",
-          img: htmlImages,
-        },
-        {
-          id: "2",
-          img: cssImages,
-        },
-        {
-          id: "3",
-          img: jsImages,
-        }
-      ],
-      skills: "React Js, Bootstrap4",
-      animation: "fade-right",
-      projectdeatails: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum fuga quidem, rerum nihil, explicabo saepe, illum corrupti nemo reprehenderit perspiciatis dolor atque. Exercitationem reiciendis doloremque magni delectus pariatur voluptatem repudiandae!"
-    },
-    {
-      id: "4",
-      title: "Project Fourth",
-      details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-      link: "XXXXXXXXXXXXXXXXXXXXXXX",
-      homeimages: htmlImages,
-      slideImages: [
-        {
-          id: "1",
-          img: htmlImages,
-        },
-        {
-          id: "2",
-          img: cssImages,
-        },
-        {
-          id: "3",
-          img: jsImages,
-        }
-      ],
-      skills: "React Js, Bootstrap4",
-      animation: "fade-left",
-      projectdeatails: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum fuga quidem, rerum nihil, explicabo saepe, illum corrupti nemo reprehenderit perspiciatis dolor atque. Exercitationem reiciendis doloremque magni delectus pariatur voluptatem repudiandae!"
+      projectdeatails: "MyHealthcare project work with team"
     },
   ]
 
@@ -145,7 +73,6 @@ const Portfolio = ({portfolioSectionRef}) => {
                         <img src={item.homeimages} alt={item.title} />
                         <div className='project-details'>
                           <h1>{item.title}</h1>
-                          <p>{item.details}</p>
                           <Link target='_blank' to={item.link}>{item.link}</Link>
                         </div>
                         <button onClick={() => handleProject(item)} className='project-view'>

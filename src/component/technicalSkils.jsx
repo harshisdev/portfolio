@@ -166,13 +166,13 @@ const TechnicalSkils = ({aboutSectionRef}) => {
       <div className="container" ref={aboutSectionRef}>
         <div className="row mt-0 mt-lg-4 text-hover">
           <div className="col-12 mb-4 d-flex justify-content-center">
-            <h1 className="fs-5" data-aos="zoom-in">Technical skills</h1>
+            <h1 className="fs-5">Technical skills</h1>
           </div>
           <div className="col-12 d-flex">
             <div className="row justify-content-between">
               {
                 Skills.map((items, index) => (
-                  <div data-aos={items.animation} className="col-auto mb-3" key={index}>
+                  <div className="col-auto mb-3" key={index}>
                     <div className={`eb-progress-bar ${hoverClass === true ? "animation" : ''}`} style={{ '--value': items.percentage }}>
                     </div>
                     <label htmlFor={items.skill} className="eb-progress-bar-title">
@@ -188,14 +188,14 @@ const TechnicalSkils = ({aboutSectionRef}) => {
           <div className="col-12">
             <div className='about-secition'>
               <div className="d-flex justify-content-center">
-                <h1 className="fs-5" data-aos="zoom-in">Experiance</h1>
+                <h1 className="fs-5">Experiance</h1>
               </div>
               <ul>
                 {experienceData.map((experience, index) => (
                   <li key={index} className={hoveredIndex === index ? "hoverafter" : ""}>
                     <span></span>
                     <div onMouseEnter={() => setHoveredIndex(index)}
-                      onMouseLeave={() => setHoveredIndex(null)} data-aos={experience.animation} className="card">
+                      onMouseLeave={() => setHoveredIndex(null)} className="card">
                       <div className="d-block d-sm-flex justify-content-between">
                         <div className="heading">
                           <h1>{experience.company}</h1>
@@ -223,14 +223,14 @@ const TechnicalSkils = ({aboutSectionRef}) => {
           <div className="col-12">
             <div className='about-secition'>
               <div className="d-flex justify-content-center">
-                <h1 className="fs-5" data-aos="zoom-in">Certification</h1>
+                <h1 className="fs-5">Certification</h1>
               </div>
               <ul>
                 {CertificationData.map((certifiate, index) => (
                   <li key={index} className={hoveredIndex === index ? "hoverafter" : ""}>
                     <span></span>
                     <div onMouseEnter={() => setHoveredIndex(index)}
-                      onMouseLeave={() => setHoveredIndex(null)} data-aos={certifiate.animation} className="card">
+                      onMouseLeave={() => setHoveredIndex(null)} className="card">
                       <div className="d-block d-sm-flex justify-content-between align-items-center">
                         <div className="heading">
                           <h1>{certifiate.certificateCourseName}, <i>Meta</i></h1>
@@ -256,14 +256,14 @@ const TechnicalSkils = ({aboutSectionRef}) => {
           <div className="col-12">
             <div className='about-secition'>
               <div className="d-flex justify-content-center">
-                <h1 className="fs-5" data-aos="zoom-in">Education</h1>
+                <h1 className="fs-5">Education</h1>
               </div>
               <ul>
                 {EducationData.map((education, index) => (
                   <li key={index} className={hoveredIndex === index ? "hoverafter" : ""}>
                     <span></span>
                     <div onMouseEnter={() => setHoveredIndex(index)}
-                      onMouseLeave={() => setHoveredIndex(null)} data-aos={education.animation} className="card">
+                      onMouseLeave={() => setHoveredIndex(null)} className="card">
                       <div className="d-blcok d-sm-flex justify-content-between">
                         <div className="heading">
                           <h1>{education.instituteName}</h1>

@@ -99,7 +99,7 @@ const Contact = ({contactSectionRef}) => {
                 <div className="container">
                     <div className="row text-hover pb-2">
                         <div className="col-12 d-flex justify-content-center mb-4">
-                            <h1 className="fs-5" data-aos="zoom-in">Get in touch</h1>
+                            <h1 className="fs-5">Get in touch</h1>
                         </div>
                         <div className="col-12 col-lg-6">
                             <div className="contact__us">
@@ -111,15 +111,15 @@ const Contact = ({contactSectionRef}) => {
                                     </span> <a href="mailto:harshch9931@gmail.com">harshch9931@gmail.com</a>
                                 </div>
                                 <div className="d-flex justify-content-between pt-3">
-                                    <Card className="p-2" data-aos="zoom-in"><a href="https://www.facebook.com/harshkumar1208200" target="__blank"><CiFacebook className="fs-3" />
+                                    <Card className="p-2"><a href="https://www.facebook.com/harshkumar1208200" target="__blank"><CiFacebook className="fs-3" />
                                     </a></Card>
-                                    <Card className="p-2" data-aos="zoom-in"><a href="https://www.linkedin.com/in/harsh-kumar-593a19232/" target="__blank"><CiLinkedin className="fs-3" /></a>
+                                    <Card className="p-2"><a href="https://www.linkedin.com/in/harsh-kumar-593a19232/" target="__blank"><CiLinkedin className="fs-3" /></a>
                                     </Card>
-                                    <Card className="p-2" data-aos="zoom-in"><a href="https://wa.me/+916205044930?text=Hi Harsh," target="__blank"><FaWhatsapp className="fs-3" /></a>
+                                    <Card className="p-2"><a href="https://wa.me/+916205044930?text=Hi Harsh," target="__blank"><FaWhatsapp className="fs-3" /></a>
                                     </Card>
-                                    <Card className="p-2" data-aos="zoom-in"><a href="https://www.instagram.com/harshch9931/" target="__blank"><CiInstagram className="fs-3" /></a>
+                                    <Card className="p-2"><a href="https://www.instagram.com/harshch9931/" target="__blank"><CiInstagram className="fs-3" /></a>
                                     </Card>
-                                    <Card className="p-2" data-aos="zoom-in"><a href="https://github.com/harshisdev" target="__blank"><FaGithub className="fs-3" />
+                                    <Card className="p-2"><a href="https://github.com/harshisdev" target="__blank"><FaGithub className="fs-3" />
                                     </a></Card>
                                 </div>
                             </div>

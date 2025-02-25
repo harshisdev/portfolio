@@ -105,8 +105,8 @@ const Headers = ({ scrollToSection, activeSection }) => {
         <div className="container d-block">
           <Row>
             <div className="col-2 d-flex align-items-center">
-              <Link>
-                <img src={harshLogo} alt="Harsh Kumar" className="rounded-circle" />
+              <Link className="text-white fst-italic fs-5 text-decoration-none">
+                Harsh Kumar
               </Link>
             </div>
             {/* desktop view nav bar */}

@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import { HiViewfinderCircle } from "react-icons/hi2";
-import htmlImages from "../assets/images/html-img.png";
-import cssImages from "../assets/images/css-img.png";
-import jsImages from "../assets/images/js-img.png";
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import myHealthcare1 from '../assets/images/myhealthcare/1.png'
@@ -48,7 +45,6 @@ const Portfolio = ({portfolioSectionRef}) => {
         }
       ],
       skills: "React Js, Bootstrap4",
-      animation: "fade-right",
       projectdeatails: "MyHealthcare project work with team"
     },
   ]
@@ -59,7 +55,7 @@ const Portfolio = ({portfolioSectionRef}) => {
         <div className="row text-hover">
           <div className="col-12 d-flex justify-content-center row-hover">
             <div className="about-secition">
-              <h1 className='fs-5' data-aos="zoom-in">Latest Works</h1>
+              <h1 className='fs-5'>Latest Works</h1>
             </div>
           </div>
           <div className="col-12">
@@ -69,7 +65,7 @@ const Portfolio = ({portfolioSectionRef}) => {
                   <li key={item.id}>
                     <div className='project-section'>
                       <span></span>
-                      <div className='card d-flex' data-aos={item.animation}>
+                      <div className='card d-flex'>
                         <img src={item.homeimages} alt={item.title} />
                         <div className='project-details'>
                           <h1>{item.title}</h1>

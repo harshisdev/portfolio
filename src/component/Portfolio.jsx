@@ -54,8 +54,8 @@ const Portfolio = ({portfolioSectionRef}) => {
       <div className="container" ref={portfolioSectionRef}>
         <div className="row text-hover">
           <div className="col-12 d-flex justify-content-center row-hover">
-            <div className="about-secition">
-              <h1 className='fs-5'>Latest Works</h1>
+            <div className="about-secition mb-4">
+              <h1 className='fs-5 fw-bold'>Latest Works</h1>
             </div>
           </div>
           <div className="col-12">

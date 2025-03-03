@@ -77,10 +77,16 @@ const Home = () => {
         <title>Harsh Kumar || Ui Developer || Software Developer || Frontend Developer</title>
       </Helmet>
       <Headers scrollToSection={scrollToSection} activeSection={activeSection} />
-      <Banner homeSectionRef={homeSectionRef} />
+      <div className="banner-section py-5">
+        <Banner homeSectionRef={homeSectionRef} />
+      </div>
       <TechnicalSkils aboutSectionRef={aboutSectionRef} />
-      <Portfolio portfolioSectionRef={portfolioSectionRef} />
-      <Contact contactSectionRef={contactSectionRef} />
+      <div className="banner-section-1 py-5">
+        <Portfolio portfolioSectionRef={portfolioSectionRef} />
+      </div>
+      <div className="banner-section py-5">
+        <Contact contactSectionRef={contactSectionRef} />
+      </div>
       <ScrollToTop />
       <Footer />
     </>

@@ -34,11 +34,11 @@ function ScrollToTop() {
                     data-aos="fade-up"
                     style={{
                         position: "fixed",
-                        bottom: "40px",
+                        bottom: "55px",
                         right: "20px",
                         padding: "10px",
                         fontSize: "18px",
-                        backgroundColor: "#ffc107",
+                        backgroundColor:"#48b96c",
                         color: "#fff",
                         border: "none",
                         borderRadius: "50%",
@@ -48,8 +48,7 @@ function ScrollToTop() {
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
-                        boxShadow: "0px 2px 5px rgba(0, 0, 0, 0.2)",
-                        zIndex: "999",
+                        zIndex: "9",
                     }}
                 >
                     <BiArrowToTop />

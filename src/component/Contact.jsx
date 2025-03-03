@@ -97,29 +97,29 @@ const Contact = ({contactSectionRef}) => {
         <>
             <div className="contact-bg" ref={contactSectionRef}>
                 <div className="container">
-                    <div className="row text-hover pb-2">
-                        <div className="col-12 d-flex justify-content-center mb-4">
-                            <h1 className="fs-5">Get in touch</h1>
+                    <div className="row text-hover">
+                        <div className="col-12 d-flex justify-content-center mb-5">
+                            <h1 className="fs-5 fw-bold">Get in touch</h1>
                         </div>
                         <div className="col-12 col-lg-6">
                             <div className="contact__us">
-                                <p className="mb-2">Experienced frontend developer available for freelance projects. Proficient in HTML5, CSS3, JavaScript, React.js. Specializing in crafting captivating user interfaces and ensuring seamless user experiences. Let's collaborate to elevate your online presence. Contact me to discuss your project requirements and achieve your goals together!</p>
+                                <p className="mb-4">Experienced frontend developer available for freelance projects. Proficient in HTML5, CSS3, JavaScript, React.js. Specializing in crafting captivating user interfaces and ensuring seamless user experiences. Let's collaborate to elevate your online presence. Contact me to discuss your project requirements and achieve your goals together!</p>
                                 <div>
                                     <span className="pe-2"><MdOutlineLocalPhone /> </span> <a href="tel:6205044930">+91-6205044930</a>
                                     <br className="d-block d-sm-none" />
-                                    <span className="ps-0 ps-sm-3"><IoMailUnreadOutline />
+                                    <span className="ps-0 ps-sm-4"><IoMailUnreadOutline />
                                     </span> <a href="mailto:harshch9931@gmail.com">harshch9931@gmail.com</a>
                                 </div>
-                                <div className="d-flex justify-content-between pt-3">
-                                    <Card className="p-2"><a href="https://www.facebook.com/harshkumar1208200" target="__blank"><CiFacebook className="fs-3" />
+                                <div className="d-flex justify-content-between pt-4">
+                                    <Card className="p-3"><a href="https://www.facebook.com/harshkumar1208200" target="__blank"><CiFacebook className="fs-3" />
                                     </a></Card>
-                                    <Card className="p-2"><a href="https://www.linkedin.com/in/harsh-kumar-593a19232/" target="__blank"><CiLinkedin className="fs-3" /></a>
+                                    <Card className="p-3"><a href="https://www.linkedin.com/in/harsh-kumar-593a19232/" target="__blank"><CiLinkedin className="fs-3" /></a>
                                     </Card>
-                                    <Card className="p-2"><a href="https://wa.me/+916205044930?text=Hi Harsh," target="__blank"><FaWhatsapp className="fs-3" /></a>
+                                    <Card className="p-3"><a href="https://wa.me/+916205044930?text=Hi Harsh," target="__blank"><FaWhatsapp className="fs-3" /></a>
                                     </Card>
-                                    <Card className="p-2"><a href="https://www.instagram.com/harshch9931/" target="__blank"><CiInstagram className="fs-3" /></a>
+                                    <Card className="p-3"><a href="https://www.instagram.com/harshch9931/" target="__blank"><CiInstagram className="fs-3" /></a>
                                     </Card>
-                                    <Card className="p-2"><a href="https://github.com/harshisdev" target="__blank"><FaGithub className="fs-3" />
+                                    <Card className="p-3"><a href="https://github.com/harshisdev" target="__blank"><FaGithub className="fs-3" />
                                     </a></Card>
                                 </div>
                             </div>

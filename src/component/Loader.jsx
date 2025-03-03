@@ -14,10 +14,10 @@ const Loader = () => {
     useEffect(() => {
         if (isDarkTheme) {
             document.body.classList.add('dark-theme');
-            document.querySelector('meta[name="theme-color"]').setAttribute('content', '#1C242C');
+            document.querySelector('meta[name="theme-color"]').setAttribute('content', '#48b96c');
         } else {
             document.body.classList.remove('dark-theme');
-            document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffc107');
+            document.querySelector('meta[name="theme-color"]').setAttribute('content', '#48b96c');
         }
     }, [isDarkTheme]);
 

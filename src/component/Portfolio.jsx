@@ -86,7 +86,7 @@ const Portfolio = ({portfolioSectionRef}) => {
                         <Slider {...SliderSlick}>
                           {item.slideImages.map((slide) => (
                             <div key={slide.id}>
-                              <img src={slide.img} alt={`Slide ${slide.id}`} />
+                              <img src={slide.img} className='w-100' alt={`Slide_${slide.id}`} />
                             </div>
                           ))}
                         </Slider>

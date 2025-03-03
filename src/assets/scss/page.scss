@@ -310,8 +310,8 @@ h2 {
         padding: 20px;
         max-width: 500px;
         width: 500px;
-        margin-top: 50px;
-        margin-bottom: 30px;
+        margin-top: 30px;
+        margin-bottom: 50px;
         border-radius: 0px;
         color: $black;
         font-size: 1rem;
@@ -322,6 +322,9 @@ h2 {
         border: none;
         box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.0509803922);
         z-index: 1;
+        :last-child {
+          margin-bottom: 0px;
+        }
         @media only screen and (max-width: 990px) {
           width: 100%;
           max-width: 100%;
@@ -621,13 +624,16 @@ h2 {
   .project-details-slide {
     width: 50%;
     float: right;
-    min-height: 250px;
-    padding-left: 20px;
+    max-height: 210px;
+    padding: 0px 50px;
     transition: 0.55s all ease-in-out;
-    margin-top: 15px;
+    margin: 15px 0px;
+    overflow: hidden;
+    .slick-list{
+      padding: 0px !important;
+    }
     @media only screen and (max-width: 990px) {
       width: 100%;
-      padding-left: 0px;
     }
   }
 }
@@ -941,7 +947,6 @@ td {
 .downloadbtn {
   padding: 5px 10px;
   border-radius: 50px;
-  margin-left: 5px;
   // width: max-content;
   // position: absolute;
   // top: 5px;

@@ -8,7 +8,7 @@ const Footer = () => {
               © 2023 - {(new Date().getFullYear())}. All Right Reserved
             </div>
             <div className="col-12 col-sm-5 text-center text-sm-end mt-2 mt-sm-0">
-              Made with ❤️ Harsh
+              Made with <span className="text-primary">❤</span> Harsh
             </div>
           </div>
         </div>

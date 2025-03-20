@@ -44,10 +44,10 @@ const Headers = ({ scrollToSection, activeSection }) => {
   const downloadResume = () => {
     const link = document.createElement('a');
     link.href = Resume;
-    link.download = 'harsh-kumar.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    link.setAttribute('download', 'harsh-kumar.pdf');
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
   }
 
   const [open, setOpen] = useState(false);

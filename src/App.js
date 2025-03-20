@@ -40,7 +40,8 @@ function App() {
         {
           pageLoading ?
             (
-              <Loader />
+              // <Loader />
+              null
             )
             :
             (

@@ -15,7 +15,7 @@ const Erorr = () => {
       </Helmet>
       <Headers />
       <Container className="min-height d-flex align-items-center justify-content-center">
-        <h1 className="fs-5" data-aos="zoom-in">It seems like the page you're looking for is not available. <br />check the URL or navigate back to the <Link className="text-primary" to="/">Home Page</Link></h1>
+        <h1 className="fs-5">It seems like the page you're looking for is not available. <br />check the URL or navigate back to the <Link className="text-primary" to="/">Home Page</Link></h1>
       </Container>
       <Footer />
     </>

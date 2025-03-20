@@ -7,7 +7,7 @@ import FrontEndDevelopment from '../assets/images/certification/FrontEndDevelopm
 import VersionControle from '../assets/images/certification/VersionControl.png';
 
 
-const TechnicalSkils = ({aboutSectionRef}) => {
+const TechnicalSkils = ({ aboutSectionRef }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [hoverClass, setHoverClass] = useState(false);
 
@@ -163,128 +163,142 @@ const TechnicalSkils = ({aboutSectionRef}) => {
 
   return (
     <>
-      <div className="container" ref={aboutSectionRef}>
-        <div className="row mt-0 mt-lg-4 text-hover">
-          <div className="col-12 mb-4 d-flex justify-content-center">
-            <h1 className="fs-5" data-aos="zoom-in">Technical skills</h1>
-          </div>
-          <div className="col-12 d-flex">
-            <div className="row justify-content-between">
-              {
-                Skills.map((items, index) => (
-                  <div data-aos={items.animation} className="col-auto mb-3" key={index}>
-                    <div className={`eb-progress-bar ${hoverClass === true ? "animation" : ''}`} style={{ '--value': items.percentage }}>
-                    </div>
-                    <label htmlFor={items.skill} className="eb-progress-bar-title">
-                      <h2>{items.skill}</h2>
-                    </label>
-                  </div>
-                ))
-              }
+      <div className="banner-section-1 py-5" ref={aboutSectionRef}>
+        <div className="container">
+          <div className="row text-hover">
+            <div className="col-12 mb-5 d-flex justify-content-center">
+              <h1 className="fs-5 fw-bold">Technical skills</h1>
             </div>
-          </div>
-        </div>
-        <div className="row text-hover justify-content-center">
-          <div className="col-12">
-            <div className='about-secition'>
-              <div className="d-flex justify-content-center">
-                <h1 className="fs-5" data-aos="zoom-in">Experiance</h1>
+            <div className="col-12 d-flex">
+              <div className="row justify-content-between">
+                {
+                  Skills.map((items, index) => (
+                    <div className="col-auto mb-3" key={index}>
+                      <div className={`eb-progress-bar ${hoverClass === true ? "animation" : ''}`} style={{ '--value': items.percentage }}>
+                      </div>
+                      <label htmlFor={items.skill} className="eb-progress-bar-title">
+                        <h2 className="fw-bold">{items.skill}</h2>
+                      </label>
+                    </div>
+                  ))
+                }
               </div>
-              <ul>
-                {experienceData.map((experience, index) => (
-                  <li key={index} className={hoveredIndex === index ? "hoverafter" : ""}>
-                    <span></span>
-                    <div onMouseEnter={() => setHoveredIndex(index)}
-                      onMouseLeave={() => setHoveredIndex(null)} data-aos={experience.animation} className="card">
-                      <div className="d-block d-sm-flex justify-content-between">
-                        <div className="heading">
-                          <h1>{experience.company}</h1>
-                          <i>{experience.role}</i>
-                        </div>
-                        <div className="year my-3 my-sm-0">
-                          {experience.duration}
-                        </div>
-                      </div>
-                      {
-                        experience.description.map((item, index) => (
-                          <p key={index} className="mb-0 mt-2 px-4">
-                            {item.text}
-                          </p>
-                        ))
-                      }
-                    </div>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>
-        <div className="row text-hover justify-content-center">
-          <div className="col-12">
-            <div className='about-secition'>
-              <div className="d-flex justify-content-center">
-                <h1 className="fs-5" data-aos="zoom-in">Certification</h1>
+      </div>
+      <div className="banner-section py-5">
+        <div className="container">
+          <div className="row text-hover justify-content-center">
+            <div className="col-12">
+              <div className='about-secition'>
+                <div className="d-flex justify-content-center mb-4">
+                  <h1 className="fs-5 fw-bold">Experiance</h1>
+                </div>
+                <ul>
+                  {experienceData.map((experience, index) => (
+                    <li key={index} className={hoveredIndex === index ? "hoverafter" : ""}>
+                      <span></span>
+                      <div onMouseEnter={() => setHoveredIndex(index)}
+                        onMouseLeave={() => setHoveredIndex(null)} className="card">
+                        <div className="d-block d-sm-flex justify-content-between">
+                          <div className="heading">
+                            <h1>{experience.company}</h1>
+                            <i>{experience.role}</i>
+                          </div>
+                          <div className="year my-3 my-sm-0">
+                            {experience.duration}
+                          </div>
+                        </div>
+                        {
+                          experience.description.map((item, index) => (
+                            <p key={index} className="mb-0 mt-2 px-4">
+                              {item.text}
+                            </p>
+                          ))
+                        }
+                      </div>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul>
-                {CertificationData.map((certifiate, index) => (
-                  <li key={index} className={hoveredIndex === index ? "hoverafter" : ""}>
-                    <span></span>
-                    <div onMouseEnter={() => setHoveredIndex(index)}
-                      onMouseLeave={() => setHoveredIndex(null)} data-aos={certifiate.animation} className="card">
-                      <div className="d-block d-sm-flex justify-content-between align-items-center">
-                        <div className="heading">
-                          <h1>{certifiate.certificateCourseName}, <i>Meta</i></h1>
-                        </div>
-                        <div className="year mt-3 mt-sm-0">
-                          {certifiate.certificateDate}
-                        </div>
-                      </div>
-                      <div className="d-flex justify-content-center py-3 imgHeight">
-                        <img style={{ height: "100%", width: "auto" }} src={certifiate.certificateImages} alt={certifiate.certificateCourseName} />
-                      </div>
-                      <div className="d-flex justify-content-center">
-                        <a href={certifiate.certificateLink} rel="noreferrer" target="_blank" className="btn btn-outline-primary px-4 rounded-pill">View Certificate</a>
-                      </div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>
-        <div className="row text-hover justify-content-center">
-          <div className="col-12">
-            <div className='about-secition'>
-              <div className="d-flex justify-content-center">
-                <h1 className="fs-5" data-aos="zoom-in">Education</h1>
+      </div>
+      <div className="banner-section-1 py-5">
+        <div className="container">
+          <div className="row text-hover justify-content-center">
+            <div className="col-12">
+              <div className='about-secition'>
+                <div className="d-flex justify-content-center mb-4">
+                  <h1 className="fs-5 fw-bold">Certification</h1>
+                </div>
+                <ul>
+                  {CertificationData.map((certifiate, index) => (
+                    <li key={index} className={hoveredIndex === index ? "hoverafter" : ""}>
+                      <span></span>
+                      <div onMouseEnter={() => setHoveredIndex(index)}
+                        onMouseLeave={() => setHoveredIndex(null)} className="card">
+                        <div className="d-block d-sm-flex justify-content-between align-items-center">
+                          <div className="heading">
+                            <h1>{certifiate.certificateCourseName}, <i>Meta</i></h1>
+                          </div>
+                          <div className="year mt-3 mt-sm-0">
+                            {certifiate.certificateDate}
+                          </div>
+                        </div>
+                        <div className="d-flex justify-content-center py-3 imgHeight">
+                          <img style={{ height: "100%", width: "auto" }} src={certifiate.certificateImages} alt={certifiate.certificateCourseName} />
+                        </div>
+                        <div className="d-flex justify-content-center">
+                          <a href={certifiate.certificateLink} rel="noreferrer" target="_blank" className="btn btn-outline-primary px-4 rounded-pill">View Certificate</a>
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul>
-                {EducationData.map((education, index) => (
-                  <li key={index} className={hoveredIndex === index ? "hoverafter" : ""}>
-                    <span></span>
-                    <div onMouseEnter={() => setHoveredIndex(index)}
-                      onMouseLeave={() => setHoveredIndex(null)} data-aos={education.animation} className="card">
-                      <div className="d-blcok d-sm-flex justify-content-between">
-                        <div className="heading">
-                          <h1>{education.instituteName}</h1>
-                          <i>{education.degree}
-                            {
-                              education.degree === "10" || education.degree === "12" ? <sup> th</sup> : null
-                            }
-                          </i>
-                        </div>
-                        <div className="year mt-3 mt-sm-0">
-                          {education.duration}
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>
-      </div >
+      </div>
+      <div className="banner-section py-5">
+        <div className="container">
+          <div className="row text-hover justify-content-center">
+            <div className="col-12">
+              <div className='about-secition'>
+                <div className="d-flex justify-content-center mb-4">
+                  <h1 className="fs-5 fw-bold">Education</h1>
+                </div>
+                <ul>
+                  {EducationData.map((education, index) => (
+                    <li key={index} className={hoveredIndex === index ? "hoverafter" : ""}>
+                      <span></span>
+                      <div onMouseEnter={() => setHoveredIndex(index)}
+                        onMouseLeave={() => setHoveredIndex(null)} className="card">
+                        <div className="d-blcok d-sm-flex justify-content-between">
+                          <div className="heading">
+                            <h1>{education.instituteName}</h1>
+                            <i>{education.degree}
+                              {
+                                education.degree === "10" || education.degree === "12" ? <sup> th</sup> : null
+                              }
+                            </i>
+                          </div>
+                          <div className="year mt-3 mt-sm-0">
+                            {education.duration}
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

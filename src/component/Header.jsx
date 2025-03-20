@@ -5,7 +5,6 @@ import { Drawer } from "antd";
 import { VscMenu } from "react-icons/vsc";
 import { MdOutlineFileDownload } from "react-icons/md";
 import Resume from "../assets/images/Harsh-CV.pdf";
-import harshLogo from '../assets/images/harsh-logo.png'
 import { CiDark } from "react-icons/ci";
 import { CiLight } from "react-icons/ci";
 
@@ -104,9 +103,11 @@ const Headers = ({ scrollToSection, activeSection }) => {
       <Navbar className={`navbar__custom ${sticky === true ? "nav-sticky" : ''}`}>
         <div className="container d-block">
           <Row>
-            <div className="col-2 d-flex align-items-center">
-              <Link>
-                <img src={harshLogo} alt="Harsh Kumar" className="rounded-circle" />
+            <div className="col-auto d-flex align-items-center">
+              <Link className="text-primary fst-italic fs-5 text-decoration-none text-center" style={{ lineHeight: '0.9' }}>
+                Harsh Kumar
+                <br />
+                <i style={{ fontSize: '0.75rem' }} className='text-black'>Software Engineer</i>
               </Link>
             </div>
             {/* desktop view nav bar */}
@@ -130,12 +131,12 @@ const Headers = ({ scrollToSection, activeSection }) => {
                 </nav>
               </Col>
               : null}
-            <Col className={`col col-lg-${errPage == true ? "auto" : ''} d-flex align-items-center ${errPage == true ? 'justify-content-center' : 'justify-content-end'}`}>
+            <Col className={`col-lg-${errPage == true ? "auto" : ''} d-flex align-items-center ${errPage == true ? 'justify-content-center' : 'justify-content-end'} d-none d-lg-block`}>
               <Button className="rounded-pill px-4 downloadbtn" onClick={downloadResume} >Download CV <span className="downloadbtnicon"><MdOutlineFileDownload /></span>
               </Button>
             </Col>
             {errPage == true ?
-              <Col className="col-auto align-items-center d-flex d-lg-none">
+              <Col className="col align-items-center d-flex d-lg-none justify-content-end">
                 <VscMenu onClick={showDrawer} className="fs-2" />
               </Col>
               : null}
@@ -146,7 +147,7 @@ const Headers = ({ scrollToSection, activeSection }) => {
       <Drawer
         title={false}
         placement="right"
-        width={200}
+        width={250}
         onClose={onClose}
         open={open}
       >
@@ -166,21 +167,25 @@ const Headers = ({ scrollToSection, activeSection }) => {
             </li>
           </ul>
         </nav>
-        <button className="dark-theme-btn" onClick={toggleTheme}>
+        <Col className={`col col-lg-${errPage == true ? "auto" : ''} d-flex align-items-center mt-3 ${errPage == true ? 'justify-content-center' : 'justify-content-end'}`}>
+          <Button className="rounded-pill px-4 downloadbtn" onClick={downloadResume} >Download CV <span className="downloadbtnicon"><MdOutlineFileDownload /></span>
+          </Button>
+        </Col>
+        {/* <button className="dark-theme-btn" onClick={toggleTheme}>
           {isDarkTheme ?
             <CiLight />
             :
             <CiDark />
           }
-        </button>
+        </button> */}
       </Drawer>
-      <button className="dark-theme-btn d-none d-lg-block" onClick={toggleTheme}>
+      {/* <button className="dark-theme-btn d-none d-lg-block" onClick={toggleTheme}>
         {isDarkTheme ?
           <CiLight />
           :
           <CiDark />
         }
-      </button>
+      </button> */}
     </>
   );
 };

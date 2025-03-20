@@ -4,11 +4,11 @@ const Footer = () => {
       <footer>
         <div className="py-3 container">
           <div className="row">
-            <div className="col-7 d-flex">
+            <div className="col-12 col-sm-7 text-center text-sm-start">
               © 2023 - {(new Date().getFullYear())}. All Right Reserved
             </div>
-            <div className="col-5 d-flex justify-content-end">
-              Made with 💛 Harsh
+            <div className="col-12 col-sm-5 text-center text-sm-end mt-2 mt-sm-0">
+              Made with <span className="text-primary">❤</span> Harsh
             </div>
           </div>
         </div>
